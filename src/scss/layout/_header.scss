@@ -1,0 +1,56 @@
+.no-webp .inicio{
+    background-image: url('../img/header.jpg');
+}
+
+.webp .inicio {
+    // background-image: url(../img/header.webp);
+    background-image: url('../img/header.webp');
+
+}
+.header{
+    background-color: $grisOscuro;
+    padding: 1rem 0 3rem 0; 
+    &{background-color:hsla(212,0%,0%,1);
+        background-image:
+        radial-gradient(at 51% 61%, hsla(75,0%,0%,0.48) 0px, transparent 50%),
+        radial-gradient(at 20% 78%, hsla(161,0%,20%,1) 0px, transparent 50%),
+        radial-gradient(at 70% 44%, hsla(186,0%,0%,0.83) 0px, transparent 50%)}
+            margin-bottom: 0;
+
+    &.inicio{
+
+        background-position: center center;
+        background-size: cover;
+         
+        @include tablet{
+            min-height: 70rem;
+        }
+        .contenido-header{
+            @include tablet{
+                min-height: 70rem;
+            }
+        }
+        
+    }
+
+}
+.contenido-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    a {
+        &:hover {
+            color: hsla(209, 100%, 47%, 1);
+        }
+    }
+    
+    h1{
+        text-align: left;
+        color: $blanco;
+        font-weight: $bold;
+        line-height: 2;
+        max-width: 60rem;
+    }
+
+}

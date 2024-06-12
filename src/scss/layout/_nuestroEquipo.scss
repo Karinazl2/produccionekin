@@ -1,0 +1,108 @@
+
+.botonop{    
+  
+
+.boton-rosa {
+    background-color: #F3084B;
+    color: $blanco;
+    font-weight: $bold;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 2.5rem;
+    display: table;
+    border: none;
+    width: 33%;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    align-items: center;
+
+
+    &:hover{
+        background-color: darken(#F3084B, 10%);
+        cursor: pointer;
+    }
+   
+}
+
+.boton-azul {
+    background-color: $azul;
+    color: $blanco;
+    font-weight: $bold;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 2.5rem;
+    display: table;
+    border: none;
+    width: 33%;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    align-items: center;
+
+
+    &:hover{
+        background-color: darken($azul, 10%);
+        cursor: pointer;
+    }
+   
+}
+
+}
+
+.speakers{
+    &__grid{
+        @include contenedor;
+        @include grid(1, 5rem);
+        @include tablet{
+            @include grid(2, 5rem);
+
+        }
+
+        @include xl_desktop{
+            @include grid(3, 5rem);
+
+        }
+    }
+
+    &__descripcion{
+
+        
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 300;
+        color: #1E293B;
+        margin: 5rem 0;
+    
+
+}
+}
+
+.speaker{
+
+    @include card;
+
+    background-position: center top;
+    background-size: 350px;
+    background-repeat: no-repeat;
+
+    @for $i from 1 through 4 {
+
+        &:nth-child(4n + #{$i}){
+            background-image: image-set(
+                url('../img/bg_#{$i}.webp') 1x,
+                url('../img/bg_#{$i}.png') 1x
+            );
+        }
+    } 
+
+
+    &__imagen{
+        min-width: 350px;
+        //background-color: transparent;
+        
+        @include tablet{
+            min-width: unset;
+        }
+    }
+}
+
+

@@ -1,0 +1,32 @@
+.footer {
+    padding: 2.5rem 0;
+    &{background-color:hsla(212,0%,0%,1);
+background-image:
+radial-gradient(at 51% 61%, hsla(75,0%,0%,0.48) 0px, transparent 50%),
+radial-gradient(at 20% 78%, hsla(161,0%,20%,1) 0px, transparent 50%),
+radial-gradient(at 70% 44%, hsla(186,0%,0%,0.83) 0px, transparent 50%)}
+    margin-bottom: 0;
+
+    .contenedor-footer {
+        padding-top: 2.5rem;
+    }
+
+    .navegacion {
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+
+        a {
+            &:hover {
+              //  color: $verde;
+                color: hsla(209, 100%, 47%, 1);
+
+            }
+        }
+    }
+
+    .copyright {
+        color: $blanco;
+        text-align: center;
+    }
+}

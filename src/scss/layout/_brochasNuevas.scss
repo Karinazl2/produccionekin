@@ -1,0 +1,192 @@
+.no-webp .imagen-materiaPrima {
+    background-image: url('../img/encuentra1.jpg');
+}
+
+.webp .imagen-materiaPrima {
+    background-image: url('../img/encuentra1.webp');
+
+}
+
+.imagen-materiaPrima {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-position: center center;
+    background-size: cover;
+    padding: 3rem 0;
+
+    @include telefono {
+        margin: 2rem 10rem 0rem 10rem;
+
+    }
+
+    @include tablet {
+
+        margin: 1rem 20rem 0rem 20rem;
+
+    }
+
+
+    @include desktop {
+
+        margin: 1rem 40rem 0rem 40rem;
+
+    }
+
+
+
+    h3 {
+        font-size: 2.5rem;
+        font-weight: $black;
+        color: $blanco;
+    }
+
+    p {
+        font-size: 1.4rem;
+        color: $blanco;
+        padding: 0 2rem;
+        text-align: center;
+        //font-weight: $black;
+    }
+}
+
+.negritas {
+    h1 {
+        font-weight: $black;
+
+    }
+
+    p {
+        text-align: center;
+        font-size: small;
+    }
+}
+
+.titulo {
+    h3 {
+        color: #007df4;
+        margin: 4rem 5rem 2rem 5rem;
+        text-align: left;
+        font-size: clamp(1.8rem, -0.4rem + 4vw, 3rem);
+        font-weight: 1000;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1),
+            2px 2px 2px rgba(0, 0, 0, 0.1),
+            3px 3px 2px rgba(0, 0, 0, 0.1);
+        //font-weight: $bold;
+    }
+
+    p {
+        color: #64748B;
+        margin: 3rem 0 1rem 5rem;
+    }
+}
+
+.agenda{
+    padding: 5rem 0; 
+    @include contenedor;
+
+}
+
+.eventos{
+    $modificador: &;
+    &__heading{
+        color: $azul;
+        margin: 5rem 0;
+        text-align: left;
+        font-size: clamp(2rem, -0.8rem + 8vw, 6rem);
+
+    }
+
+    &__fecha{
+        color: $gris;
+        margin: 3rem 0 1rem 0;
+
+    }
+
+    &--workshops{
+        #{$modificador}__heading{
+            color: $secundario;
+        }
+
+        .evento__informacion{
+            background-color: $secundario;
+            &:hover{
+                background-color: darken($secundario, 1%);
+            }
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev{
+        color: rgba($blanco, .5);
+    }
+
+}
+
+.evento{
+    &__hora{
+        font-weight: $bold;
+    }
+
+    &__informacion{
+        padding: 2rem;
+        border-radius: 1rem;
+        background-color: $azul;
+        color: $blanco;
+        transition: 300ms background-color ease;
+
+        &:hover{
+            background-color: darken($azul, 10%);
+        }
+    }
+
+    &__nombre{
+        font-size: 2rem;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    &__introduccion{
+        font-size: 1.6rem;
+        // Cortar el texto
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        //Si se desea mostrar diferentes número de lineas en otro dispositivo
+        //@include m.tablet{
+        //-webkit-line-clamp: 2;
+        //}
+    }
+
+    &__autor-info{
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__imagen-autor{
+        width: 5rem;
+        background-color: $blanco;
+        border-radius: 50%;
+    }
+
+    &__autor-nombre{
+        font-weight: $bold;
+    }
+
+    &__agregar{
+        @include boton($blanco, $negro);
+        margin-top: 1rem;
+
+        &:disabled{
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+}

@@ -1,0 +1,88 @@
+/** Media Queries **/
+@mixin telefono {
+    @media (min-width: #{$telefono}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin xl_desktop {
+    @media (min-width: #{$xl_desktop}) {
+        @content;
+    }
+}
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin boton($bgColor, $display ) {
+    background-color: $bgColor;
+    color: $blanco;
+    font-weight: $bold;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: 2.5rem;
+    display: $display;
+    border: none;
+    border-radius: 1rem;
+
+    &:hover{
+        background-color: darken($bgColor, 10%);
+        cursor: pointer;
+    }
+}
+
+@mixin contenedor{
+    width: min(95%, 140rem);
+    margin: 0 auto;
+}
+
+
+@mixin card{
+    border: 1px solid lighten($gris, 10);
+    padding: 3rem;
+
+    &__nombre{
+        font-weight: $black;
+        font-size: 2.6rem;
+        margin: 2rem 0;
+    }
+}
+
+@mixin reset-lista{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin tags{
+    @include reset-lista;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+
+    > li {
+        background-color: $azul;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-size: 1.4rem;
+        color: $blanco;
+        font-weight: $bold;
+    }
+}

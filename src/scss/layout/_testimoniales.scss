@@ -1,0 +1,35 @@
+.testimonial {
+    background-color: hsla(209, 100%, 47%, 1);
+    background-image:
+        radial-gradient(at 0% 18%, hsla(178, 100%, 39%, 1) 0px, transparent 50%),
+        radial-gradient(at 28% 75%, hsla(209, 100%, 47%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 47%, hsla(178, 100%, 39%, 1) 0px, transparent 50%),
+        radial-gradient(at 74% 27%, hsla(209, 100%, 47%, 1) 0px, transparent 50%),
+        radial-gradient(at 70% 71%, hsla(178, 100%, 39%, 1) 0px, transparent 50%),
+        radial-gradient(at 30% 64%, hsla(209, 100%, 47%, 1) 0px, transparent 50%);
+    font-size: 2.4rem;
+    padding: 2rem;
+    color: $blanco;
+    border-radius: 2rem;
+
+    blockquote {
+        padding-left: 5rem;
+        position: relative;
+
+        &::before {
+            content: '';
+            background-image: url(../img/comilla.svg);
+            background-repeat: no-repeat;
+            width: 6rem;
+            height: 8rem;
+            display: block;
+            position: absolute;
+            left: -2rem;
+        }
+    }
+    p {
+        text-align: right;
+        color: $blanco;
+
+    }
+}

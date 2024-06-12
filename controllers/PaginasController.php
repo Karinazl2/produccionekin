@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Model\Anuncios;
 use Model\Operadores;
 use MVC\Router;
 use Model\Propiedad;
@@ -66,7 +67,12 @@ class PaginasController
 
     public static function blog(Router $router)
     {
-        $router->render('paginas/blog');
+        $anuncios=Anuncios::all();
+
+
+        $router->render('paginas/anuncios',[
+            'anuncios' => $anuncios
+        ]);
 
     }
 

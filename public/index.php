@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
+use Controllers\AnunciosController;
 use Controllers\OperadoresController;
 use MVC\Router;
 use Controllers\LoginController;
@@ -31,7 +32,7 @@ $router->get('/', [PaginasController::class,'index']);
 $router->get('/brochasNuevas', [PaginasController::class,'brochasNuevas']);
 $router->get('/cremalleras', [PaginasController::class,'cremalleras']);
 //$router->get('/propiedad', [PaginasController::class,'propiedad']);
-$router->get('/blog', [PaginasController::class,'blog']);
+
 $router->get('/afilado', [PaginasController::class,'afilado']);
 $router->get('/busquedaPersonalizada', [PaginasController::class,'busquedaPersonalizada']);
 $router->post('/busquedaPersonalizada', [PaginasController::class,'busquedaPersonalizada']);
@@ -46,6 +47,13 @@ $router->post('/nuestroEquipo/actualizar', [OperadoresController::class,'actuali
 $router->post('/nuestroEquipo/eliminar', [OperadoresController::class,'eliminar']);
 
 
+$router->get('/anuncios', [PaginasController::class,'blog']);
+$router->get('/anuncios/anunciosadmin', [AnunciosController::class,'anunciosadmin']);
+$router->get('/anuncios/crear', [AnunciosController::class,'crear']);
+$router->post('/anuncios/crear', [AnunciosController::class,'crear']);
+$router->get('/anuncios/actualizar', [AnunciosController::class,'actualizar']);
+$router->post('/anuncios/actualizar', [AnunciosController::class,'actualizar']);
+$router->post('/anuncios/eliminar', [AnunciosController::class,'eliminar']);
 
 
 //login y autenticacion 

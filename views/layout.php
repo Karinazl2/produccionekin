@@ -16,7 +16,7 @@ if (!isset($inicio)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienes Raices</title>
+    <title>Ekin Producción</title>
     <link rel="stylesheet" href="../build/css/app.css">
 </head>
 
@@ -39,7 +39,7 @@ if (!isset($inicio)) {
                         <a href="/afilado">Afilado de Brochas</a>
                         <a href="/busquedaPersonalizada">Búsqueda personalizada</a>
                         <a href="/nuestroEquipo">Nuestro Equipo</a>
-                        <a href="/blog">Anuncios</a>
+                        <a href="/anuncios">Anuncios</a>
                         <?php if ($auth) { ?>
                             <a href="/logout">Cerrar Sesión</a>
                         <?php } else { ?>
@@ -67,7 +67,7 @@ if (!isset($inicio)) {
                 <a href="/afilado">Afilado de Brochas</a>
                 <a href="/busquedaPersonalizada">Búsqueda personalizada</a>
                 <a href="/nuestroEquipo">Nuestro Equipo</a>
-                <a href="/blog">Anuncios</a>
+                <a href="/anuncios">Anuncios</a>
                 <?php if ($auth) { ?>
                     <a href="/logout">Cerrar Sesión</a>
                 <?php } else { ?>

@@ -48,6 +48,4 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-
-
 </main>

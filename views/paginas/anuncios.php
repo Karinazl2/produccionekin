@@ -16,7 +16,7 @@
             </picture>
         </div>
         <div class="texto-entrada">
-            <a href="/entrada">
+            <a href="/anuncios/anuncio?id=<?php echo $anuncio->id; ?>">
                 <h4><?php echo $anuncio->titulo; ?></h4>
                 <p class="informacion-meta">Escrito el: <span><?php echo $anuncio->fecha; ?></span> por: <span><?php echo $anuncio->autor; ?></span></p>
                 <p>
@@ -28,3 +28,9 @@
     </article>
     <?php } ?>
 </main>
+
+
+<section class="contenedor seccion">
+    <h2>Más sobre nosotros</h2>
+    <?php include 'iconos.php'; ?>
+</section>

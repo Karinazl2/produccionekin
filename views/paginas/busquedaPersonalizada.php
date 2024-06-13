@@ -2,7 +2,7 @@
     <h1>Administrador de Producción</h1>
 </section>
 <section class="botonop">
-    <a href="/nuestroEquipo/crear" class="boton-rosa"> + Anadir Nueva Herramienta</a>
+    <a href="/busquedaPersonalizada/crear" class="boton-rosa"> + Anadir Nueva Herramienta</a>
 </section>
 
 <main class="contenedor seccion">

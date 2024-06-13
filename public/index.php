@@ -54,6 +54,8 @@ $router->post('/anuncios/crear', [AnunciosController::class,'crear']);
 $router->get('/anuncios/actualizar', [AnunciosController::class,'actualizar']);
 $router->post('/anuncios/actualizar', [AnunciosController::class,'actualizar']);
 $router->post('/anuncios/eliminar', [AnunciosController::class,'eliminar']);
+$router->get('/anuncios/anuncio', [AnunciosController::class,'anuncio']);
+
 
 
 //login y autenticacion 

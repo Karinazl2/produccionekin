@@ -17,3 +17,9 @@
     <h3>Producción de Afilado de Brochas>> </h3>
     <p>Ekin México</p>
 </section>
+
+
+<section class="contenedor seccion">
+    <h2>Más sobre nosotros</h2>
+    <?php include 'iconos.php'; ?>
+</section>

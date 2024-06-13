@@ -56,43 +56,28 @@
     <section class="blog">
         <h3>Anuncios</h3>
 
-        <article class="entrada-blog">
-            <div class="imagen">
-                <picture>
-                    <source srcset="build/img/blog1.webp" type="image/webp">
-                    <source srcset="build/img/blog1.jpg" type="image/jpg">
-                    <img loading="lazy" src="build/img/blog1.jpg" alt="Texto Entrada Blog">
-                </picture>
-            </div>
-            <div class="texto-entrada">
-                <a href="/entrada">
-                    <h4>Rol de Turnos</h4>
-                    <p class="informacion-meta">Escrito el: <span>01/06/2024</span> por: <span>Admin</span></p>
-                    <p>
-                        Conoce el Rol de Turnos de esta semana.
-                    </p>
-                </a>
-            </div>
+        <?php foreach ($anuncios as $anuncio) { ?>
+            <article class="entrada-blog">
+                <div class="imagen">
+                    <picture>
+                        <source srcset="/imagenes/<?php echo $anuncio->imagen; ?>" type="image/webp">
+                        <source srcset="/imagenes/<?php echo $anuncio->imagen; ?>" type="image/jpeg">
+                        <img loading="lazy" src="/imagenes/<?php echo $anuncio->imagen; ?>.jpg" alt="Texto Entrada Blog">
+                    </picture>
+                </div>
+                <div class="texto-entrada">
+                    <a href="/anuncios/anuncio?id=<?php echo $anuncio->id; ?>">
+                        <h4><?php echo $anuncio->titulo; ?></h4>
+                        <p class="informacion-meta">Escrito el: <span><?php echo $anuncio->fecha; ?></span> por:
+                            <span><?php echo $anuncio->autor; ?></span></p>
+                        <p>
+                            <?php echo substr($anuncio->descripcion, 0, 50) . '...'; ?>
+                        </p>
+                    </a>
+                </div>
 
-        </article>
-        <article class="entrada-blog">
-            <div class="imagen">
-                <picture>
-                    <source srcset="build/img/blog2.webp" type="image/webp">
-                    <source srcset="build/img/blog2.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/blog2.jpg" alt="Texto Entrada Blog">
-                </picture>
-            </div>
-            <div class="texto-entrada">
-                <a href="/entrada">
-                    <h4>TPM</h4>
-                    <p class="informacion-meta">Escrito el: <span>01/06/2024</span> por: <span>Admin</span></p>
-                    <p>
-                        Consulta aqui el cumplimiento de TPM.
-                    </p>
-                </a>
-            </div>
-        </article>
+            </article>
+        <?php } ?>
     </section>
 
 

@@ -6,7 +6,7 @@
         value="<?php echo s($anuncio->titulo); ?>">
 
     <label for="autor">Autor:</label>
-    <input type="text" id="autor" name="anuncios[autor]" placeholder="Autor" value="<?php echo s($anuncios->autor); ?>">
+    <input type="text" id="autor" name="anuncios[autor]" placeholder="Autor" value="<?php echo s($anuncio->autor); ?>">
 
 
     <label for="descripcion">Descripción:</label>

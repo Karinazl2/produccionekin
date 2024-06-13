@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use Controllers\AnunciosController;
+use Controllers\BusquedaPersonalizadaController;
 use Controllers\OperadoresController;
 use MVC\Router;
 use Controllers\LoginController;
@@ -56,7 +57,9 @@ $router->post('/anuncios/actualizar', [AnunciosController::class,'actualizar']);
 $router->post('/anuncios/eliminar', [AnunciosController::class,'eliminar']);
 $router->get('/anuncios/anuncio', [AnunciosController::class,'anuncio']);
 
-
+$router->get('/busquedaPersonalizada/busquedaafilado', [BusquedaPersonalizadaController::class,'busquedaafilado']);
+$router->get('/busquedaPersonalizada/busquedacremalleras', [BusquedaPersonalizadaController::class,'busquedacremalleras']);
+$router->get('/busquedaPersonalizada/busquedanuevas', [BusquedaPersonalizadaController::class,'busquedanuevas']);
 
 //login y autenticacion 
 $router->get('/login', [LoginController::class, 'login']);

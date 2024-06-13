@@ -2,8 +2,15 @@
     @include boton($amarillo, inline-block);
 }
 
+.boton-amarillo-1 {
+    @include boton($amarillo1, inline-block);
+}
+
 .boton-azul {
     @include boton($azul2, inline-block);
+}
+.boton-azul-1 {
+    @include boton($azul5, inline-block);
 }
 
 .boton-amarillo-block {
@@ -16,6 +23,10 @@
 
 .boton-verde {
     @include boton($verde, inline-block);
+}
+
+.boton-verde-1 {
+    @include boton($verde1, inline-block);
 }
 
 .boton-rojo-block {
@@ -32,3 +43,25 @@
     @include boton($verde, block);
 }
 
+
+.botones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    margin: auto 25rem;
+
+    @include telefono{
+
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        margin: auto 0;
+
+
+    }
+    @include tablet{
+        grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    margin: auto 25rem;
+    }
+
+}

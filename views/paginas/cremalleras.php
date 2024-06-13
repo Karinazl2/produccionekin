@@ -2,10 +2,14 @@
     <h1>Brochas Planas y Cremalleras</h1>
 </section>
 
+<section class="botonop">
+    <a href="/anuncios/anunciosadmin" class="boton-rosa">+ Añadir ordenes para Brochas Planas y Cremalleras</a>
+</section>
+
 <section class="imagen-materiaPrima">
     <h3>Materia prima</h3>
     <p>Vea las cremalleras y brochas planas disponibles en materia prima.</p>
-    <a href="/brochasNuevas" class="boton-amarillo">Ver Materia Prima</a>
+    <a href="/brochasNuevas" class="boton-azul">Ver Materia Prima</a>
 </section>
 
 <section class="negritas">

@@ -1,11 +1,15 @@
 <section class="n">
-    <h1>Afilado de Brochas Cilíndricas</h1>
+    <h1>Afilado de Brochas</h1>
+</section>
+
+<section class="botonop">
+    <a href="/anuncios/anunciosadmin" class="boton-rosa">+ Añadir ordenes para Afilado</a>
 </section>
 
 <section class="imagen-materiaPrima">
     <h3>Materia prima</h3>
     <p>Vea las brochas disponibles en materia prima.</p>
-    <a href="/brochasNuevas" class="boton-amarillo">Ver Materia Prima</a>
+    <a href="/brochasNuevas" class="boton-azul">Ver Materia Prima</a>
 </section>
 
 <section class="negritas">

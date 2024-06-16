@@ -1,9 +1,8 @@
-<?php
+<?php 
 
 namespace Model;
 
-class Nuevas_ordenes extends ActiveRecord
-{
+class Nuevas_ordenes extends ActiveRecord{
     protected static $tabla = 'nuevas_ordenes';
     protected static $columnasDB = [
         'id',
@@ -32,7 +31,6 @@ class Nuevas_ordenes extends ActiveRecord
 
     public function __construct($args = [])
     {
-
         $this->id = $args["id"] ?? null;
         $this->orden = $args["orden"] ?? '';
         $this->descripcion = $args["descripcion"] ?? '';

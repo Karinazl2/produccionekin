@@ -7,11 +7,11 @@ class Cliente extends ActiveRecord
     protected static $tabla = 'cliente';
     protected static $columnasDB = [
         'id',
-        'cliente',
+        'nombre',
         'referencia_cliente_id'
     ];
     public $id;
-    public $cliente;
+    public $nombre;
 
     public $referencia_cliente_id;
 
@@ -19,14 +19,14 @@ class Cliente extends ActiveRecord
     {
 
         $this->id = $args["id"] ?? null;
-        $this->cliente = $args["cliente"] ?? '';
+        $this->nombre = $args["nombre"] ?? '';
         $this->referencia_cliente_id = $args["referencia_cliente_id"] ?? '';
     }
 
     public function validar()
     {
 
-        if (!$this->cliente) {
+        if (!$this->nombre) {
             self::$errores[] = "Debes añadir un cliente.";
         }
 

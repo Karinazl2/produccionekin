@@ -20,7 +20,7 @@
     <h2>Brochas Nuevas</h2>
 
     <section class="botonop">
-        <a href="/anuncios/anunciosadmin" class="boton-rosa">+ Añadir Órdenes en Brochas Nuevas</a>
+        <a href="/busquedanuevas/crear" class="boton-rosa">+ Añadir Órdenes en Brochas Nuevas</a>
     </section>
 
     <table class="propiedades">
@@ -32,6 +32,8 @@
                 <th>Máquina</th>
                 <th>Prioridad</th>
                 <th>Operador</th>
+                <th>Última actualizacion</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <!-- Mostrar los resultados -->

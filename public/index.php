@@ -2,14 +2,17 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
-use Controllers\AnunciosController;
-use Controllers\BusquedaPersonalizadaController;
-use Controllers\OperadoresController;
 use MVC\Router;
 use Controllers\LoginController;
 use Controllers\PaginasController;
+use Controllers\AnunciosController;
 use Controllers\VendedorController;
 use Controllers\PropiedadController;
+use Controllers\OperadoresController;
+use Controllers\BusquedaNuevasController;
+use Controllers\BusquedaAfiladoController;
+use Controllers\BusquedaCremallerasController;
+use Controllers\BusquedaPersonalizadaController;
 
 
 $router = new Router();
@@ -57,9 +60,15 @@ $router->post('/anuncios/actualizar', [AnunciosController::class,'actualizar']);
 $router->post('/anuncios/eliminar', [AnunciosController::class,'eliminar']);
 $router->get('/anuncios/anuncio', [AnunciosController::class,'anuncio']);
 
-$router->get('/busquedaPersonalizada/busquedaafilado', [BusquedaPersonalizadaController::class,'busquedaafilado']);
-$router->get('/busquedaPersonalizada/busquedacremalleras', [BusquedaPersonalizadaController::class,'busquedacremalleras']);
-$router->get('/busquedaPersonalizada/busquedanuevas', [BusquedaPersonalizadaController::class,'busquedanuevas']);
+$router->get('/busquedaPersonalizada/busquedaafilado', [BusquedaAfiladoController::class,'busquedaafilado']);
+$router->get('/busquedaPersonalizada/busquedacremalleras', [BusquedaCremallerasController::class,'busquedacremalleras']);
+$router->get('/busquedaPersonalizada/busquedanuevas', [BusquedaNuevasController::class,'busquedanuevas']);
+
+$router->get('/busquedanuevas/crear', [BusquedaNuevasController::class,'crear']);
+$router->post('/busquedanuevas/crear', [BusquedaNuevasController::class,'crear']);
+$router->get('/busquedanuevas/actualizar', [BusquedaNuevasController::class,'actualizar']);
+$router->post('/busquedanuevas/actualizar', [BusquedaNuevasController::class,'actualizar']);
+$router->post('/busquedanuevas/eliminar', [BusquedaNuevasController::class,'eliminar']);
 
 //login y autenticacion 
 $router->get('/login', [LoginController::class, 'login']);

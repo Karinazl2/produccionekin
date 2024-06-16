@@ -53,6 +53,7 @@ class ActiveRecord
         $query .= join("', '", array_values($atributos));
         $query .= " ') ";
 
+
         $resultado = self::$db->query($query);
         if ($resultado) {
             //redireccionar al usuario

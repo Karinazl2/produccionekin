@@ -41,7 +41,7 @@ class Nuevas_ordenes extends ActiveRecord{
         $this->maquina_id = $args["maquina_id"] ?? '';
         $this->cliente_id = $args["cliente_id"] ?? '';
         $this->operador_id = $args["operador_id"] ?? '';
-        $this->usuario_id = $args["usuario_id"] ?? '';
+        $this->usuario_id = $args["usuario_id"] ?? 1;
     }
 
     public function validar()
@@ -76,7 +76,7 @@ class Nuevas_ordenes extends ActiveRecord{
 
     private function obtenerHoraActual() {
         // Devuelve la hora actual formateada
-        return date("Y-m-d H:i:s");
+        return date("H:i:s");
     }
 
 }

@@ -2,7 +2,10 @@
 
 namespace Controllers;
 use Model\Cliente;
+use Model\Nuevas_areas;
+use Model\Operadores;
 use Model\Referencia_cliente;
+use Model\Vista_clientes;
 use MVC\Router;
 use Model\Nuevas_ordenes;
 use Model\Nuevas_maquinas;
@@ -24,6 +27,9 @@ class BusquedaNuevasController
         $maquinas = Nuevas_maquinas::all();
         $clientes = Cliente::all();
         $referencia_cliente = Referencia_cliente::all();
+        $vista_clientes = Vista_clientes::all();
+        $operadores = Operadores::all();
+        $nuevas_areas = Nuevas_areas::all();
 
 
         // metodo post actualizar
@@ -39,6 +45,7 @@ class BusquedaNuevasController
 
             //Guarda en la base de datos.
             $nuevas_ordenes->guardar();
+            header('Location:/busquedaPersonalizada/busquedanuevas');
         }
 
 
@@ -47,6 +54,9 @@ class BusquedaNuevasController
             'maquinas' => $maquinas,
             'clientes' => $clientes,
             'referencia_cliente_id' => $referencia_cliente,
+            'vista_clientes'=> $vista_clientes,
+            'operadores' => $operadores,
+            'nuevas_areas' => $nuevas_areas,
 
             'errores' => $errores
         ]);

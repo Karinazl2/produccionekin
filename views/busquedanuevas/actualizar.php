@@ -1,6 +1,6 @@
 <main class="contenedor seccion">
     <section class="n">
-        <h1>Crear Nuevo Miembro</h1>
+        <h1>Actualizar Herramienta</h1>
 
         <?php foreach ($errores as $error): ?>
             <div class="alerta error">
@@ -12,11 +12,11 @@
     </section>
 
     <section class="botonop">
-        <a href="/nuestroEquipo" class="boton-rosa">Volver</a>
+        <a href="/busquedaPersonalizada/busquedanuevas" class="boton-rosa">Volver</a>
     </section>
 
     <form class="formularioperadores" method="POST"  enctype ="multipart/form-data" >
         <?php include 'formulario.php'; ?>
-        <input type="submit" value="Añadir Nuevo Técnico" class="boton-azul">
+        <input type="submit" value="Actualizar Herramienta" class="boton-azul">
     </form>
 </main>

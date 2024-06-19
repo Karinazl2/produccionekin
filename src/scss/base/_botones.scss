@@ -2,6 +2,10 @@
     @include boton($amarillo, inline-block);
 }
 
+.boton-rosa-1 {
+    @include boton(#F3084B, inline-block);
+}
+
 .boton-amarillo-1 {
     @include boton($amarillo1, inline-block);
 }
@@ -35,8 +39,32 @@
     padding: 1.2rem;
 }
 
+.boton-azul-block-1 {
+    @include boton($azul2, inline-block);
+    width: 75%;
+    align-items: center;
+    padding: 0.22rem;
+    margin: 0.3rem;
+}
+
+.boton-rojo-block-1 {
+    @include boton($rojo, inline-block);
+    width: 75%;
+    align-items: center;
+    padding: 0.22rem;
+    margin: 0.3rem;
+}
+
 .boton-verde-block {
     @include boton($verde, block);
+}
+
+.boton-verde-block-1 {
+    @include boton($verde, inline-block);
+    width: 75%;
+    align-items: center;
+    padding: 0.17rem;
+    margin: 0.3rem;
 }
 
 .boton-rosa-block {
@@ -51,12 +79,9 @@
     margin: auto 25rem;
 
     @include telefono{
-
         grid-template-columns: repeat(1, 1fr);
         justify-content: center;
         margin: auto 0;
-
-
     }
     @include tablet{
         grid-template-columns: repeat(3, 1fr);

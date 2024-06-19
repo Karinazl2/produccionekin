@@ -1,0 +1,24 @@
+table.ordenes {
+    margin-top: 4rem;
+    width: 100%;
+    border-spacing: 0;
+    
+
+    thead {
+        background-color: $azul;
+
+        th{
+            color: $blanco;
+            padding: 2rem;
+        }
+    }
+    tbody{
+        tr{
+            text-align: center;
+            font-size: smaller;
+            margin-top: 0.2;
+            padding: 0;
+        }
+    }
+
+}

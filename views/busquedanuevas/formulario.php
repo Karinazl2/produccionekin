@@ -17,7 +17,7 @@
     <select name="nuevas_ordenes[cliente_id]" id="vista_clientes">
         <option selected value="">----Seleccione el cliente----</option>
         <?php foreach ($vista_clientes as $cliente) { ?>
-            <option <?php echo $cliente->$cliente_id === $cliente->cliente_id ? 'selected' : ''; ?>
+            <option <?php echo $nuevas_ordenes->cliente_id == $cliente->cliente_id ? 'selected' : ''; ?>
                 value="<?php echo s($cliente->cliente_id); ?>">
                 <?php echo s($cliente->referencia_cliente) . " " . s($cliente->nombre_cliente); ?>
             </option>
@@ -28,7 +28,7 @@
     <select name="nuevas_ordenes[area_id]" id="area">
         <option selected value="">----Seleccione el área----</option>
         <?php foreach ($nuevas_areas as $area) { ?>
-            <option <?php echo $area->$id === $area->id ? 'selected' : ''; ?> value="<?php echo s($area->id); ?>">
+            <option <?php echo $nuevas_ordenes->area_id === $area->id ? 'selected' : ''; ?> value="<?php echo s($area->id); ?>">
                 <?php echo s($area->area); ?>
             </option>
         <?php } ?>
@@ -38,7 +38,7 @@
     <select name="nuevas_ordenes[maquina_id]" id="maquina">
         <option selected value="">----Seleccione la máquina----</option>
         <?php foreach ($maquinas as $maquina) { ?>
-            <option <?php echo $maquina->$id === $maquina->id ? 'selected' : ''; ?> value="<?php echo s($maquina->id); ?>">
+            <option <?php echo $nuevas_ordenes->maquina_id === $maquina->id ? 'selected' : ''; ?> value="<?php echo s($maquina->id); ?>">
                 <?php echo s($maquina->maquina); ?>
             </option>
         <?php } ?>
@@ -48,7 +48,7 @@
     <select name="nuevas_ordenes[operador_id]" id="operadores">
         <option selected value="">----Seleccione el nombre del técnico----</option>
         <?php foreach ($operadores as $operador) { ?>
-            <option <?php echo $operador->$id === $operador->id ? 'selected' : ''; ?> value="<?php echo s($operador->id); ?>"><?php echo s($operador->nombre) . " " . s($operador->apellido); ?> </option>
+            <option <?php echo $nuevas_ordenes->operador_id === $operador->id ? 'selected' : ''; ?> value="<?php echo s($operador->id); ?>"><?php echo s($operador->nombre) . " " . s($operador->apellido); ?> </option>
         <?php } ?>
     </select>
 

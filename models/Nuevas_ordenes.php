@@ -46,6 +46,9 @@ class Nuevas_ordenes extends ActiveRecord{
 
     public function validar()
     {
+        $this->fecha = date('Y/m/d');;
+        $this->hora = $this->obtenerHoraActual();
+
 
         if (!$this->orden) {
             self::$errores[] = "Debes añadir una orden.";

@@ -16,6 +16,7 @@ const webp = require('gulp-webp');
 
 const paths = {
     scss: 'src/scss/**/*.scss',
+    bundlejs: ['src/js/**/app.js', 'src/js/**/modernizr.js'],
     js: 'src/js/**/*.js',
     imagenes: 'src/img/**/*'
 }
@@ -31,14 +32,22 @@ function css() {
 }
 
 function javascript() {
-    return src(paths.js)
-      .pipe(sourcemaps.init())
-      .pipe(concat('bundle.js'))
-      .pipe(terser())
-      .pipe(sourcemaps.write('.'))
-      .pipe(rename({ suffix: '.min' }))
-      .pipe(dest('./public/build/js'))
+    return src(paths.bundlejs)
+        .pipe(sourcemaps.init())
+        .pipe(concat('bundle.js'))
+        .pipe(terser())
+        .pipe(sourcemaps.write('.'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(dest('./public/build/js'))
 }
+
+
+function otherJavaScript() {
+    return src(['src/js/**/*.js', '!src/js/app.js', '!src/js/modernizr.js'])
+        .pipe(dest('./public/build/js'))
+        .pipe(notify({ message: 'Otros JS Completados' }));
+}
+
 
 function imagenes() {
     return src(paths.imagenes)
@@ -57,7 +66,8 @@ function versionWebp() {
 
 function watchArchivos() {
     watch(paths.scss, css);
-    watch(paths.js, javascript);
+    watch(paths.bundlejs, javascript);
+    watch(['src/js/**/*.js', '!src/js/app.js', '!src/js/modernizr.js'], otherJavaScript);
     watch(paths.imagenes, imagenes);
     watch(paths.imagenes, versionWebp);
 
@@ -66,4 +76,4 @@ function watchArchivos() {
 exports.css = css;
 
 exports.watchArchivos = watchArchivos;
-exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivos); 
+exports.default = parallel(css, javascript, otherJavaScript, imagenes, versionWebp, watchArchivos); 

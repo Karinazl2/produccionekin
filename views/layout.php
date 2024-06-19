@@ -57,6 +57,7 @@ if (!isset($inicio)) {
 
     <?php echo $contenido; ?>
 
+    <?php echo $script ?? ''; ?>
 
 
     <footer class="footer seccion">

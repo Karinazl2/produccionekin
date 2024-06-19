@@ -15,12 +15,15 @@ class PaginasController
 
     //    $propiedades = Propiedad::get(3);
         $inicio = true;
+        $script = '<script src="../build/js/prueba.js"></script>';
         $anuncios = Anuncios::get(2);
 
         $router->render('paginas/index', [
             // 'propiedades' => $propiedades,
             'inicio' => $inicio,
-            'anuncios' => $anuncios
+            'anuncios' => $anuncios,
+            'script' => $script
+
         ]);
     }
 

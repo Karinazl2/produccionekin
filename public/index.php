@@ -69,6 +69,9 @@ $router->post('/busquedanuevas/crear', [BusquedaNuevasController::class,'crear']
 $router->get('/busquedanuevas/actualizar', [BusquedaNuevasController::class,'actualizar']);
 $router->post('/busquedanuevas/actualizar', [BusquedaNuevasController::class,'actualizar']);
 $router->post('/busquedanuevas/eliminar', [BusquedaNuevasController::class,'eliminar']);
+$router->post('/busquedanuevas/siguiente_area', [BusquedaNuevasController::class,'siguiente_area']);
+
+
 
 //login y autenticacion 
 $router->get('/login', [LoginController::class, 'login']);

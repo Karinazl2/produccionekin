@@ -23,7 +23,7 @@ class BusquedaNuevasController
         $operadores=Operadores::all();
 
         $vista_nuevas_ordenes = Vista_nuevas_ordenes::all();
-        $script = '<script src="../build/js/filtros.js"></script>';
+        $script = '<script src="../build/js/filtrosNuevas.js"></script>';
 
 
 
@@ -51,8 +51,6 @@ class BusquedaNuevasController
         $vista_clientes = Vista_clientes::all();
         $operadores = Operadores::all();
         $nuevas_areas = Nuevas_areas::all();
-
-
 
 
         // metodo post actualizar
@@ -194,6 +192,27 @@ class BusquedaNuevasController
             }
         }
     }
+
+    public static function filtrar()
+    {
+        $vista_nuevas_ordenes = Vista_nuevas_ordenes::all();
+        $vista_clientes = Vista_clientes::all();
+    
+        // Concatenar referencia_cliente y nombre_cliente
+        $clientes_concatenados = [];
+        foreach ($vista_clientes as $cliente) {
+            $clientes_concatenados[] = [
+                'cliente_id' => $cliente->cliente_id,
+                'cliente_concatenado' => $cliente->referencia_cliente . ' ' . $cliente->nombre_cliente
+            ];
+        }
+    
+        echo json_encode([
+            'vista_nuevas_ordenes' => $vista_nuevas_ordenes,
+            'vista_clientes' => $clientes_concatenados,
+        ]);
+    }
+    
 }
 
 

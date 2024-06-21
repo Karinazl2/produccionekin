@@ -46,6 +46,29 @@
    
 }
 
+.boton-amarillito {
+    background-color: $amarillo;
+    color: $blanco;
+    font-weight: $bold;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 2.5rem;
+    display: table;
+    border: none;
+    width: 33%;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    align-items: center;
+
+
+    &:hover{
+        background-color: darken($amarillo, 10%);
+        cursor: pointer;
+    }
+   
+}
+
+
 }
 
 .speakers{

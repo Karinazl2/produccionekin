@@ -70,6 +70,15 @@ $router->get('/busquedanuevas/actualizar', [BusquedaNuevasController::class,'act
 $router->post('/busquedanuevas/actualizar', [BusquedaNuevasController::class,'actualizar']);
 $router->post('/busquedanuevas/eliminar', [BusquedaNuevasController::class,'eliminar']);
 $router->post('/busquedanuevas/siguiente_area', [BusquedaNuevasController::class,'siguiente_area']);
+$router->get('/api/ordenes', [BusquedaNuevasController::class,'filtrar']);
+
+$router->get('/busquedacremalleras/crear', [BusquedaCremallerasController::class,'crear']);
+$router->post('/busquedacremalleras/crear', [BusquedaCremallerasController::class,'crear']);
+$router->get('/busquedacremalleras/actualizar', [BusquedaCremallerasController::class,'actualizar']);
+$router->post('/busquedacremalleras/actualizar', [BusquedaCremallerasController::class,'actualizar']);
+$router->post('/busquedacremalleras/eliminar', [BusquedaCremallerasController::class,'eliminar']);
+$router->post('/busquedacremalleras/siguiente_area', [BusquedaCremallerasController::class,'siguiente_area']);
+$router->get('/api/cremalleras', [BusquedaCremallerasController::class,'filtrar']);
 
 
 

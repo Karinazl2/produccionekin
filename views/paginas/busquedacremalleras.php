@@ -19,39 +19,103 @@
 
     <h2>Brochas Planas y Cremalleras</h2>
     <section class="botonop">
-        <a href="/anuncios/anunciosadmin" class="boton-rosa">+ Añadir Órdenes en Cremalleras</a>
+        <a href="/busquedacremalleras/crear" class="boton-amarillito">+ Añadir Órdenes en Cremalleras</a>
     </section>
 
-    <table class="propiedades">
+    <section class="n">
+        <h3>Filtros</h3>
+    </section>
+
+    <div class="mobile-menu1">
+        <img src="/build/img/barras1.svg" alt="icono menu responsive">
+    </div>
+
+    <!-- //filtrosssssssssssssssssssss -->
+
+    <div class="contenedor1 oculto" id="contenedorForm">
+        <form id="buscador">
+            <fieldset>
+                <legend>Personaliza tu búsqueda</legend>
+                <div class="row">
+                    <div class="three columns">
+                        <label for="orden">Orden: </label>
+                        <input type="text" id="orden">
+                    </div>
+                    <div class="three columns">
+                        <label for="area">Área: </label>
+                        <select class="u-full-width" id="area">
+                            <option value="">Seleccione</option>
+                            <?php foreach ($nuevas_areas as $area) { ?>
+                                <option value="<?php echo $area->area; ?>"><?php echo $area->area; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                    <div class="three columns">
+                        <label for="maquina">Máquina: </label>
+                        <select class="u-full-width" id="maquina">
+                            <option value="">Seleccione</option>
+                            <?php foreach ($nuevas_maquinas as $maquina) { ?>
+                                <option value="<?php echo $maquina->maquina; ?>"><?php echo $maquina->maquina; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                    <div class="three columns">
+                        <label for="vista_clientes">Cliente</label>
+                        <select name="cremalleras_ordenes[cliente_id]" id="cliente">
+                            <option selected value="">Seleccione el cliente</option>
+                            <?php foreach ($vista_clientes as $cliente) { ?>
+                                <option
+                                    value="<?php echo s($cliente->referencia_cliente) . " " . s($cliente->nombre_cliente); ?>">
+                                    <?php echo s($cliente->referencia_cliente) . " " . s($cliente->nombre_cliente); ?>
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                    <div class="three columns">
+                        <label for="operadores">Operador: </label>
+                        <select name="cremalleras_ordenes[operador_id]" id="operador">
+                            <option selected value="">Seleccione</option>
+                            <?php foreach ($operadores as $operador) { ?>
+                                <option value="<?php echo s($operador->nombre) . " " . s($operador->apellido); ?>">
+                                    <?php echo s($operador->nombre) . " " . s($operador->apellido); ?>
+                                </option>
+                            <?php } ?>
+                        </select>
+
+                    </div>
+
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- filtrossssssssssssssssssssss -->
+    <table class="ordenes">
         <thead>
             <tr>
                 <th>Orden</th>
-                <th>Cliente</th>
-                <th>Area</th>
-                <th>Máquina</th>
+                <th>Descripción</th>
+                <th>Actualizado el</th>
                 <th>Prioridad</th>
+                <th>Área</th>
+                <th>Máquina</th>
+                <th>Cliente</th>
                 <th>Operador</th>
+                <th>Usuario</th>
+                <th>Acciones</th>
+
             </tr>
         </thead>
         <!-- Mostrar los resultados -->
         <tbody>
 
-            <?php foreach ($vendedores as $vendedor): ?>
-
+            <?php foreach ($vista_cremalleras_ordenes as $ordenes): ?>
                 <tr>
-                    <td> <?php echo $vendedor->id; ?> </td>
-                    <td> <?php echo $vendedor->nombre . " " . $vendedor->apellido; ?> </td>
-                    <td> <?php echo $vendedor->telefono; ?></td>
-                    <td>
-                        <form method="POST" class="w-100" action="/vendedores/eliminar">
-                            <input type="hidden" name="id" value="<?php echo $vendedor->id; ?>">
-                            <input type="hidden" name="tipo" value="vendedor">
-                            <input type="submit" class="boton-rojo-block" value="Eliminar">
-                        </form>
-                        <a href="/vendedores/actualizar?id=<?php echo $vendedor->id; ?>"
-                            class="boton-amarillo-block">Actualizar</a>
-                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
+</main>

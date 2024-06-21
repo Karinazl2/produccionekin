@@ -49,10 +49,10 @@ class ActiveRecord
         //insertar en la base de datos
         $query = " INSERT INTO " . static::$tabla . " ( ";
         $query .= join(", ", array_keys($atributos));
-        $query .= " ) VALUES (' ";
+        $query .= " ) VALUES ('";
         $query .= join("', '", array_values($atributos));
-        $query .= " ') ";
-
+        $query .= "') ";
+        // debuguear($query);
 
         $resultado = self::$db->query($query);
         if ($resultado) {
@@ -80,6 +80,8 @@ class ActiveRecord
         $query .= join(', ', $valores);
         $query .= " WHERE id = '" . self::$db->escape_string($this->id) . "' ";
         $query .= " LIMIT 1 ";
+        // debuguear($query);
+
 
         $resultado = self::$db->query($query);
 
@@ -98,6 +100,8 @@ class ActiveRecord
     {
         //Eliminar la propiedad
         $query = "DELETE FROM " . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1 ";
+        // debuguear($query);
+
         $resultado = self::$db->query($query);
 
         if ($resultado) {

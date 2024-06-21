@@ -44,14 +44,6 @@
                         <label for="orden">Orden: </label>
                         <input type="text" id="orden">
                     </div>
-
-                    <div class="three columns">
-                        <label for="fecha">Fecha: </label>
-                        <select class="u-full-width" id="fecha">
-                            <option value="">Seleccione</option>
-                        </select>
-                    </div>
-
                     <div class="three columns">
                         <label for="area">Área: </label>
                         <select class="u-full-width" id="area">
@@ -78,7 +70,7 @@
                             <option selected value="">Seleccione el cliente</option>
                             <?php foreach ($vista_clientes as $cliente) { ?>
                                 <option value="<?php echo s($cliente->referencia_cliente). " " . s($cliente->nombre_cliente); ?>">
-                                    <?php echo s($cliente->referencia_cliente) . " " . s($cliente->nombre_cliente); ?>
+                                    <?php echo s($cliente->referencia_cliente). " " . s($cliente->nombre_cliente); ?>
                                 </option>
                             <?php } ?>
                         </select>
@@ -121,39 +113,8 @@
         <!-- Mostrar los resultados -->
         <tbody>
 
-            <?php foreach ($vista_nuevas_ordenes as $ordenes): ?>
+            <?php foreach ($vista_nuevas_ordenes as $ordenes) : ?>
                 <tr>
-                    <td><?php echo $ordenes->numero_orden; ?> </td>
-                    <td><?php echo $ordenes->descripcion_orden; ?> </td>
-                    <?php
-                    $dateTime = new DateTime($ordenes->fecha_orden);
-
-                    $fechaFormateada = $dateTime->format('d/m/Y');
-                    ?>
-
-                    <td><?php echo $ordenes->hora_orden . " el " . $fechaFormateada; ?></td>
-                    <td><?php echo $ordenes->prioridad_orden; ?></td>
-                    <td><?php echo $ordenes->nombre_area; ?></td>
-                    <td><?php echo $ordenes->nombre_maquina; ?></td>
-                    <td><?php echo $ordenes->referencia_cliente . " " . $ordenes->nombre_cliente; ?></td>
-                    <td><?php echo $ordenes->nombre_operador . " " . $ordenes->apellido_operador; ?></td>
-                    <td><?php echo $ordenes->nombre_usuario . " " . $ordenes->apellido_usuario; ?></td>
-                    <td>
-                        <form method="POST" class="w-100" action="/busquedanuevas/eliminar">
-                            <input type="hidden" name="id" value="<?php echo $ordenes->orden_id; ?>">
-                            <input type="hidden" name="tipo" value="nuevas_ordenes">
-                            <input type="submit" class="boton-rojo-block-1" value="Eliminar">
-                        </form>
-
-                        <a href="/busquedanuevas/actualizar?id=<?php echo $ordenes->orden_id; ?>"
-                            class="boton-verde-block-1">Actualizar</a>
-
-                        <form method="POST" class="w-100" action="/busquedanuevas/siguiente_area">
-                            <input type="hidden" name="id" value="<?php echo $ordenes->orden_id; ?>">
-                            <input type="hidden" name="tipo" value="nuevas_ordenes">
-                            <input type="submit" class="boton-azul-block-1" value="Área  >>">
-                        </form>
-                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

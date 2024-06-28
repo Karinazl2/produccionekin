@@ -141,6 +141,25 @@ public static function busquedacremalleras(Router $router)
         ]);
     }
 
+    public static function eliminar()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            //validadr id
+            $id = $_POST['id'];
+            $id = filter_var($id, FILTER_VALIDATE_INT);
+
+            if ($id) {
+                $tipo = $_POST['tipo'];
+
+                if (validarTipoContenido($tipo)) {
+                    $cremalleras_ordenes = Cremalleras_ordenes::find($id);
+                    $cremalleras_ordenes->eliminar('/busquedaPersonalizada/busquedacremalleras');
+                }
+
+            }
+        }
+    }
+
     public static function filtrar()
     {
         $vista_cremalleras_ordenes = Vista_cremalleras_ordenes::all();

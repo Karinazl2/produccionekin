@@ -13,6 +13,10 @@
 .boton-azul {
     @include boton($azul2, inline-block);
 }
+.boton-nuevas-azul3 {
+    @include boton($acanalado1, inline-block);
+}
+
 .boton-azul-1 {
     @include boton($azul5, inline-block);
 }

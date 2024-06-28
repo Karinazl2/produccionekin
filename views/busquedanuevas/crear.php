@@ -11,7 +11,7 @@
 
 
     <section class="botonop">
-        <a href="/busquedaPersonalizada/busquedanuevas" class="boton boton-rosa">Volver</a>
+        <a href="/busquedaPersonalizada/busquedanuevas" class="boton boton-azulito">Volver</a>
     </section>
 
     <form class="formulariobrochas" method="POST" enctype="multipart/form-data">

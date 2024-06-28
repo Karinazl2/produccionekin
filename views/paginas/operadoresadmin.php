@@ -11,8 +11,8 @@
 
 
 <section class="botonop">
-    <a href="/nuestroEquipo/crear" class="boton-rosa"> + Anadir Nuevo Miembro</a>
-    <a href="/nuestroEquipo" class="boton-rosa">Volver</a>
+    <a href="/nuestroEquipo/crear" class="boton-rosa-chido"> + Anadir Nuevo Miembro</a>
+    <a href="/nuestroEquipo" class="boton-rosa-chido">Volver</a>
 </section>
 
     <h2>Operadores</h2>

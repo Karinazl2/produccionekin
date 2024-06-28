@@ -16,6 +16,6 @@
 
     <form class="formulariobrochas" method="POST" enctype="multipart/form-data">
         <?php include __DIR__ . '/formulario.php'; ?>
-        <input type="submit" value="Actualizar herramienta" class="boton-azul">
+        <input type="submit" value="Actualizar herramienta" class="boton-rosa-1">
     </form>
 </main>

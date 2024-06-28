@@ -1,18 +1,19 @@
 .formulario{
     p{
         font-size: 1.4rem;
-        color: $grisOscuro;
+        color: $blanco;
         margin: 2rem 0 0 0;
     }
     legend{
         font-size: 2rem;
-        color: $grisOscuro;
+        color: $blanco;
     }
 
     label{
         font-weight: $bold;
         text-transform: uppercase;
         display: block;
+        color: $blanco;
     }
 
     input:not([type="submit"]), 
@@ -21,16 +22,15 @@
         padding: 1rem;
         display: block;
         width: 100%;
-        background-color: $blanco;
-        border: 1px solid $gris;
+        background-color: $grisOscuro;
         border-radius: 1rem;
         margin-bottom: 2rem;
+        color: $blanco;
 
     }
 
     textarea{
         height: 20rem;
-
     }
 
 

@@ -19,4 +19,9 @@
         <input type="submit" value="Iniciar Sesión" class="boton boton-verde">
     </form>
 
+    <div class="acciones-auth">
+        <a href="/registrar">¿No tienes cuenta? Crea una</a>
+        <a href="/recuperar">¿Olvidaste tu password? Reestablécelo</a>
+    </div>
+
 </main>

@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
+use Controllers\EditorClientesController;
 use MVC\Router;
 use Controllers\LoginController;
 use Controllers\PaginasController;
@@ -40,6 +41,7 @@ $router->get('/cremalleras', [PaginasController::class,'cremalleras']);
 $router->get('/afilado', [PaginasController::class,'afilado']);
 $router->get('/busquedaPersonalizada', [PaginasController::class,'busquedaPersonalizada']);
 $router->post('/busquedaPersonalizada', [PaginasController::class,'busquedaPersonalizada']);
+$router->get('/materiaprima', [PaginasController::class,'materiaprima']);
 
 $router->get('/nuestroEquipo', [OperadoresController::class,'nuestroEquipo']);
 $router->get('/nuestroEquipo/operadoresadmin', [OperadoresController::class,'operadoresadmin']);
@@ -80,11 +82,29 @@ $router->post('/busquedacremalleras/eliminar', [BusquedaCremallerasController::c
 $router->post('/busquedacremalleras/siguiente_area', [BusquedaCremallerasController::class,'siguiente_area']);
 $router->get('/api/cremalleras', [BusquedaCremallerasController::class,'filtrar']);
 
+$router->get('/busquedaafilado/crear', [BusquedaAfiladoController::class,'crear']);
+$router->post('/busquedaafilado/crear', [BusquedaAfiladoController::class,'crear']);
+$router->get('/busquedaafilado/actualizar', [BusquedaAfiladoController::class,'actualizar']);
+$router->post('/busquedaafilado/actualizar', [BusquedaAfiladoController::class,'actualizar']);
+$router->post('/busquedaafilado/eliminar', [BusquedaAfiladoController::class,'eliminar']);
+$router->get('/api/afilado', [BusquedaAfiladoController::class,'filtrar']);
+
+
+$router->get('/editorclientes', [EditorClientesController::class,'editorclientes']);
+$router->get('/editorclientes/crear', [EditorClientesController::class,'crear']);
+$router->post('/editorclientes/crear', [EditorClientesController::class,'crear']);
+$router->get('/editorclientes/actualizar', [EditorClientesController::class,'actualizar']);
+$router->post('/editorclientes/actualizar', [EditorClientesController::class,'actualizar']);
+$router->post('/editorclientes/eliminar', [EditorClientesController::class,'eliminar']);
 
 
 //login y autenticacion 
 $router->get('/login', [LoginController::class, 'login']);
 $router->post('/login', [LoginController::class, 'login']);
+$router->get('/recuperar', [LoginController::class, 'recuperar']);
+$router->post('/recuperar', [LoginController::class, 'recuperar']);
+$router->get('/registrar', [LoginController::class, 'registrar']);
+$router->post('/registrar', [LoginController::class, 'registrar']);
 $router->get('/logout', [LoginController::class, 'logout']);
 
 

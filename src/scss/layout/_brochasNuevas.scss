@@ -82,66 +82,210 @@
     }
 }
 
-.agenda{
-    padding: 5rem 0; 
+.agenda {
+    padding: -45rem 0;
     @include contenedor;
 
 }
 
-.eventos{
+.eventos {
     $modificador: &;
-    &__heading{
+
+
+    &__heading {
         color: $azul;
-        margin: 5rem 0;
+        background: linear-gradient(to right, #00CC00, #990066);
+        /* Degradado de color */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 2rem 0;
         text-align: left;
         font-size: clamp(2rem, -0.8rem + 8vw, 6rem);
+        font-weight: bold;
 
     }
 
-    &__fecha{
-        color: $gris;
-        margin: 3rem 0 1rem 0;
-
+    &__fecha {
+        color: #64748B;
+        margin: 3rem 0 0 0;
     }
 
-    &--workshops{
-        #{$modificador}__heading{
+    &--workshops {
+        #{$modificador}__heading {
             color: $secundario;
         }
 
-        .evento__informacion{
+        .evento__informacion {
             background-color: $secundario;
-            &:hover{
+
+            &:hover {
                 background-color: darken($secundario, 1%);
             }
         }
+
     }
 
     .swiper-button-next,
-    .swiper-button-prev{
+    .swiper-button-prev {
         color: rgba($blanco, .5);
     }
 
 }
 
-.evento{
-    &__hora{
-        font-weight: $bold;
+.swiper-wrapper {
+    @include grid(5, 2rem);
+    border-radius: 1rem;
+
+
+
+    .evento {
+
+
+        &__informacion {
+            grid-column: 2;
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: $azul;
+            color: $blanco;
+            transition: 300ms background-color ease;
+
+            &:hover {
+                background-color: darken($azul, 10%);
+            }
+        }
+
+        &__hora {
+            font-weight: $bold;
+        }
+
+
+        //Si se desea mostrar diferentes número de lineas en otro dispositivo
+        //@include m.tablet{
+        //-webkit-line-clamp: 2;
+        //}
+
+
+        &__autor-info {
+            display: flex;
+            gap: 2rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__imagen-autor {
+            width: 5rem;
+            background-color: $blanco;
+            border-radius: 50%;
+        }
+
+        &__autor-nombre {
+            font-weight: $bold;
+        }
+
+        &__agregar {
+            @include boton($blanco, $negro);
+            margin-top: 1rem;
+
+            &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
     }
+}
 
-    &__informacion{
-        padding: 2rem;
-        border-radius: 1rem;
-        background-color: $azul;
+.botones_editor_tablas {
+    display: flex;
+    /* Añadir esto para habilitar Flexbox */
+    align-items: center;
+    justify-content: center;
+
+    .boton-azul-clientes {
+        background-color: $azul1000;
         color: $blanco;
-        transition: 300ms background-color ease;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 0 auto;
+        align-items: center;
 
-        &:hover{
-            background-color: darken($azul, 10%);
+        &:hover {
+            background-color: darken($azul1000, 10%);
+            cursor: pointer;
         }
     }
 
-    &__nombre{
+    .boton-rosa-clientes {
+        background-color: $rosa;
+        color: $blanco;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 0 auto;
+        align-items: center;
+
+        &:hover {
+            background-color: darken($rosa, 10%);
+            cursor: pointer;
+        }
+    }
+
+    .boton-verde-clientes {
+        background-color: $verde;
+        color: $blanco;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 0 auto;
+        align-items: center;
+
+        &:hover {
+            background-color: darken($verde, 10%);
+            cursor: pointer;
+        }
+    }
+
+}
+
+
+.contenedor-anuncios1 {
+    @include grid(4, 1rem);
+    margin: 5rem;
+
+
+    .anuncio1 {
+        //  background-color: lighten($gris,5);
+        background-color: $azul7;
+        margin-bottom: 3rem;
+        //border-radius: 2rem;
+        padding: 2rem 2rem;
+        //padding: 2rem;
+        border-radius: 1rem;
+
+
+        //transition: 300ms background-color ease;
+        &:hover {
+            background-color: darken($azul7, 10%);
+        }
+
+    }
+
+    .anuncio1_nombre {
         font-size: 2rem;
         margin: 0;
         display: -webkit-box;
@@ -149,44 +293,1175 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
-    &__introduccion{
+
+    .anuncio1_introduccion {
         font-size: 1.6rem;
         // Cortar el texto
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
-
-        //Si se desea mostrar diferentes número de lineas en otro dispositivo
-        //@include m.tablet{
-        //-webkit-line-clamp: 2;
-        //}
     }
 
-    &__autor-info{
+    .anuncio1_fecha {
+        color: #64748B;
+        margin: 3rem 0 1rem 0;
+    }
+
+    .anuncio1_hora {
+        font-weight: $bold;
+    }
+
+    .anuncio1_autor-info {
         display: flex;
         gap: 2rem;
         justify-content: space-between;
         align-items: center;
     }
 
-    &__imagen-autor{
-        width: 5rem;
+    .anuncio1_imagen-autor {
+        width: 3rem;
         background-color: $blanco;
         border-radius: 50%;
     }
 
-    &__autor-nombre{
+    .anuncio1_autor-nombre {
         font-weight: $bold;
     }
 
-    &__agregar{
-        @include boton($blanco, $negro);
-        margin-top: 1rem;
+    .anuncio1_informacion {
+        grid-column: 2;
+        padding: 2rem;
+        border-radius: 1rem;
+        background-color: $azul;
+        color: $blanco;
+        transition: 300ms background-color ease;
 
-        &:disabled{
-            opacity: 0.5;
-            cursor: not-allowed;
+        &:hover {
+            background-color: darken($azul, 10%);
         }
     }
+
+
+
+}
+
+.monitor {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 0rem 5rem 1rem 5rem;
+
+    .tout1 {
+        font-weight: 550;
+        color: $asientos1;
+    }
+
+    .tout2 {
+        font-weight: 550;
+        color: $dientes1;
+    }
+
+    .tout3 {
+        font-weight: 550;
+        color: $dientes2;
+    }
+
+    .tout4 {
+        font-weight: 550;
+        color: $dientes3;
+    }
+
+    .tout5 {
+        font-weight: 550;
+        color: $dientes4;
+    }
+
+    .tout6 {
+        font-weight: 550;
+        color: $mangos1;
+    }
+
+    .tout7 {
+        font-weight: 550;
+        color: $mangos2;
+    }
+
+    .tout8 {
+        font-weight: 550;
+        color: $acanalado1;
+    }
+    .tout9 {
+        font-weight: 550;
+        color: $acanalado2;
+    }
+    .tout10 {
+        font-weight: 550;
+        color: $acanalado3;
+    }
+    .tout11 {
+        font-weight: 550;
+        color: $planos1;
+    }
+    .tout12 {
+        font-weight: 550;
+        color: $afilado1;
+    }
+    .tout13 {
+        font-weight: 550;
+        color: $afilado2;
+    }
+    .tout14 {
+        font-weight: 550;
+        color: $afilado3;
+    }
+
+    // .card {
+    //     background-color: $azul4;
+    //     padding: 1.5rem 2rem 0 2rem;
+    //     width: 100%;
+    //     border-radius: 2rem;
+    //     height: 27rem;
+
+    //     p {
+    //         margin: 0 0 0.5rem 0;
+    //         color: $blanco;
+    //         text-align: center;
+    //         font-size: 1.8rem;
+    //         font-weight: bold;
+
+
+
+    //     }
+
+
+    //     img {
+    //         width: 6.8rem;
+    //         height: 5.8rem;
+    //         background-color: $blanco;
+    //         border-radius: 50%;
+    //     }
+
+    //     .imgmaq {
+    //         font-weight: 800;
+    //         font-size: 2.2rem;
+    //         display: grid;
+    //         grid-template-columns: repeat(2, 1fr);
+    //         gap: 1rem;
+
+    //         p {
+    //             color: $blanco;
+    //             font-size: 1.55rem;
+    //             margin: 1.8rem 0 0 0;
+    //         }
+    //     }
+
+    //     table {
+    //         margin: 0 0 0 3rem;
+    //         width: 70%;
+    //         border-spacing: 0;
+
+    //         thead {
+    //             th {
+    //                 color: $blanco;
+    //                 padding: 0;
+    //                 text-align: center;
+    //                 font-size: 1.3rem;
+    //                 margin: 0 0 0 0;
+    //             }
+    //         }
+
+    //         tbody {
+    //             tr {
+    //                 text-align: center;
+    //                 font-size: 1.1rem;
+    //                 margin-top: 0;
+    //                 padding: 0;
+    //                 color: $blanco;
+    //             }
+
+    //         }
+    //     }
+    // }
+
+    .card1 {
+        background-color: $asientos1;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+        }
+
+        img {
+            width: 7.2rem;
+            height: 6.2rem;
+            background-color: $blanco;
+            border-radius: 50%;
+
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            align-self: flex-end;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;          
+            }
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+        
+    .card2 {
+        background-color: $dientes1;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+        }
+
+        img {
+            width: 7.2rem;
+            height: 6.2rem;
+            background-color: $blanco;
+            border-radius: 50%;
+
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            align-self: flex-end;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;          
+            }
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+
+    .card3 {
+        background-color: $dientes2;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+        }
+
+        img {
+            width: 7.2rem;
+            height: 6.2rem;
+            background-color: $blanco;
+            border-radius: 50%;
+
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            align-self: flex-end;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;          
+            }
+
+
+
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+
+    .card4 {
+        background-color: $dientes3;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+        }
+
+        img {
+            width: 7.2rem;
+            height: 6.2rem;
+            background-color: $blanco;
+            border-radius: 50%;
+
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            align-self: flex-end;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;          
+            }
+
+
+
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+
+    .card5 {
+        background-color: $dientes4;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+
+
+
+        }
+
+
+        img {
+            width: 6.8rem;
+            height: 5.8rem;
+            background-color: $blanco;
+            border-radius: 50%;
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.8rem 0 0 0;
+            }
+
+
+
+        }
+
+        table {
+            margin: 0 0 0 8rem;
+            width: 70%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.1rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+
+    .card6 {
+        background-color: $mangos1;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+
+
+
+        }
+
+
+        img {
+            width: 6.8rem;
+            height: 5.8rem;
+            background-color: $blanco;
+            border-radius: 50%;
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.8rem 0 0 0;
+            }
+
+
+
+        }
+
+        table {
+            margin: 0 0 0 8rem;
+            width: 70%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.1rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+
+    .card7 {
+        background-color: $mangos2;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+
+
+
+        }
+
+
+        img {
+            width: 6.8rem;
+            height: 5.8rem;
+            background-color: $blanco;
+            border-radius: 50%;
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.8rem 0 0 0;
+            }
+
+
+
+        }
+
+        table {
+            margin: 0 0 0 8rem;
+            width: 70%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.1rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+
+    .card8 {
+        background-color: $acanalado1;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+
+
+
+        }
+
+
+        img {
+            width: 6.8rem;
+            height: 5.8rem;
+            background-color: $blanco;
+            border-radius: 50%;
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.8rem 0 0 0;
+            }
+
+
+
+        }
+
+        table {
+            margin: 0 0 0 8rem;
+            width: 70%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.1rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+
+    .card9 {
+        background-color: $acanalado2;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+
+
+
+        }
+
+
+        img {
+            width: 6.8rem;
+            height: 5.8rem;
+            background-color: $blanco;
+            border-radius: 50%;
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.8rem 0 0 0;
+            }
+
+
+
+        }
+
+        table {
+            margin: 0 0 0 8rem;
+            width: 70%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.1rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+
+    .card10 {
+        background-color: $acanalado3;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+
+
+
+        }
+
+
+        img {
+            width: 6.8rem;
+            height: 5.8rem;
+            background-color: $blanco;
+            border-radius: 50%;
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.8rem 0 0 0;
+            }
+
+
+
+        }
+
+        table {
+            margin: 0 0 0 8rem;
+            width: 70%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.1rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+
+    .card11 {
+        background-color: $planos1;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+
+
+
+        }
+
+
+        img {
+            width: 6.8rem;
+            height: 5.8rem;
+            background-color: $blanco;
+            border-radius: 50%;
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.8rem 0 0 0;
+            }
+
+
+
+        }
+
+        table {
+            margin: 0 0 0 8rem;
+            width: 70%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.1rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+
+    .card12 {
+        background-color: $afilado1;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+
+
+
+        }
+
+
+        img {
+            width: 6.8rem;
+            height: 5.8rem;
+            background-color: $blanco;
+            border-radius: 50%;
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.8rem 0 0 0;
+            }
+
+
+
+        }
+
+        table {
+            margin: 0 0 0 8rem;
+            width: 70%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.1rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+
+    .card13 {
+        background-color: $afilado2;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+
+
+
+        }
+
+
+        img {
+            width: 6.8rem;
+            height: 5.8rem;
+            background-color: $blanco;
+            border-radius: 50%;
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.8rem 0 0 0;
+            }
+
+
+
+        }
+
+        table {
+            margin: 0 0 0 8rem;
+            width: 70%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.1rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+
+    .card14 {
+        background-color: $afilado3;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 33rem;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+
+
+
+        }
+
+
+        img {
+            width: 6.8rem;
+            height: 5.8rem;
+            background-color: $blanco;
+            border-radius: 50%;
+        }
+
+        .imgmaq {
+            font-weight: 800;
+            font-size: 2.2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.8rem 0 0 0;
+            }
+
+
+
+        }
+
+        table {
+            margin: 0 0 0 8rem;
+            width: 70%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.1rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+    }
+
 }

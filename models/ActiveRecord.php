@@ -36,8 +36,16 @@ class ActiveRecord
 
     public static function where($columna, $valor) {
         $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor'";
+        // debuguear($query);
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
+    }
+
+        public static function arraywhere($columna, $valor) {
+        $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor'";
+        // debuguear($query);
+        $resultado = self::consultarSQL($query);
+        return  $resultado  ;
     }
 
 
@@ -95,6 +103,8 @@ class ActiveRecord
 
         }
     }
+
+    
 
     public function eliminar($ruta=null)
     {
@@ -245,5 +255,18 @@ class ActiveRecord
 
             }
         }
+    }
+
+    public static function ordenasc($columna, $valor, $columna_orden) {
+        $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor' ORDER BY $columna_orden " . "ASC";
+        // debuguear($query);
+        $resultado = self::consultarSQL($query);
+        return  $resultado  ;
+    }
+    public static function ordendesc($columna, $valor, $columna_orden) {
+        $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor' ORDER BY $columna_orden " . "DESC";
+        // debuguear($query);
+        $resultado = self::consultarSQL($query);
+        return  $resultado  ;
     }
 }

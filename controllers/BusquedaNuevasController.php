@@ -65,8 +65,10 @@ class BusquedaNuevasController
             //generar nombre único
 
             //Guarda en la base de datos.
+            if (empty($errores)) {
             $nuevas_ordenes->guardar();
             header('Location:/busquedaPersonalizada/busquedanuevas');
+            }
         }
 
 

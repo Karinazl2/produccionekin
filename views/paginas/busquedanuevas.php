@@ -23,7 +23,9 @@
         <a href="/busquedanuevas/crear" class="boton-azulito">+ Añadir Órdenes en Brochas Nuevas</a>
     </section>
 
-
+    <section class="botones_editor_tablas">
+        <a href="/editorclientes" class="boton-azul-clientes">Ver Clientes</a>
+    </section>
 
     <section class="n">
         <h3>Filtros</h3>
@@ -31,7 +33,7 @@
 
 
     <div class="mobile-menu1">
-        <img src="/build/img/barras1.svg" alt="icono menu responsive">
+        <img src="/build/img/barras.svg" alt="icono menu responsive">
     </div>
 
     <!-- //filtrossssssssssssssros -->
@@ -69,8 +71,9 @@
                         <select name="nuevas_ordenes[cliente_id]" id="cliente">
                             <option selected value="">Seleccione el cliente</option>
                             <?php foreach ($vista_clientes as $cliente) { ?>
-                                <option value="<?php echo s($cliente->referencia_cliente). " " . s($cliente->nombre_cliente); ?>">
-                                    <?php echo s($cliente->referencia_cliente). " " . s($cliente->nombre_cliente); ?>
+                                <option
+                                    value="<?php echo s($cliente->referencia_cliente) . " " . s($cliente->nombre_cliente); ?>">
+                                    <?php echo s($cliente->referencia_cliente) . " " . s($cliente->nombre_cliente); ?>
                                 </option>
                             <?php } ?>
                         </select>
@@ -113,7 +116,7 @@
         <!-- Mostrar los resultados -->
         <tbody>
 
-            <?php foreach ($vista_nuevas_ordenes as $ordenes) : ?>
+            <?php foreach ($vista_nuevas_ordenes as $ordenes): ?>
                 <tr>
                 </tr>
             <?php endforeach; ?>

@@ -34,7 +34,7 @@ function s($html): string
 
 function validarTipoContenido($tipo)
 {
-    $tipos = ['vendedor', 'propiedad', 'operador','anuncio', 'nuevas_ordenes', 'cremalleras_ordenes'];
+    $tipos = ['vendedor', 'propiedad', 'operador','anuncio', 'nuevas_ordenes', 'cremalleras_ordenes','afilado_ordenes','referencia_cliente', 'cliente'];
     return in_array($tipo, $tipos);
 }
 

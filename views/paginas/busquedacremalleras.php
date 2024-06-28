@@ -13,13 +13,17 @@
     ?>
     <div class="botones">
         <a href="/busquedaPersonalizada/busquedanuevas" class="boton-azul">Brochas Nuevas</a>
-        <a href="/busquedaPersonalizada/busquedacremalleras" class="boton-amarillo-1">Cremalleras y Planas</a>
+        <a href="/busquedaPersonalizada/busquedacremalleras" class="boton-rosa-1">Cremalleras y Planas</a>
         <a href="/busquedaPersonalizada/busquedaafilado" class="boton-verde">Afilado</a>
     </div>
 
     <h2>Brochas Planas y Cremalleras</h2>
     <section class="botonop">
-        <a href="/busquedacremalleras/crear" class="boton-amarillito">+ Añadir Órdenes en Cremalleras</a>
+        <a href="/busquedacremalleras/crear" class="boton-rosa">+ Añadir Órdenes en Cremalleras</a>
+    </section>
+
+    <section class="botones_editor_tablas">
+        <a href="/editorclientes" class="boton-rosa-clientes">Ver Clientes</a>
     </section>
 
     <section class="n">
@@ -27,7 +31,7 @@
     </section>
 
     <div class="mobile-menu1">
-        <img src="/build/img/barras1.svg" alt="icono menu responsive">
+        <img src="/build/img/barras.svg" alt="icono menu responsive">
     </div>
 
     <!-- //filtrosssssssssssssssssssss -->
@@ -93,12 +97,12 @@
     </div>
 
     <!-- filtrossssssssssssssssssssss -->
-    <table class="ordenes">
+    <table class="ordenes1">
         <thead>
             <tr>
                 <th>Orden</th>
                 <th>Descripción</th>
-                <th>Actualizado el</th>
+                <th>Actualizado el:</th>
                 <th>Prioridad</th>
                 <th>Área</th>
                 <th>Máquina</th>

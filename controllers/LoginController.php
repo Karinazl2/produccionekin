@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Model\Usuarios;
 use MVC\Router;
 use Model\Admin;
 
@@ -44,11 +45,49 @@ class LoginController
             'errores' => $errores
         ]);
     }
-    public static function logout(){
+
+    public static function recuperar(Router $router)
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            debuguear($_POST);
+        }
+        $router->render('auth/recuperar', [
+        ]);
+    }
+
+    public static function registrar(Router $router)
+    {
+        $errores = [];
+        $usuario = new Usuarios;
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $usuario->sincronizar($_POST);
+
+            $errores = $usuario->validarNuevacuenta();
+
+            if (empty($errores)) {
+                $existeUsuario = $usuario->existeUsuario();
+                if ($existeUsuario) {
+                    echo "Ya existe";
+                } else {
+                    "No existe";
+                }
+            }
+
+        }
+        $router->render('auth/registrar', [
+            'errores' => $errores,
+            'usuario' => $usuario
+        ]);
+    }
+
+    public static function logout()
+    {
         session_start();
 
         $_SESSION = [];
-    
+
         header('Location: /');
 
     }

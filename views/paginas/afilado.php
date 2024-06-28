@@ -3,7 +3,8 @@
 </section>
 
 <section class="botonop">
-    <a href="/anuncios/anunciosadmin" class="boton-rosa">+ Añadir ordenes para Afilado</a>
+    <a href="/busquedaPersonalizada/busquedaafilado" class="boton-rosa">ADMINISTRADOR DE AFILADO DE BROCHAS</a>
+    <a href="/busquedanuevas/crear" class="boton-rosa">+ Añadir ordenes para Afilado</a>
 </section>
 
 <section class="imagen-materiaPrima">

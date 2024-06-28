@@ -12,10 +12,10 @@
     </section>
 
     <section class="botonop">
-        <a href="/busquedaPersonalizada/busquedanuevas" class="boton-rosa">Volver</a>
+        <a href="/busquedaPersonalizada/busquedanuevas" class="boton-azulito">Volver</a>
     </section>
 
-    <form class="formularioperadores" method="POST"  enctype ="multipart/form-data" >
+    <form class="formulariobrochas" method="POST"  enctype ="multipart/form-data" >
         <?php include 'formulario.php'; ?>
         <input type="submit" value="Actualizar Herramienta" class="boton-azul">
     </form>

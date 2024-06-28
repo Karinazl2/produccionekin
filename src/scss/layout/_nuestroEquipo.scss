@@ -1,105 +1,224 @@
+.l {
+    p {
+        color: $blanco;
+        text-align: center;
 
-.botonop{    
-  
-
-.boton-rosa {
-    background-color: #F3084B;
-    color: $blanco;
-    font-weight: $bold;
-    text-decoration: none;
-    text-align: center;
-    margin-top: 2.5rem;
-    display: table;
-    border: none;
-    width: 33%;
-    border-radius: 1rem;
-    margin: 2rem auto;
-    align-items: center;
-
-
-    &:hover{
-        background-color: darken(#F3084B, 10%);
-        cursor: pointer;
     }
-   
 }
 
-.boton-azulito {
-    background-color: $azul;
-    color: $blanco;
-    font-weight: $bold;
-    text-decoration: none;
-    text-align: center;
-    margin-top: 2.5rem;
-    display: table;
-    border: none;
-    width: 33%;
-    border-radius: 1rem;
-    margin: 2rem auto;
-    align-items: center;
+.botonop {
+
+    .boton-rosa-chido {
+        background-color: $rosa;
+        color: $blanco;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
 
 
-    &:hover{
-        background-color: darken($azul, 10%);
-        cursor: pointer;
+        &:hover {
+            background-color: darken($rosa1, 10%);
+            cursor: pointer;
+        }
+
     }
-   
-}
 
-.boton-amarillito {
-    background-color: $amarillo;
-    color: $blanco;
-    font-weight: $bold;
-    text-decoration: none;
-    text-align: center;
-    margin-top: 2.5rem;
-    display: table;
-    border: none;
-    width: 33%;
-    border-radius: 1rem;
-    margin: 2rem auto;
-    align-items: center;
+    .boton-nuevas-azul1{
+        background-color: $mangos1;
+        color: $blanco;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
 
 
-    &:hover{
-        background-color: darken($amarillo, 10%);
-        cursor: pointer;
+        &:hover {
+            background-color: darken($mangos1, 10%);
+            cursor: pointer;
+        }
+
     }
-   
-}
+    .boton-nuevas-azul2{
+        background-color: $mangos2;
+        color: $blanco;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+
+
+        &:hover {
+            background-color: darken($mangos2, 10%);
+            cursor: pointer;
+        }
+
+    }
+
+    .boton-nuevas-azul3{
+        background-color: $acanalado1;
+        color: $blanco;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+
+
+        &:hover {
+            background-color: darken($rosa1, 10%);
+            cursor: pointer;
+        }
+
+    }
+
+
+    .boton-rosa {
+        background-color: $rosa1;
+        color: $blanco;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+
+
+        &:hover {
+            background-color: darken($rosa1, 10%);
+            cursor: pointer;
+        }
+
+    }
+
+    .boton-azulito {
+        background-color: $azul7;
+        color: $blanco;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+
+
+        &:hover {
+            background-color: darken($azul7, 10%);
+            cursor: pointer;
+        }
+
+    }
+
+    .boton-amarillito {
+        background-color: $amarillo;
+        color: $blanco;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+
+
+        &:hover {
+            background-color: darken($amarillo, 10%);
+            cursor: pointer;
+        }
+
+    }
+
+    .boton-verdecito {
+        background-color: $verde3;
+        color: $blanco;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+
+
+        &:hover {
+            background-color: darken($verde3, 10%);
+            cursor: pointer;
+        }
+
+    }
+
+
 
 
 }
 
-.speakers{
-    &__grid{
+.speakers {
+    &__grid {
         @include contenedor;
         @include grid(1, 5rem);
-        @include tablet{
+
+        @include tablet {
             @include grid(2, 5rem);
 
         }
 
-        @include xl_desktop{
+        @include xl_desktop {
             @include grid(3, 5rem);
 
         }
     }
 
-    &__descripcion{
+    &__descripcion {
 
-        
+
         text-align: center;
         font-size: 1.8rem;
         font-weight: 300;
         color: #1E293B;
         margin: 5rem 0;
-    
 
-}
+
+    }
 }
 
-.speaker{
+.speaker {
 
     @include card;
 
@@ -109,23 +228,19 @@
 
     @for $i from 1 through 4 {
 
-        &:nth-child(4n + #{$i}){
-            background-image: image-set(
-                url('../img/bg_#{$i}.webp') 1x,
-                url('../img/bg_#{$i}.png') 1x
-            );
+        &:nth-child(4n + #{$i}) {
+            background-image: image-set(url('../img/bg_#{$i}.webp') 1x,
+                url('../img/bg_#{$i}.png') 1x);
         }
-    } 
+    }
 
 
-    &__imagen{
+    &__imagen {
         min-width: 350px;
         //background-color: transparent;
-        
-        @include tablet{
+
+        @include tablet {
             min-width: unset;
         }
     }
 }
-
-

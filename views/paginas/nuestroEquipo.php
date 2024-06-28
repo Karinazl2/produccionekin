@@ -3,11 +3,13 @@
 </section>
 <section class="botonop">
 
-    <a href="/nuestroEquipo/operadoresadmin" class="boton-azul">PANEL DE ADMINISTRACIÓN</a>
+    <a href="/nuestroEquipo/operadoresadmin" class="boton-rosa-chido">PANEL DE ADMINISTRACIÓN</a>
 </section>
 
+<div class="l"><p>Conoce a nuestros expertos en fabricación de brochas</p>
+</div>
+
 <section class="speakers">
-    <p class="speakers__descripcion">Conoce a nuestros expertos en fabricación de brochas</p>
     <div class="speakers__grid">
 
         <?php foreach ($operadores as $operador) { ?>

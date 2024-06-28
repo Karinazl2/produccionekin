@@ -13,7 +13,7 @@
     ?>
     <div class="botones">
         <a href="/busquedaPersonalizada/busquedanuevas" class="boton-azul">Brochas Nuevas</a>
-        <a href="/busquedaPersonalizada/busquedacremalleras" class="boton-amarillo">Cremalleras y Planas</a>
+        <a href="/busquedaPersonalizada/busquedacremalleras" class="boton-rosa-1">Cremalleras y Planas</a>
         <a href="/busquedaPersonalizada/busquedaafilado" class="boton-verde">Afilado</a>
     </div>
 </main>

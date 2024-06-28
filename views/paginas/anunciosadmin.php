@@ -11,8 +11,8 @@
 
 
 <section class="botonop">
-    <a href="/anuncios/crear" class="boton-rosa"> + Anadir Nuevo Anuncio</a>
-    <a href="/anuncios" class="boton-rosa">Volver</a>
+    <a href="/anuncios/crear" class="boton-rosa-chido"> + Anadir Nuevo Anuncio</a>
+    <a href="/anuncios" class="boton-rosa-chido">Volver</a>
 </section>
 
     <h2>Anuncios</h2>

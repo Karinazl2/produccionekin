@@ -114,11 +114,6 @@
                             <input type="submit" class="boton-rojo-block-1" value="Eliminar">
                         </form>
                         <a href="/busquedacremalleras/actualizar?id=${orden_id}" class="boton-verde-block-1">Actualizar</a>
-                        <form method="POST" class="w-100" action="/busquedacremalleras/siguiente_area">
-                            <input type="hidden" name="id" value="${orden_id}">
-                            <input type="hidden" name="tipo" value="cremalleras_ordenes">
-                            <input type="submit" class="boton-azul-block-1" value="Área >>">
-                        </form>
                     </td>
                 `;
                 resultado.appendChild(row);

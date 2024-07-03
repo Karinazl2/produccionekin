@@ -21,6 +21,7 @@
         border-radius: 1rem;
         margin: 2rem auto;
         align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
 
         &:hover {
@@ -29,7 +30,6 @@
         }
 
     }
-
     .boton-nuevas-azul1{
         background-color: $mangos1;
         color: $blanco;
@@ -43,6 +43,8 @@
         border-radius: 1rem;
         margin: 2rem auto;
         align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
 
         &:hover {
@@ -64,6 +66,8 @@
         border-radius: 1rem;
         margin: 2rem auto;
         align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
 
         &:hover {
@@ -72,7 +76,6 @@
         }
 
     }
-
     .boton-nuevas-azul3{
         background-color: $acanalado1;
         color: $blanco;
@@ -86,6 +89,8 @@
         border-radius: 1rem;
         margin: 2rem auto;
         align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
 
         &:hover {
@@ -94,8 +99,52 @@
         }
 
     }
+    .boton-nuevas-mp{
+        background-color: $aux1materiap;
+        color: $blanco;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
 
+
+        &:hover {
+            background-color: darken($aux1materiap, 10%);
+            cursor: pointer;
+        }
+
+    }
+    .boton-nuevas-mp1{
+        background-color: $aux3materiap;
+        color: $blanco;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+
+        &:hover {
+            background-color: darken($aux3materiap, 10%);
+            cursor: pointer;
+        }
+
+    }
     .boton-rosa {
         background-color: $rosa1;
         color: $blanco;
@@ -109,10 +158,166 @@
         border-radius: 1rem;
         margin: 2rem auto;
         align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
 
         &:hover {
             background-color: darken($rosa1, 10%);
+            cursor: pointer;
+        }
+
+    }
+    .boton-rosadito1 {
+        background-color: $afilado1;
+        color: $blanco;
+        font-weight: $bold;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+        &:hover {
+            background-color: darken($afilado1, 10%);
+            cursor: pointer;
+        }
+
+    }
+    .boton-verdeson1 {
+        background-color: $verde_afi1;
+        color: $blanco;
+        font-weight: $bold;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+
+        &:hover {
+            background-color: darken($verde_afi1, 10%);
+            cursor: pointer;
+        }
+
+    }
+    .boton-naranja1 {
+        background-color: $nuestroteam;
+        color: $blanco;
+        font-weight: $bold;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+
+        &:hover {
+            background-color: darken($nuestroteam, 10%);
+            cursor: pointer;
+        }
+
+    }
+    .boton-rojo1 {
+        background-color: $nuestrosanuncios;
+        color: $blanco;
+        font-weight: $bold;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+
+        &:hover {
+            background-color: darken($nuestrosanuncios, 10%);
+            cursor: pointer;
+        }
+
+    }
+    .boton-rojote2 {
+        background-color: $nuestrosanuncios1;
+        color: $blanco;
+        font-weight: $bold;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+
+        &:hover {
+            background-color: darken($nuestrosanuncios1, 10%);
+            cursor: pointer;
+        }
+
+    }
+    
+    .boton-rosadito2 {
+        background-color: $afilado2;
+        color: $blanco;
+        font-weight: $bold;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+
+        &:hover {
+            background-color: darken($afilado2, 10%);
+            cursor: pointer;
+        }
+
+    }
+    .boton-verdeson2 {
+        background-color: $verde_afi2;
+        color: $blanco;
+        font-weight: $bold;
+        text-align: center;
+        margin-top: 2.5rem;
+        display: table;
+        border: none;
+        width: 33%;
+        border-radius: 1rem;
+        margin: 2rem auto;
+        align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+        &:hover {
+            background-color: darken($verde_afi2, 10%);
             cursor: pointer;
         }
 
@@ -131,6 +336,8 @@
         border-radius: 1rem;
         margin: 2rem auto;
         align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
 
         &:hover {
@@ -153,6 +360,8 @@
         border-radius: 1rem;
         margin: 2rem auto;
         align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
 
         &:hover {
@@ -175,6 +384,8 @@
         border-radius: 1rem;
         margin: 2rem auto;
         align-items: center;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
 
         &:hover {
@@ -183,10 +394,6 @@
         }
 
     }
-
-
-
-
 }
 
 .speakers {

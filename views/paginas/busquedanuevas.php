@@ -103,7 +103,7 @@
             <tr>
                 <th>Orden</th>
                 <th>Descripción</th>
-                <th>Última actualización</th>
+                <th>Actualizado el:</th>
                 <th>Prioridad</th>
                 <th>Área</th>
                 <th>Máquina</th>

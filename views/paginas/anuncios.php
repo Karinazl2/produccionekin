@@ -3,7 +3,7 @@
         <h1>Anuncios</h1>
     </section>
     <section class="botonop">
-        <a href="/anuncios/anunciosadmin" class="boton-rosa-chido">PANEL DE ADMINISTRACIÓN</a>
+        <a href="/anuncios/anunciosadmin" class="boton-rosadito2">PANEL DE ADMINISTRACIÓN</a>
     </section>
 
     <?php foreach ($anuncios as $anuncio) { ?>

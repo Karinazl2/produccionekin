@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Model\Vista_afilado_ordenes;
 use Model\Vista_cremalleras_ordenes;
 use MVC\Router;
 use cremalleras;
@@ -32,34 +33,48 @@ class PaginasController
     public static function brochasNuevas(Router $router)
     {
 
-        $vista_nuevas_jarbe = Vista_nuevas_ordenes::ordenasc('nombre_maquina','JARBE','prioridad_orden');
-        $vista_nuevas_122 = Vista_nuevas_ordenes::ordenasc('nombre_maquina','MAQ. 122.','prioridad_orden');
-        $vista_nuevas_india = Vista_nuevas_ordenes::ordenasc('nombre_maquina','INDIA','prioridad_orden');    
+        $vista_nuevas_jarbe1 = Vista_nuevas_ordenes::where2_colums_asc('nombre_maquina','nombre_area','JARBE','ASIENTOS DE LUNETA','prioridad_orden');
+        $vista_nuevas_jarbe2 = Vista_nuevas_ordenes::where2_colums_asc('nombre_maquina','nombre_area','JARBE','RECTIFICADO DE DIENTES','prioridad_orden');
+        $vista_nuevas_india1 = Vista_nuevas_ordenes::where2_colums_asc('nombre_maquina','nombre_area','INDIA','RECTIFICADO DE DIENTES','prioridad_orden');  
+        $vista_nuevas_122_1 = Vista_nuevas_ordenes::where2_colums_asc('nombre_maquina','nombre_area','MAQ. 122','RECTIFICADO DE DIENTES','prioridad_orden');
+        $vista_nuevas_doimak = Vista_nuevas_ordenes::ordenasc('nombre_maquina','DOIMAK','prioridad_orden');
+        $vista_nuevas_danobat = Vista_nuevas_ordenes::ordenasc('nombre_maquina','DANOBAT','prioridad_orden');
+        $vista_nuevas_india2 = Vista_nuevas_ordenes::where2_colums_asc('nombre_maquina','nombre_area','INDIA','RECTIFICADO DE MANGOS','prioridad_orden');
+        $vista_nuevas_122_2 = Vista_nuevas_ordenes::where2_colums_asc('nombre_maquina','nombre_area','MAQ. 122','RECTIFICADO DE MANGOS','prioridad_orden');
+        $vista_nuevas_jarbe3 = Vista_nuevas_ordenes::where2_colums_asc('nombre_maquina','nombre_area','JARBE','RECTIFICADO DE MANGOS','prioridad_orden');
+        $vista_nuevas_23 = Vista_nuevas_ordenes::ordenasc('nombre_maquina','ACANALADO MAQ. 23','prioridad_orden');
         $vista_nuevas_29 = Vista_nuevas_ordenes::ordenasc('nombre_maquina','ACANALADO MAQ. 29','prioridad_orden');    
-        $vista_nuevas_24 = Vista_nuevas_ordenes::ordenasc('nombre_maquina','ACANALADO MAQ. 24','prioridad_orden');    
-        $vista_nuevas_23 = Vista_nuevas_ordenes::ordenasc('nombre_maquina','ACANALADO MAQ. 23','prioridad_orden');    
+        $vista_nuevas_24 = Vista_nuevas_ordenes::ordenasc('nombre_maquina','ACANALADO MAQ. 24','prioridad_orden');  
+        $vista_nuevas_recubrimiento = Vista_nuevas_ordenes::ordenasc('nombre_area','RECUBRIMIENTO','prioridad_orden');    
         $vista_nuevas_1200 = Vista_nuevas_ordenes::ordenasc('nombre_maquina','AFILADO MAQ. 1200','prioridad_orden');    
         $vista_nuevas_116 = Vista_nuevas_ordenes::ordenasc('nombre_maquina','AFILADO MAQ. 116','prioridad_orden');
         $vista_nuevas_131 = Vista_nuevas_ordenes::ordenasc('nombre_maquina','AFILADO MAQ. 131','prioridad_orden');
         $vista_nuevas_tachella = Vista_nuevas_ordenes::ordenasc('nombre_maquina','TACHELLA','prioridad_orden');
-        $vista_nuevas_doimak = Vista_nuevas_ordenes::ordenasc('nombre_maquina','DOIMAK','prioridad_orden');
+        $script = '<script src="/build/js/tablas.js"></script>';
+        
         // debuguear($vista_nuevas_jarbe);
-        $vista_nuevas_danobat = Vista_nuevas_ordenes::ordenasc('nombre_maquina','DANOBAT','prioridad_orden');
-
+        
 
         $router->render('paginas/brochasNuevas',[
-            'vista_nuevas_jarbe' => $vista_nuevas_jarbe,
-            'vista_nuevas_122' => $vista_nuevas_122,
-            'vista_nuevas_india' => $vista_nuevas_india,
+            'vista_nuevas_jarbe1' => $vista_nuevas_jarbe1,
+            'vista_nuevas_jarbe2' => $vista_nuevas_jarbe2,
+            'vista_nuevas_india1' => $vista_nuevas_india1,
+            'vista_nuevas_122_1' => $vista_nuevas_122_1,
+            'vista_nuevas_doimak' => $vista_nuevas_doimak,
+            'vista_nuevas_danobat' => $vista_nuevas_danobat,
+            'vista_nuevas_india2' => $vista_nuevas_india2,
+            'vista_nuevas_122_2' => $vista_nuevas_122_2,
+            'vista_nuevas_jarbe3' => $vista_nuevas_jarbe3,
+            'vista_nuevas_23' => $vista_nuevas_23,
             'vista_nuevas_29' => $vista_nuevas_29,
             'vista_nuevas_24' => $vista_nuevas_24,
-            'vista_nuevas_23' => $vista_nuevas_23,
+            'vista_nuevas_recubrimiento' =>$vista_nuevas_recubrimiento,
             'vista_nuevas_1200' => $vista_nuevas_1200,
             'vista_nuevas_116' => $vista_nuevas_116,
             'vista_nuevas_131' => $vista_nuevas_131,
             'vista_nuevas_tachella' =>$vista_nuevas_tachella,
-            'vista_nuevas_doimak' => $vista_nuevas_doimak,
-            'vista_nuevas_danobat' => $vista_nuevas_danobat,
+            'script' => $script
+            
         ]);
     }
 
@@ -70,19 +85,31 @@ class PaginasController
         $vista_cremalleras_58 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina','MECANIZADO MAQ. 58','prioridad_orden');
         $vista_cremalleras_54 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina','MECANIZADO MAQ. 54','prioridad_orden');
         $vista_cremalleras_125 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina','MECANIZADO MAQ. 125','prioridad_orden');
+        $vista_cremalleras_60 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina','PLANAS MAQ. 60','prioridad_orden');
+        $vista_cremalleras_59 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina','CIL Y HELIC MAQ. 59','prioridad_orden');
 
         $router->render('paginas/cremalleras', [
             'vista_cremalleras_39'=> $vista_cremalleras_39,
             'vista_cremalleras_41'=> $vista_cremalleras_41,
             'vista_cremalleras_58'=> $vista_cremalleras_58,
             'vista_cremalleras_54'=> $vista_cremalleras_54,
-            'vista_cremalleras_125'=> $vista_cremalleras_125
+            'vista_cremalleras_125'=> $vista_cremalleras_125,
+            'vista_cremalleras_60'=> $vista_cremalleras_60,
+            'vista_cremalleras_59'=> $vista_cremalleras_59
         ]);
     }
 
     public static function afilado(Router $router)
     {
-        $router->render('paginas/afilado');
+        $vista_afilado_1200 = Vista_afilado_ordenes::ordenasc('nombre_maquina','AFILADO MAQ. 1200','prioridad_orden');
+        $vista_afilado_116 = Vista_afilado_ordenes::ordenasc('nombre_maquina','AFILADO MAQ. 116','prioridad_orden');
+        $vista_afilado_131 = Vista_afilado_ordenes::ordenasc('nombre_maquina','AFILADO MAQ. 131','prioridad_orden');
+
+        $router->render('paginas/afilado', [
+            'vista_afilado_1200' => $vista_afilado_1200,
+            'vista_afilado_131' => $vista_afilado_131,
+            'vista_afilado_116' => $vista_afilado_116
+        ]);
     }
 
     public static function busquedaPersonalizada(Router $router)
@@ -91,10 +118,13 @@ class PaginasController
     }
 
     public static function materiaprima(Router $router){
-        $vista_materiaprima = Vista_nuevas_ordenes::ordenasc('nombre_area','MATERIA PRIMA','prioridad_orden');
+        $vista_nuevas_materiaprima = Vista_nuevas_ordenes::ordenasc('nombre_area','MATERIA PRIMA','prioridad_orden');
+        $vista_cremalleras_materiaprima = Vista_cremalleras_ordenes::ordenasc('nombre_area','MATERIA PRIMA','prioridad_orden');
 
-        $router->render('paginas/materiaprima', 
-        ['vista_materiaprima'=>$vista_materiaprima
+        $router->render('paginas/materiaprima',[
+            'vista_nuevas_materiaprima'=>$vista_nuevas_materiaprima,
+            'vista_cremalleras_materiaprima'=>$vista_cremalleras_materiaprima,
+
         ]);
     }
 

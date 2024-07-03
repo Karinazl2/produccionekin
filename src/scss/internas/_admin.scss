@@ -42,6 +42,60 @@ table.propiedades {
     }
 
 }
+table.propiedades1 {
+    margin-top: 5rem;
+    width: 100%;
+    border-spacing: 0;
+    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+    thead {
+        background-color: $nuestroteam2;
+
+        th{
+            color: $blanco;
+            padding: 1.3rem;
+        }
+    }
+    tbody{
+        tr{
+            text-align: center;
+            color: $blanco;
+
+        }
+    }
+
+    .imagen-tabla{
+        width: 10rem;
+    }
+
+}
+table.propiedades2 {
+    margin-top: 5rem;
+    width: 100%;
+    border-spacing: 0;
+    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+    thead {
+        background-color: $nuestrosanuncios2;
+
+        th{
+            color: $blanco;
+            padding: 1.3rem;
+        }
+    }
+    tbody{
+        tr{
+            text-align: center;
+            color: $blanco;
+
+        }
+    }
+
+    .imagen-tabla{
+        width: 10rem;
+    }
+
+}
 
 .imagen-small {
     width: 20rem;

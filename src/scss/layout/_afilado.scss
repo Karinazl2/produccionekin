@@ -1,0 +1,274 @@
+.eventos2 {
+    $modificador: &;
+
+
+    &__heading {
+        color: $azul;
+        background: linear-gradient(to right, #00CC00, #c20404);
+        /* Degradado de color */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 2rem 0;
+        text-align: left;
+        font-size: clamp(2rem, -0.8rem + 8vw, 6rem);
+        font-weight: bold;
+
+    }
+}
+
+
+.monitorafilado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 0rem 5rem 1rem 5rem;
+    .touta1 {
+        font-weight: 550;
+        color: $afilado11;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+    }
+    .touta2 {
+        font-weight: 550;
+        color: $afilado12;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+    }    
+    .touta3 {
+        font-weight: 550;
+        color: $afilado13;
+    }    
+   
+
+    .carda1 {
+        background-color: $afilado11;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;  
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                img {
+                    width: 9rem;
+                    height: 8rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+            }
+        }
+    }
+    .carda2 {
+        background-color: $afilado12;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;  
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                img {
+                    width: 9rem;
+                    height: 8rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+            }
+        }
+    }
+    .carda3 {
+        background-color: $afilado13;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;  
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                img {
+                    width: 9rem;
+                    height: 8rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+            }
+        }
+    }
+}

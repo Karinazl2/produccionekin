@@ -194,6 +194,23 @@
     }
 }
 
+.nani {
+    color: hsla(180, 33%, 30%, 1);
+    background-image:
+        radial-gradient(at 57% 74%, hsla(180, 100%, 30%, 1) 0px, transparent 50%),
+        radial-gradient(at 65% 43%, hsla(180, 100%, 20%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(204, 100%, 50%, 1) 0px, transparent 50%)
+}
+
+.tutul {
+    background-color: linear-gradient(to right, #00CC00, #990066);
+
+    .hto2 {
+        background-color: linear-gradient(to right, #00CC00, #990066);
+    }
+
+}
+
 .botones_editor_tablas {
     display: flex;
     /* Añadir esto para habilitar Flexbox */
@@ -355,141 +372,119 @@
     .tout1 {
         font-weight: 550;
         color: $asientos1;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
     }
 
     .tout2 {
         font-weight: 550;
         color: $dientes1;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
     }
 
     .tout3 {
         font-weight: 550;
         color: $dientes2;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
     }
 
     .tout4 {
         font-weight: 550;
         color: $dientes3;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
     }
 
     .tout5 {
         font-weight: 550;
         color: $dientes4;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
     }
 
     .tout6 {
         font-weight: 550;
-        color: $mangos1;
+        color: $dientes5;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
     }
 
     .tout7 {
         font-weight: 550;
-        color: $mangos2;
+        color: $mangos1;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
     }
 
     .tout8 {
         font-weight: 550;
-        color: $acanalado1;
+        color: $mangos2;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
     }
+
     .tout9 {
         font-weight: 550;
-        color: $acanalado2;
+        color: $mangos3;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
     }
+
     .tout10 {
         font-weight: 550;
-        color: $acanalado3;
+        color: $acanalado1;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
     }
+
     .tout11 {
         font-weight: 550;
-        color: $planos1;
+        color: $acanalado2;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
     }
+
     .tout12 {
         font-weight: 550;
-        color: $afilado1;
+        color: $acanalado3;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
     }
+
     .tout13 {
         font-weight: 550;
-        color: $afilado2;
+        color: $planos1;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
     }
+
     .tout14 {
         font-weight: 550;
-        color: $afilado3;
+        color: $recubrimiento;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
     }
 
-    // .card {
-    //     background-color: $azul4;
-    //     padding: 1.5rem 2rem 0 2rem;
-    //     width: 100%;
-    //     border-radius: 2rem;
-    //     height: 27rem;
+    .tout15 {
+        font-weight: 550;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+        color: $afilado1;
+    }
 
-    //     p {
-    //         margin: 0 0 0.5rem 0;
-    //         color: $blanco;
-    //         text-align: center;
-    //         font-size: 1.8rem;
-    //         font-weight: bold;
+    .tout16 {
+        font-weight: 550;
+        color: $afilado2;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
+    }
 
-
-    //     }
-
-
-    //     img {
-    //         width: 6.8rem;
-    //         height: 5.8rem;
-    //         background-color: $blanco;
-    //         border-radius: 50%;
-    //     }
-
-    //     .imgmaq {
-    //         font-weight: 800;
-    //         font-size: 2.2rem;
-    //         display: grid;
-    //         grid-template-columns: repeat(2, 1fr);
-    //         gap: 1rem;
-
-    //         p {
-    //             color: $blanco;
-    //             font-size: 1.55rem;
-    //             margin: 1.8rem 0 0 0;
-    //         }
-    //     }
-
-    //     table {
-    //         margin: 0 0 0 3rem;
-    //         width: 70%;
-    //         border-spacing: 0;
-
-    //         thead {
-    //             th {
-    //                 color: $blanco;
-    //                 padding: 0;
-    //                 text-align: center;
-    //                 font-size: 1.3rem;
-    //                 margin: 0 0 0 0;
-    //             }
-    //         }
-
-    //         tbody {
-    //             tr {
-    //                 text-align: center;
-    //                 font-size: 1.1rem;
-    //                 margin-top: 0;
-    //                 padding: 0;
-    //                 color: $blanco;
-    //             }
-
-    //         }
-    //     }
-    // }
+    .tout17 {
+        font-weight: 550;
+        color: $afilado3;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+    }
 
     .card1 {
         background-color: $asientos1;
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         p {
             margin: 0 0 0.5rem 0;
@@ -497,35 +492,14 @@
             text-align: center;
             font-size: 1.7rem;
             font-weight: bold;
-        }
-
-        img {
-            width: 7.2rem;
-            height: 6.2rem;
-            background-color: $blanco;
-            border-radius: 50%;
-
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            align-self: flex-end;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.5rem 0 0 0;          
-            }
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
         }
 
         table {
             margin: 0 0 1rem 0;
             width: 100%;
             border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
             thead {
                 th {
@@ -548,14 +522,47 @@
 
             }
         }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+            }
+        }
     }
-        
+
     .card2 {
         background-color: $dientes1;
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         p {
             margin: 0 0 0.5rem 0;
@@ -563,35 +570,16 @@
             text-align: center;
             font-size: 1.7rem;
             font-weight: bold;
-        }
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
-        img {
-            width: 7.2rem;
-            height: 6.2rem;
-            background-color: $blanco;
-            border-radius: 50%;
-
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            align-self: flex-end;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.5rem 0 0 0;          
-            }
         }
 
         table {
             margin: 0 0 1rem 0;
             width: 100%;
             border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
             thead {
                 th {
@@ -600,6 +588,7 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
+
                 }
             }
 
@@ -611,6 +600,40 @@
                     padding: 0;
                     color: $blanco;
                 }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
             }
         }
@@ -621,7 +644,10 @@
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         p {
             margin: 0 0 0.5rem 0;
@@ -629,31 +655,7 @@
             text-align: center;
             font-size: 1.7rem;
             font-weight: bold;
-        }
-
-        img {
-            width: 7.2rem;
-            height: 6.2rem;
-            background-color: $blanco;
-            border-radius: 50%;
-
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            align-self: flex-end;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.5rem 0 0 0;          
-            }
-
-
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
         }
 
@@ -661,6 +663,8 @@
             margin: 0 0 1rem 0;
             width: 100%;
             border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
             thead {
                 th {
@@ -680,6 +684,40 @@
                     padding: 0;
                     color: $blanco;
                 }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
             }
         }
@@ -690,7 +728,10 @@
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         p {
             margin: 0 0 0.5rem 0;
@@ -698,31 +739,7 @@
             text-align: center;
             font-size: 1.7rem;
             font-weight: bold;
-        }
-
-        img {
-            width: 7.2rem;
-            height: 6.2rem;
-            background-color: $blanco;
-            border-radius: 50%;
-
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            align-self: flex-end;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.5rem 0 0 0;          
-            }
-
-
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
         }
 
@@ -730,6 +747,8 @@
             margin: 0 0 1rem 0;
             width: 100%;
             border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
             thead {
                 th {
@@ -738,6 +757,8 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
             }
 
@@ -752,6 +773,40 @@
 
             }
         }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            }
+        }
     }
 
     .card5 {
@@ -759,48 +814,27 @@
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         p {
             margin: 0 0 0.5rem 0;
             color: $blanco;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: bold;
-
-
-
-        }
-
-
-        img {
-            width: 6.8rem;
-            height: 5.8rem;
-            background-color: $blanco;
-            border-radius: 50%;
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.8rem 0 0 0;
-            }
-
-
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
         }
 
         table {
-            margin: 0 0 0 8rem;
-            width: 70%;
+            margin: 0 0 1rem 0;
+            width: 100%;
             border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
             thead {
                 th {
@@ -809,68 +843,82 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
             }
 
             tbody {
                 tr {
                     text-align: center;
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
                 }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
             }
         }
     }
 
     .card6 {
-        background-color: $mangos1;
+        background-color: $dientes5;
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         p {
             margin: 0 0 0.5rem 0;
             color: $blanco;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: bold;
-
-
-
-        }
-
-
-        img {
-            width: 6.8rem;
-            height: 5.8rem;
-            background-color: $blanco;
-            border-radius: 50%;
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.8rem 0 0 0;
-            }
-
-
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
         }
 
         table {
-            margin: 0 0 0 8rem;
-            width: 70%;
+            margin: 0 0 1rem 0;
+            width: 100%;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
             border-spacing: 0;
 
             thead {
@@ -880,69 +928,84 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
             }
 
             tbody {
                 tr {
                     text-align: center;
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
                 }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
             }
         }
     }
 
     .card7 {
-        background-color: $mangos2;
+        background-color: $mangos1;
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         p {
             margin: 0 0 0.5rem 0;
             color: $blanco;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: bold;
-
-
-
-        }
-
-
-        img {
-            width: 6.8rem;
-            height: 5.8rem;
-            background-color: $blanco;
-            border-radius: 50%;
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.8rem 0 0 0;
-            }
-
-
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
         }
 
         table {
-            margin: 0 0 0 8rem;
-            width: 70%;
+            margin: 0 0 1rem 0;
+            width: 100%;
             border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
             thead {
                 th {
@@ -951,69 +1014,88 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
             }
 
             tbody {
                 tr {
                     text-align: center;
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
             }
         }
     }
 
     .card8 {
-        background-color: $acanalado1;
+        background-color: $mangos2;
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
         p {
             margin: 0 0 0.5rem 0;
             color: $blanco;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: bold;
-
-
-
-        }
-
-
-        img {
-            width: 6.8rem;
-            height: 5.8rem;
-            background-color: $blanco;
-            border-radius: 50%;
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.8rem 0 0 0;
-            }
-
-
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
         }
 
         table {
-            margin: 0 0 0 8rem;
-            width: 70%;
+            margin: 0 0 1rem 0;
+            width: 100%;
             border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
             thead {
                 th {
@@ -1022,69 +1104,86 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
             }
 
             tbody {
                 tr {
                     text-align: center;
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
             }
         }
     }
 
     .card9 {
-        background-color: $acanalado2;
+        background-color: $mangos3;
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         p {
             margin: 0 0 0.5rem 0;
             color: $blanco;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: bold;
-
-
-
-        }
-
-
-        img {
-            width: 6.8rem;
-            height: 5.8rem;
-            background-color: $blanco;
-            border-radius: 50%;
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.8rem 0 0 0;
-            }
-
-
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
         }
 
         table {
-            margin: 0 0 0 8rem;
-            width: 70%;
+            margin: 0 0 1rem 0;
+            width: 100%;
             border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
             thead {
                 th {
@@ -1093,69 +1192,86 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
             }
 
             tbody {
                 tr {
                     text-align: center;
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
             }
         }
     }
 
     .card10 {
-        background-color: $acanalado3;
+        background-color: $acanalado1;
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         p {
             margin: 0 0 0.5rem 0;
             color: $blanco;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: bold;
-
-
-
-        }
-
-
-        img {
-            width: 6.8rem;
-            height: 5.8rem;
-            background-color: $blanco;
-            border-radius: 50%;
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.8rem 0 0 0;
-            }
-
-
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
         }
 
         table {
-            margin: 0 0 0 8rem;
-            width: 70%;
+            margin: 0 0 1rem 0;
+            width: 100%;
             border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
             thead {
                 th {
@@ -1164,69 +1280,84 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
             }
 
             tbody {
                 tr {
                     text-align: center;
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
                 }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
             }
         }
     }
 
     .card11 {
-        background-color: $planos1;
+        background-color: $acanalado2;
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         p {
             margin: 0 0 0.5rem 0;
             color: $blanco;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: bold;
-
-
-
-        }
-
-
-        img {
-            width: 6.8rem;
-            height: 5.8rem;
-            background-color: $blanco;
-            border-radius: 50%;
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.8rem 0 0 0;
-            }
-
-
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
         }
 
         table {
-            margin: 0 0 0 8rem;
-            width: 70%;
+            margin: 0 0 1rem 0;
+            width: 100%;
             border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
             thead {
                 th {
@@ -1235,69 +1366,84 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
             }
 
             tbody {
                 tr {
                     text-align: center;
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
                 }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
             }
         }
     }
 
     .card12 {
-        background-color: $afilado1;
+        background-color: $acanalado3;
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         p {
             margin: 0 0 0.5rem 0;
             color: $blanco;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: bold;
-
-
-
-        }
-
-
-        img {
-            width: 6.8rem;
-            height: 5.8rem;
-            background-color: $blanco;
-            border-radius: 50%;
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.8rem 0 0 0;
-            }
-
-
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
         }
 
         table {
-            margin: 0 0 0 8rem;
-            width: 70%;
+            margin: 0 0 1rem 0;
+            width: 100%;
             border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
             thead {
                 th {
@@ -1306,69 +1452,86 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
             }
 
             tbody {
                 tr {
                     text-align: center;
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
             }
         }
     }
 
     .card13 {
-        background-color: $afilado2;
+        background-color: $planos1;
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         p {
             margin: 0 0 0.5rem 0;
             color: $blanco;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: bold;
-
-
-
-        }
-
-
-        img {
-            width: 6.8rem;
-            height: 5.8rem;
-            background-color: $blanco;
-            border-radius: 50%;
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.8rem 0 0 0;
-            }
-
-
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
         }
 
         table {
-            margin: 0 0 0 8rem;
-            width: 70%;
+            margin: 0 0 1rem 0;
+            width: 100%;
             border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
             thead {
                 th {
@@ -1377,69 +1540,86 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
             }
 
             tbody {
                 tr {
                     text-align: center;
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
             }
         }
     }
 
     .card14 {
-        background-color: $afilado3;
+        background-color: $recubrimiento;
         padding: 1.5rem 2rem 0 2rem;
         width: 100%;
         border-radius: 2rem;
-        height: 33rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         p {
             margin: 0 0 0.5rem 0;
             color: $blanco;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: bold;
-
-
-
-        }
-
-
-        img {
-            width: 6.8rem;
-            height: 5.8rem;
-            background-color: $blanco;
-            border-radius: 50%;
-        }
-
-        .imgmaq {
-            font-weight: 800;
-            font-size: 2.2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-
-            p {
-                color: $blanco;
-                font-size: 1.55rem;
-                margin: 1.8rem 0 0 0;
-            }
-
-
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
         }
 
         table {
-            margin: 0 0 0 8rem;
-            width: 70%;
+            margin: 0 0 1rem 0;
+            width: 100%;
             border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
             thead {
                 th {
@@ -1448,17 +1628,321 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
             }
 
             tbody {
                 tr {
                     text-align: center;
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
                 }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            }
+        }
+    }
+
+    .card15 {
+        background-color: $afilado1;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            }
+        }
+    }
+
+    .card16 {
+        background-color: $afilado2;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            }
+        }
+    }
+
+    .card17 {
+        background-color: $afilado3;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
             }
         }

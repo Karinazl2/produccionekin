@@ -9,7 +9,7 @@
         value="<?php echo s($afilado_ordenes->descripcion); ?>">
 
     <label for="prioridad">Prioridad</label>
-    <input type="text" id="prioridad" name="afilado_ordenes[prioridad]" placeholder="Prioridad"
+    <input type="text" id="prioridad" max="20" min="1" name="afilado_ordenes[prioridad]" placeholder="Prioridad"
         value="<?php echo s($afilado_ordenes->prioridad); ?>">
 
 

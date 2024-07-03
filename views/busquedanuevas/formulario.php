@@ -10,7 +10,7 @@
         value="<?php echo s($nuevas_ordenes->descripcion); ?>">
 
     <label for="prioridad">Prioridad</label>
-    <input type="number" min="1" max="10" id="prioridad" name="nuevas_ordenes[prioridad]" placeholder="Prioridad"
+    <input type="number" min="1" max="15" id="prioridad" name="nuevas_ordenes[prioridad]" placeholder="Prioridad"
         value="<?php echo s($nuevas_ordenes->prioridad); ?>">
 
 

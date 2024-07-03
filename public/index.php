@@ -101,11 +101,23 @@ $router->post('/editorclientes/eliminar', [EditorClientesController::class,'elim
 //login y autenticacion 
 $router->get('/login', [LoginController::class, 'login']);
 $router->post('/login', [LoginController::class, 'login']);
-$router->get('/recuperar', [LoginController::class, 'recuperar']);
-$router->post('/recuperar', [LoginController::class, 'recuperar']);
+$router->get('/logout', [LoginController::class, 'logout']);
+
+//Crar cuenta
 $router->get('/registrar', [LoginController::class, 'registrar']);
 $router->post('/registrar', [LoginController::class, 'registrar']);
-$router->get('/logout', [LoginController::class, 'logout']);
+
+//confirmación de la cuenta
+$router->get('/mensaje', [LoginController::class, 'mensaje']);
+$router->get('/confirmar-cuenta', [LoginController::class, 'confirmar']);
+
+//Formulario de olvidé mi password
+$router->get('/recuperar', [LoginController::class, 'recuperar']);
+$router->post('/recuperar', [LoginController::class, 'recuperar']);
+
+//colocar el nuevo password
+$router->get('/reestablecer', [LoginController::class, 'reestablecer']);
+$router->post('/reestablecer', [LoginController::class, 'reestablecer']);
 
 
 

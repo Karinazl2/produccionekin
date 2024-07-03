@@ -12,12 +12,12 @@
     </section>
 
     <section class="botonop">
-        <a href="/nuestroEquipo/operadoresadmin" class="boton-rosa-chido">Volver</a>
+        <a href="/nuestroEquipo/operadoresadmin" class="boton-naranja1">Volver</a>
     </section>
 
     <form class="formulariobrochas" method="POST"  enctype ="multipart/form-data" >
         <?php include 'formulario.php'; ?>
-        <input type="submit" value="Actualizar Técnico" class="boton-azul">
+        <input type="submit" value="Actualizar Técnico" class="boton-naranjado">
     </form>
 
 </main>

@@ -9,7 +9,7 @@
         value="<?php echo s($cremalleras_ordenes->descripcion); ?>">
 
     <label for="prioridad">Prioridad</label>
-    <input type="number" max="10" min="1" id="prioridad" name="cremalleras_ordenes[prioridad]" placeholder="Prioridad"
+    <input type="number" max="15" min="1" id="prioridad" name="cremalleras_ordenes[prioridad]" placeholder="Prioridad"
         value="<?php echo s($cremalleras_ordenes->prioridad); ?>">
 
 

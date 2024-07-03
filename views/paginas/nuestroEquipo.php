@@ -3,7 +3,7 @@
 </section>
 <section class="botonop">
 
-    <a href="/nuestroEquipo/operadoresadmin" class="boton-rosa-chido">PANEL DE ADMINISTRACIÓN</a>
+    <a href="/nuestroEquipo/operadoresadmin" class="boton-naranja1">PANEL DE ADMINISTRACIÓN</a>
 </section>
 
 <div class="l"><p>Conoce a nuestros expertos en fabricación de brochas</p>

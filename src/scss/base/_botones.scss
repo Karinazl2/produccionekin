@@ -3,7 +3,7 @@
 }
 
 .boton-rosa-1 {
-    @include boton(#F3084B, inline-block);
+    @include boton($afilado2, inline-block);
 }
 
 .boton-amarillo-1 {
@@ -13,12 +13,22 @@
 .boton-azul {
     @include boton($azul2, inline-block);
 }
+
+.boton-naranjado {
+    @include boton($nuestroteam, inline-block);
+}
+.boton-verdeson3 {
+    @include boton($verde_afi3, inline-block);
+}
+.boton-rosado10 {
+    @include boton($afilado3, inline-block);
+}
 .boton-nuevas-azul3 {
     @include boton($acanalado1, inline-block);
 }
 
 .boton-azul-1 {
-    @include boton($azul5, inline-block);
+    @include boton($acanalado3, inline-block);
 }
 
 .boton-amarillo-block {

@@ -1,0 +1,691 @@
+.eventos1 {
+    $modificador: &;
+
+
+    &__heading {
+        color: $azul;
+        background: linear-gradient(to right, #9966FF, #990066);
+        /* Degradado de color */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 2rem 0;
+        text-align: left;
+        font-size: clamp(2rem, -0.8rem + 8vw, 6rem);
+        font-weight: bold;
+
+    }
+}
+
+
+.monitorcremalleras {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 0rem 5rem 1rem 5rem;
+
+    .toutc1 {
+        font-weight: 550;
+        color: $cremalleras1;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+    }
+
+    .toutc1 {
+        font-weight: 550;
+        color: $cremalleras1;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+    }
+
+    .toutc2 {
+        font-weight: 550;
+        color: $cremalleras2;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+    }
+
+    .toutc3 {
+        font-weight: 550;
+        color: $cremalleras3;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+    }
+
+    .toutc4 {
+        font-weight: 550;
+        color: $cremalleras4;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+    }
+
+    .toutc5 {
+        font-weight: 550;
+        color: $cremalleras5;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+    }
+
+    .toutc6 {
+        font-weight: 550;
+        color: $cremalleras6;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+    }
+
+    .toutc7 {
+        font-weight: 550;
+        color: $cremalleras7;
+        text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+    }
+
+    .cardc1 {
+        background-color: $cremalleras1;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            }
+        }
+    }
+
+    .cardc2 {
+        background-color: $cremalleras2;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            }
+        }
+    }
+
+    .cardc3 {
+        background-color: $cremalleras3;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            }
+        }
+    }
+
+    .cardc4 {
+        background-color: $cremalleras4;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            }
+        }
+    }
+
+    .cardc5 {
+        background-color: $cremalleras5;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            }
+        }
+    }
+
+    .cardc6 {
+        background-color: $cremalleras6;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            }
+        }
+    }
+
+    .cardc7 {
+        background-color: $cremalleras7;
+        padding: 1.5rem 2rem 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        min-height: 43rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0 0 0.5rem 0;
+            color: $blanco;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+        }
+
+        table {
+            margin: 0 0 1rem 0;
+            width: 100%;
+            border-spacing: 0;
+            text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+            thead {
+                th {
+                    color: $blanco;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    margin: 0 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+            }
+
+            tbody {
+                tr {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                    padding: 0;
+                    color: $blanco;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+                }
+
+            }
+        }
+
+        .imgmaq {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+
+            .informe {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+                flex-direction: row;
+                margin: 0 2rem 1.5rem 2rem;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+
+                img {
+                    width: 7.2rem;
+                    height: 6.2rem;
+                    background-color: $blanco;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                color: $blanco;
+                font-size: 1.55rem;
+                margin: 1.5rem 0 0 0;
+                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
+            }
+        }
+    }
+}

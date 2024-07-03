@@ -182,6 +182,12 @@ class ActiveRecord
         return static::$errores;
     }
 
+    public static function setError($mensaje)
+    {
+        static::$errores[] = $mensaje;
+
+    }
+
     public function validar()
     {
         static::$errores = [];
@@ -257,6 +263,12 @@ class ActiveRecord
         }
     }
 
+    public static function where2_colums_asc($columna1, $columna2, $valor1, $valor2, $columna_orden) {
+        $query = "SELECT * FROM " . static::$tabla . " WHERE ($columna1,$columna2) = ('$valor1','$valor2') ORDER BY $columna_orden " . "ASC";
+        $resultado = self::consultarSQL($query);
+        return  $resultado  ;
+    }
+    
     public static function ordenasc($columna, $valor, $columna_orden) {
         $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor' ORDER BY $columna_orden " . "ASC";
         // debuguear($query);
@@ -269,4 +281,6 @@ class ActiveRecord
         $resultado = self::consultarSQL($query);
         return  $resultado  ;
     }
+
+    
 }

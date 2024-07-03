@@ -19,7 +19,7 @@
 
     <h2>Brochas Planas y Cremalleras</h2>
     <section class="botonop">
-        <a href="/busquedacremalleras/crear" class="boton-rosa">+ Añadir Órdenes en Cremalleras</a>
+        <a href="/busquedacremalleras/crear" class="boton-rosadito2">+ Añadir Órdenes en Cremalleras</a>
     </section>
 
     <section class="botones_editor_tablas">

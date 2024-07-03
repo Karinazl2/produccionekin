@@ -11,12 +11,12 @@
 
 
 <section class="botonop">
-    <a href="/anuncios/crear" class="boton-rosa-chido"> + Anadir Nuevo Anuncio</a>
-    <a href="/anuncios" class="boton-rosa-chido">Volver</a>
+    <a href="/anuncios/crear" class="boton-rosadito1"> + Anadir Nuevo Anuncio</a>
+    <a href="/anuncios" class="boton-rosadito2">Volver</a>
 </section>
 
     <h2>Anuncios</h2>
-    <table class="propiedades">
+    <table class="ordenes1">
         <thead>
             <tr>
                 <th>ID</th>

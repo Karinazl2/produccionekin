@@ -1,15 +1,66 @@
-table.ordenes {
+
+table.ordenop {
     margin-top: 4rem;
     width: 100%;
     border-spacing: 0;
-    
-
+    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
     thead {
-        background-color: $azul2;
+        background-color: $nuestroteam2;
 
         th{
             color: $blanco;
-            padding: 2rem;
+            padding: 0.7rem;
+        }
+    }
+    tbody{
+        tr{
+            text-align: center;
+            font-size: smaller;
+            margin-top: 0.2;
+            padding: 0;
+            color: $blanco;
+        }
+    }
+
+}
+table.materiapnuevas {
+    margin-top: 4rem;
+    width: 100%;
+    border-spacing: 0;
+    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+    thead {
+        background-color: #009999;
+
+        th{
+            color: $blanco;
+            padding: 0.7rem;
+        }
+    }
+    tbody{
+        tr{
+            text-align: center;
+            font-size: smaller;
+            margin-top: 0.2;
+            padding: 0;
+            color: $blanco;
+        }
+    }
+
+}
+table.materiapnuevas1 {
+    margin-top: 4rem;
+    width: 100%;
+    border-spacing: 0;
+    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+    
+
+    thead {
+        background-color: $aux3materiap;
+
+        th{
+            color: $blanco;
+        padding: 0.7rem;
+
         }
     }
     tbody{
@@ -32,10 +83,66 @@ table.ordenes1 {
 
     thead {
         background-color: $rosa3;
+        padding: .7rem
 
         th{
             color: $blanco;
             padding: 2rem;
+        }
+    }
+    tbody{
+        tr{
+            text-align: center;
+            font-size: smaller;
+            margin-top: 0.2;
+            padding: 0;
+            color: $blanco;
+
+        }
+    }
+
+}
+table.ordenes {
+    margin-top: 4rem;
+    width: 100%;
+    border-spacing: 0;
+    padding: 0.7;
+    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+    
+
+    thead {
+        background-color: #0000FF;
+
+        th{
+            color: $blanco;
+            padding: 1.3rem;
+        }
+    }
+    tbody{
+        tr{
+            text-align: center;
+            font-size: smaller;
+            margin-top: 0.2;
+            padding: 0;
+            color: $blanco;
+        }
+    }
+
+}
+
+table.ordenes1 {
+    margin-top: 4rem;
+    width: 100%;
+    border-spacing: 0;
+    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+    
+
+    thead {
+        background-color: $afilado3;
+
+        th{
+            color: $blanco;
+            padding: 1.3rem;
         }
     }
     tbody{
@@ -55,14 +162,16 @@ table.ordenes2 {
     margin-top: 4rem;
     width: 100%;
     border-spacing: 0;
+    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
     
 
     thead {
-        background-color: $verde2;
+        background-color: $verde_afi3;
 
         th{
             color: $blanco;
-            padding: 2rem;
+            padding: 1.3rem;
         }
     }
     tbody{

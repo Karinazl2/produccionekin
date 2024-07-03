@@ -40,6 +40,8 @@
     display: $display;
     border: none;
     border-radius: 1rem;
+    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+
 
     &:hover{
         background-color: darken($bgColor, 10%);

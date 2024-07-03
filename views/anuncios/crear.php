@@ -12,12 +12,12 @@
     </section>
 
     <section class="botonop">
-        <a href="/anuncios/anunciosadmin" class="boton-rosa-chido">Volver</a>
+        <a href="/anuncios/anunciosadmin" class="boton-rosadito2">Volver</a>
     </section>
 
     <form class="formulariobrochas" method="POST"  enctype ="multipart/form-data" >
         <?php include 'formulario.php'; ?>
-        <input type="submit" value="Añadir Nuevo Anuncio" class="boton-azul">
+        <input type="submit" value="Añadir Nuevo Anuncio" class="boton-rosa-1">
     </form>
 
 </main>

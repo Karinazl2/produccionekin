@@ -2,7 +2,7 @@
         <h1><?php echo $anuncio->titulo; ?></h1>
 
         <section class="botonop">
-    <a href="/anuncios" class="boton-rosa">Volver</a>
+    <a href="/anuncios" class="boton-rojo1">Volver</a>
 </section>
 
 

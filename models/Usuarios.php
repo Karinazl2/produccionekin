@@ -37,8 +37,8 @@ class Usuarios extends ActiveRecord
         $this->password = $args["password"] ?? '';
         $this->password2 = $args["password2"] ?? '';
         $this->telefono = $args["telefono"] ?? '';
-        $this->rol_id = $args["rol_id"] ?? '';
-        $this->confirmado = $args["confirmado"] ?? '';
+        $this->rol_id = $args["rol_id"] ?? 2;
+        $this->confirmado = $args["confirmado"] ?? 0;
         $this->token = $args["token"] ?? '';
 
 
@@ -112,6 +112,64 @@ class Usuarios extends ActiveRecord
         return $resultado;
     }
 
+    public function guardar()
+    {
+        $resultado = '';
+        if (!is_null($this->id)) {
+            //Actualizar
+            $resultado = $this->actualizar();
+
+        } else {
+            //Crear
+            $resultado = $this->crear();
+
+        }
+
+        return $resultado;
+    }
+
+    
+    public function crear($ruta=null)
+    {
+        //Sanitizar los datos
+        $atributos = $this->sanitizarAtributos();
+
+        //insertar en la base de datos
+        $query = " INSERT INTO " . static::$tabla . " ( ";
+        $query .= join(", ", array_keys($atributos));
+        $query .= " ) VALUES ('";
+        $query .= join("', '", array_values($atributos));
+        $query .= "') ";
+        //  debuguear($query);
+
+        $resultado = self::$db->query($query);
+        return [
+        'resultado' => $resultado,
+        'id' => self::$db->insert_id
+        ];
+    }
+
+    public function actualizar($ruta=null)
+    {
+        //Sanitizar los datos
+        $atributos = $this->sanitizarAtributos();
+        $valores = [];
+        foreach ($atributos as $key => $value) {
+            $valores[] = "{$key}= '{$value}'";
+        }
+
+        $query = "UPDATE " . static::$tabla . " SET ";
+        $query .= join(', ', $valores);
+        $query .= " WHERE id = '" . self::$db->escape_string($this->id) . "' ";
+        $query .= " LIMIT 1 ";
+        // debuguear($query);
+
+
+        $resultado = self::$db->query($query);
+
+        return $resultado;
+    }
+
     public function validarLogin()
     {
         if (!$this->email) {
@@ -130,6 +188,16 @@ class Usuarios extends ActiveRecord
         }
         return self::$errores;
 
+    }
+
+    public function validarPassword() {
+        if (!$this->password) {
+            self::$errores[] = "La contraseña es obligatoria.";
+        }
+        if (strlen($this->password) < 6) {
+            self::$errores[] = "La contraseña debe tener al menos 6 caracteres.";
+        }
+        return self::$errores;
     }
 
 

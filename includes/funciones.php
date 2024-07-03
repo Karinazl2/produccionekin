@@ -17,6 +17,25 @@ function estaAutenticado()
     }
 }
 
+
+function convertDateFormat($dateStr) {
+    $dateObj = DateTime::createFromFormat("Y-m-d", $dateStr);
+    if ($dateObj === false) {
+        // Manejo de errores en caso de que el formato de fecha sea incorrecto
+        return "Fecha inválida";
+    }
+    return $dateObj->format("d-m");
+}
+
+function convertTimeFormat($timeStr) {
+    $timeObj = DateTime::createFromFormat("H:i:s", $timeStr);
+    if ($timeObj === false) {
+        // Manejo de errores en caso de que el formato de tiempo sea incorrecto
+        return "Hora inválida";
+    }
+    return $timeObj->format("H:i");
+}
+
 function debuguear($variable)
 {
     echo "<pre>";

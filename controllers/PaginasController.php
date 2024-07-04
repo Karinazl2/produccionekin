@@ -51,9 +51,29 @@ class PaginasController
         $vista_nuevas_131 = Vista_nuevas_ordenes::ordenasc('nombre_maquina','AFILADO MAQ. 131','prioridad_orden');
         $vista_nuevas_tachella = Vista_nuevas_ordenes::ordenasc('nombre_maquina','TACHELLA','prioridad_orden');
         $script = '<script src="/build/js/tablas.js"></script>';
-        
-        // debuguear($vista_nuevas_jarbe);
-        
+
+        $vista_nuevas_terminadas = Vista_nuevas_ordenes::contarmes('nombre_area','TERMINADA','prioridad_orden');
+        $cuenta_terminadas=count($vista_nuevas_terminadas);
+
+        $vista_nuevas_total = Vista_nuevas_ordenes::totalenproduccion('nombre_area', 'nombre_area', 'nombre_area', 'nombre_area', 'nombre_area', 'nombre_area', 'nombre_area','ASIENTOS DE LUNETA','RECTIFICADO DE DIENTES','RECTIFICADO DE MANGOS','ACANALADO','RECUBRIMIENTO','PLANOS Y ENGANCHES','AFILADO','orden_id');
+        $cuenta=count($vista_nuevas_total);
+        $mes_actual_numero = date('n');
+        $meses = [
+            1 => 'ENERO',
+            2 => 'FEBRERO',
+            3 => 'MARZO',
+            4 => 'ABRIL',
+            5 => 'MAYO',
+            6 => 'JUNIO',
+            7 => 'JULIO',
+            8 => 'AGOSTO',
+            9 => 'SEPTIEMBRE',
+            10 => 'OCTUBRE',
+            11 => 'NOVIEMBRE',
+            12 => 'DICIEMBRE',
+        ];
+
+        $mes_actual = $meses[$mes_actual_numero];
 
         $router->render('paginas/brochasNuevas',[
             'vista_nuevas_jarbe1' => $vista_nuevas_jarbe1,
@@ -72,9 +92,13 @@ class PaginasController
             'vista_nuevas_1200' => $vista_nuevas_1200,
             'vista_nuevas_116' => $vista_nuevas_116,
             'vista_nuevas_131' => $vista_nuevas_131,
-            'vista_nuevas_tachella' =>$vista_nuevas_tachella,
-            'script' => $script
-            
+            'vista_nuevas_tachella' =>$vista_nuevas_tachella, 
+            'cuenta' => $cuenta,
+            'vista_nuevas_total' => $vista_nuevas_total,
+            'script' => $script,
+            'vista_nuevas_terminadas'=> $vista_nuevas_terminadas,
+            'cuenta_terminadas' => $cuenta_terminadas, 'mes_actual' => $mes_actual
+
         ]);
     }
 
@@ -87,6 +111,31 @@ class PaginasController
         $vista_cremalleras_125 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina','MECANIZADO MAQ. 125','prioridad_orden');
         $vista_cremalleras_60 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina','PLANAS MAQ. 60','prioridad_orden');
         $vista_cremalleras_59 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina','CIL Y HELIC MAQ. 59','prioridad_orden');
+        
+        $vista_cremalleras_terminadas = Vista_cremalleras_ordenes::contarmes('nombre_area','TERMINADA','prioridad_orden');
+        $cuenta_terminadas=count($vista_cremalleras_terminadas);
+
+        $vista_cremalleras_total = Vista_cremalleras_ordenes::ordenasc4('nombre_area', 'PLANEADO','MECANIZADO','DETALLES','PLANAS');
+        $cuenta=count($vista_cremalleras_total);
+
+
+        $mes_actual_numero = date('n');
+        $meses = [
+            1 => 'ENERO',
+            2 => 'FEBRERO',
+            3 => 'MARZO',
+            4 => 'ABRIL',
+            5 => 'MAYO',
+            6 => 'JUNIO',
+            7 => 'JULIO',
+            8 => 'AGOSTO',
+            9 => 'SEPTIEMBRE',
+            10 => 'OCTUBRE',
+            11 => 'NOVIEMBRE',
+            12 => 'DICIEMBRE',
+        ];
+
+        $mes_actual = $meses[$mes_actual_numero];
 
         $router->render('paginas/cremalleras', [
             'vista_cremalleras_39'=> $vista_cremalleras_39,
@@ -95,7 +144,12 @@ class PaginasController
             'vista_cremalleras_54'=> $vista_cremalleras_54,
             'vista_cremalleras_125'=> $vista_cremalleras_125,
             'vista_cremalleras_60'=> $vista_cremalleras_60,
-            'vista_cremalleras_59'=> $vista_cremalleras_59
+            'vista_cremalleras_59'=> $vista_cremalleras_59,
+            'cuenta' => $cuenta,
+            'cuenta_terminadas' => $cuenta_terminadas,
+            'vista_cremalleras_total' => $vista_cremalleras_total,
+            'vista_cremalleras_terminadas' => $vista_cremalleras_terminadas,
+            'mes_actual' => $mes_actual, 
         ]);
     }
 
@@ -105,10 +159,40 @@ class PaginasController
         $vista_afilado_116 = Vista_afilado_ordenes::ordenasc('nombre_maquina','AFILADO MAQ. 116','prioridad_orden');
         $vista_afilado_131 = Vista_afilado_ordenes::ordenasc('nombre_maquina','AFILADO MAQ. 131','prioridad_orden');
 
+        $vista_afilado_terminadas = Vista_afilado_ordenes::contarmes('nombre_maquina','TERMINADA','orden_id');
+        $cuenta_terminadas=count($vista_afilado_terminadas);
+
+        $vista_afilado_total = Vista_afilado_ordenes::totalafi();
+        $cuenta=count($vista_afilado_total);
+
+        $mes_actual_numero = date('n');
+        $meses = [
+            1 => 'ENERO',
+            2 => 'FEBRERO',
+            3 => 'MARZO',
+            4 => 'ABRIL',
+            5 => 'MAYO',
+            6 => 'JUNIO',
+            7 => 'JULIO',
+            8 => 'AGOSTO',
+            9 => 'SEPTIEMBRE',
+            10 => 'OCTUBRE',
+            11 => 'NOVIEMBRE',
+            12 => 'DICIEMBRE',
+        ];
+
+        $mes_actual = $meses[$mes_actual_numero];
+        
+
         $router->render('paginas/afilado', [
             'vista_afilado_1200' => $vista_afilado_1200,
             'vista_afilado_131' => $vista_afilado_131,
-            'vista_afilado_116' => $vista_afilado_116
+            'vista_afilado_116' => $vista_afilado_116,
+            'vista_afilado_terminadas' => $vista_afilado_terminadas,
+            'vista_afilado_total' => $vista_afilado_total,
+            'cuenta' => $cuenta,
+            'cuenta_terminadas' => $cuenta_terminadas,
+            'mes_actual' => $mes_actual
         ]);
     }
 
@@ -117,13 +201,18 @@ class PaginasController
         $router->render('paginas/busquedaPersonalizada');
     }
 
-    public static function materiaprima(Router $router){
+    public static function materiaprima(Router $router){        
         $vista_nuevas_materiaprima = Vista_nuevas_ordenes::ordenasc('nombre_area','MATERIA PRIMA','prioridad_orden');
+        $cuenta_materiaprima=count($vista_nuevas_materiaprima);
+
         $vista_cremalleras_materiaprima = Vista_cremalleras_ordenes::ordenasc('nombre_area','MATERIA PRIMA','prioridad_orden');
+        $cuenta_materiaprimac=count($vista_cremalleras_materiaprima);
 
         $router->render('paginas/materiaprima',[
             'vista_nuevas_materiaprima'=>$vista_nuevas_materiaprima,
             'vista_cremalleras_materiaprima'=>$vista_cremalleras_materiaprima,
+            'cuenta_materiaprima'=>$cuenta_materiaprima,
+            'cuenta_materiaprimac'=>$cuenta_materiaprimac
 
         ]);
     }
@@ -132,6 +221,8 @@ class PaginasController
     public static function propiedades(Router $router)
     {
         $propiedades = Propiedad::all();
+        $vista_nuevas_materiaprima = Vista_nuevas_ordenes::ordenasc('nombre_area','MATERIA PRIMA','prioridad_orden');
+
         $router->render('paginas/propiedades', [
             'propiedades' => $propiedades
             

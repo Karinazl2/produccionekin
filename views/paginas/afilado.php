@@ -51,11 +51,9 @@
                 <div class="imgmaq">
                     <div class="informe">
                         <img src="../build/img/1200.jpg">
-
                     </div>
                     <div>
                         <p>MAQ.1200</p>
-
                     </div>
                 </div>
             </div>
@@ -140,6 +138,26 @@
             </div>
         </div>
     <?php } ?>
+</div>
+
+<div class="tituloimg">
+<section class="n">
+    <h1>Resumen de Afilado</h1>
+</section>
+</div>
+
+<div class="contenedorimg">
+<section class="imagen-estadisticas">
+    <h3><?php echo $cuenta; ?></h3>
+    <p>AFILADOS EN PRODUCCIÓN</p>
+</section>
+</div>
+
+<div class="contenedorimg1">
+<section class="imagen-estadisticas1">
+    <h3><?php echo $cuenta_terminadas; ?></h3>
+    <p>AFILADOS REALIZADOS EN <?php echo $mes_actual; ?></p>
+</section>
 </div>
 
 <section class="contenedor seccion">

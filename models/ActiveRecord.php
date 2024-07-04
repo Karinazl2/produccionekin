@@ -34,22 +34,24 @@ class ActiveRecord
         }
     }
 
-    public static function where($columna, $valor) {
+    public static function where($columna, $valor)
+    {
         $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor'";
         // debuguear($query);
         $resultado = self::consultarSQL($query);
-        return array_shift( $resultado ) ;
+        return array_shift($resultado);
     }
 
-        public static function arraywhere($columna, $valor) {
+    public static function arraywhere($columna, $valor)
+    {
         $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor'";
         // debuguear($query);
         $resultado = self::consultarSQL($query);
-        return  $resultado  ;
+        return $resultado;
     }
 
 
-    public function crear($ruta=null)
+    public function crear($ruta = null)
     {
         //Sanitizar los datos
         $atributos = $this->sanitizarAtributos();
@@ -65,9 +67,9 @@ class ActiveRecord
         $resultado = self::$db->query($query);
         if ($resultado) {
             //redireccionar al usuario
-            if(!$ruta){
+            if (!$ruta) {
                 header('Location:/admin?resultado=1');
-            }else{
+            } else {
                 header("Location: $ruta");
             }
 
@@ -75,7 +77,7 @@ class ActiveRecord
 
     }
 
-    public function actualizar($ruta=null)
+    public function actualizar($ruta = null)
     {
         //Sanitizar los datos
         $atributos = $this->sanitizarAtributos();
@@ -95,18 +97,18 @@ class ActiveRecord
 
         if ($resultado) {
             //redireccionar al usuario
-            if(!$ruta){
+            if (!$ruta) {
                 header('Location:/admin?resultado=2');
-            }else{
+            } else {
                 header("Location: $ruta");
             }
 
         }
     }
 
-    
 
-    public function eliminar($ruta=null)
+
+    public function eliminar($ruta = null)
     {
         //Eliminar la propiedad
         $query = "DELETE FROM " . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1 ";
@@ -117,9 +119,9 @@ class ActiveRecord
         if ($resultado) {
             $this->borrarImagen();
             //redireccionar al usuario
-            if(!$ruta){
+            if (!$ruta) {
                 header('Location:/admin?resultado=3');
-            }else{
+            } else {
                 header("Location: $ruta");
             }
 
@@ -263,24 +265,64 @@ class ActiveRecord
         }
     }
 
-    public static function where2_colums_asc($columna1, $columna2, $valor1, $valor2, $columna_orden) {
+    public static function where2_colums_asc($columna1, $columna2, $valor1, $valor2, $columna_orden)
+    {
         $query = "SELECT * FROM " . static::$tabla . " WHERE ($columna1,$columna2) = ('$valor1','$valor2') ORDER BY $columna_orden " . "ASC";
         $resultado = self::consultarSQL($query);
-        return  $resultado  ;
+        return $resultado;
     }
-    
-    public static function ordenasc($columna, $valor, $columna_orden) {
+
+    public static function totalenproduccion($columna1, $columna2, $columna3, $columna4, $columna5, $columna6, $columna7, $valor1, $valor2, $valor3, $valor4, $valor5, $valor6, $valor7, $columna_orden)
+    {
+        $query = "SELECT * FROM vista_nuevas_ordenes WHERE nombre_area IN ('ASIENTOS DE LUNETA', 'RECTIFICADO DE DIENTES', 'RECTIFICADO DE MANGOS', 'ACANALADO', 'RECUBRIMIENTO', 'PLANOS Y ENGANCHES', 'AFILADO') ORDER BY orden_id ASC";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
+    public static function totalafi()
+    {
+        $query = "SELECT * FROM vista_afilado_ordenes WHERE nombre_maquina IN ('AFILADO MAQ. 1200', 'AFILADO MAQ. 116', 'AFILADO MAQ. 131') ORDER BY orden_id ASC";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
+    public static function ordenasc($columna, $valor, $columna_orden)
+    {
         $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor' ORDER BY $columna_orden " . "ASC";
         // debuguear($query);
         $resultado = self::consultarSQL($query);
-        return  $resultado  ;
+        return $resultado;
     }
-    public static function ordendesc($columna, $valor, $columna_orden) {
+    public static function ordenasc4($columna1, $valor1, $valor2, $valor3, $valor4)
+    {
+        $query = "SELECT * FROM vista_cremalleras_ordenes WHERE $columna1 IN ('$valor1','$valor2','$valor3','$valor4') ORDER BY orden_id ASC";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
+    public static function ordenasc3($columna1, $valor1, $valor2, $valor3)
+    {
+        $query = "SELECT * FROM vista_cremalleras_ordenes WHERE $columna1 IN ('$valor1','$valor2','$valor3') ORDER BY orden_id ASC";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
+    public static function contarmes($columna, $valor, $columna_orden)
+    {
+        $mes_actual = date('m');
+        $año_actual = date('Y');
+        $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor' AND MONTH(fecha_orden) = '$mes_actual' AND YEAR(fecha_orden) = '$año_actual' " . "ORDER BY $columna_orden ASC";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
+    public static function ordendesc($columna, $valor, $columna_orden)
+    {
         $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor' ORDER BY $columna_orden " . "DESC";
         // debuguear($query);
         $resultado = self::consultarSQL($query);
-        return  $resultado  ;
+        return $resultado;
     }
 
-    
+
 }

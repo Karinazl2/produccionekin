@@ -16,7 +16,7 @@
     </section>
     <section class="tutul">
         <div class="hto2">
-        <h2>Materia prima para Brochas Nuevas</h2>
+            <h2>Materia prima para Brochas Nuevas</h2>
         </div>
     </section>
 
@@ -37,15 +37,22 @@
                 <tr>
                     <td><?php echo $orden->numero_orden; ?></td>
                     <td><?php echo $orden->descripcion_orden; ?></td>
-                    <td><?php echo $orden->hora_orden . " el " . $orden->fecha_orden ; ?></td>
+                    <td><?php echo $orden->hora_orden . " el " . $orden->fecha_orden; ?></td>
                     <td><?php echo $orden->prioridad_orden; ?></td>
                     <td><?php echo $orden->nombre_area; ?></td>
-                    <td><?php echo $orden->referencia_cliente . " " . $orden->nombre_cliente;?></td>
-                    <td><?php echo $orden->nombre_usuario . " " . $orden->apellido_usuario;?></td>
+                    <td><?php echo $orden->referencia_cliente . " " . $orden->nombre_cliente; ?></td>
+                    <td><?php echo $orden->nombre_usuario . " " . $orden->apellido_usuario; ?></td>
                 </tr>
             <?php } ?>
         </tbody>
     </table>
+
+    <div class="contenedorimg">
+        <section class="imagen-estadisticas">
+            <h3><?php echo $cuenta_materiaprima; ?></h3>
+            <p>BROCHAS NUEVAS EN MATERIA PRIMA</p>
+        </section>
+    </div>
 
     <section class="negritas">
         <h2>Materia prima para Cremalleras y Planas</h2>
@@ -68,14 +75,21 @@
                 <tr>
                     <td><?php echo $orden->numero_orden; ?></td>
                     <td><?php echo $orden->descripcion_orden; ?></td>
-                    <td><?php echo $orden->hora_orden . " el " . $orden->fecha_orden ; ?></td>
+                    <td><?php echo $orden->hora_orden . " el " . $orden->fecha_orden; ?></td>
                     <td><?php echo $orden->prioridad_orden; ?></td>
                     <td><?php echo $orden->nombre_area; ?></td>
-                    <td><?php echo $orden->referencia_cliente . " " . $orden->nombre_cliente;?></td>
-                    <td><?php echo $orden->nombre_usuario . " " . $orden->apellido_usuario;?></td>
+                    <td><?php echo $orden->referencia_cliente . " " . $orden->nombre_cliente; ?></td>
+                    <td><?php echo $orden->nombre_usuario . " " . $orden->apellido_usuario; ?></td>
                 </tr>
             <?php } ?>
         </tbody>
     </table>
+
+    <div class="contenedorimg1">
+        <section class="imagen-estadisticas1">
+            <h3><?php echo $cuenta_materiaprimac; ?></h3>
+            <p>CREMALLERAS Y PLANAS EN MATERIA PRIMA</p>
+        </section>
+    </div>
 
 </main>

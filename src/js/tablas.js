@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 datasets: [{
                     label: title,
                     data: data,
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo para las barras
-                    borderColor: 'rgba(54, 162, 235, 1)', // Color del borde de las barras
+                    backgroundColor: 'rgba(0, 153, 153, 1)', // Color de fondo para las barras
+                    borderColor: 'rgba(0, 153, 153, 1)', // Color del borde de las barras
                     borderWidth: 1
                 }]
             },

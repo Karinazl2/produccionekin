@@ -7,6 +7,23 @@
 
 }
 
+.no-webp .imagen-estadisticas {
+    background-image: url('../img/encuentra3.jpg');
+}
+
+.webp .imagen-estadisticas {
+    background-image: url('../img/encuentra3.webp');
+
+}
+.no-webp .imagen-estadisticas1 {
+    background-image: url('../img/encuentra4.jpg');
+}
+
+.webp .imagen-estadisticas1 {
+    background-image: url('../img/encuentra4.webp');
+
+}
+
 .imagen-materiaPrima {
     border-radius: 1rem;
     display: flex;
@@ -49,6 +66,108 @@
         text-align: center;
         //font-weight: $black;
     }
+}
+
+.imagen-estadisticas {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-position: center center;
+    background-size: cover;
+    padding: 3rem 0;
+
+    @include telefono {
+        margin: 2rem 10rem 0rem 10rem;
+
+    }
+
+    @include tablet {
+
+        margin: 1rem 20rem 0rem 20rem;
+
+    }
+
+
+    @include desktop {
+
+        margin: 0rem 40rem 0rem 40rem;
+
+    }
+
+
+
+    h3 {
+        font-size: 10rem;
+        font-weight: $black;
+        color: $blanco;
+    }
+
+    p {
+        margin-top: 0;
+        font-size: 2rem;
+        color: $blanco;
+        padding: 0 16rem;
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1),
+            2px 2px 2px rgba(0, 0, 0, 0.1),
+            3px 3px 2px rgba(0, 0, 0, 0.1);
+        //font-weight: $black;
+    }
+}
+
+.imagen-estadisticas1 {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-position: center center;
+    background-size: cover;
+    padding: 3rem 0;
+
+    @include telefono {
+        margin: 2rem 10rem 0rem 10rem;
+
+    }
+
+    @include tablet {
+
+        margin: 1rem 20rem 0rem 20rem;
+
+    }
+
+
+    @include desktop {
+
+        margin: 0rem 40rem 0rem 40rem;
+
+    }
+
+
+
+    h3 {
+        font-size: 10rem;
+        font-weight: $black;
+        color: $blanco;
+    }
+
+    p {
+        margin-top: 0;
+        font-size: 2rem;
+        color: $blanco;
+        padding: 0 15rem;
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1),
+            2px 2px 2px rgba(0, 0, 0, 0.1),
+            3px 3px 2px rgba(0, 0, 0, 0.1);
+        //font-weight: $black;
+    }
+}
+
+.imagenestotales{
+    margin-top: 5rem;
 }
 
 .negritas {
@@ -497,7 +616,7 @@
 
         table {
             margin: 0 0 1rem 0;
-            width: 100%;
+            width: 99%;
             border-spacing: 0;
             text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
@@ -1947,5 +2066,26 @@
             }
         }
     }
+
+}
+
+.estadisticas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 5rem 8rem 13rem 8rem;
+
+    p{
+        text-align: center;
+    }
+
+}
+
+.contenedorimg{
+    margin: 2rem;
+
+}
+.contenedorimg1{
+    margin: 2rem 2rem 12rem 2rem;
 
 }

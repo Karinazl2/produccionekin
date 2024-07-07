@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Función para obtener y procesar los datos de la API
     function fetchDataAndCreateCharts() {
-        fetch('/api/afilado')  // Asegúrate de ajustar la URL de la API según tu entorno
+        const server = window.location.origin;
+        fetch(`${server}/api/afilado`)  // Asegúrate de ajustar la URL de la API según tu entorno
             .then(response => response.json())
             .then(data => {
                 const ordenesPorMaquina = {};

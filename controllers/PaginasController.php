@@ -181,7 +181,7 @@ class PaginasController
         
         $consulta = new Vista_afilado_ordenes;
         $consulta = $consulta->consulta();
-        // debuguear($consulta);
+        debuguear($consulta);
         // debuguear($consulta);
         // $vista_afilado=Vista_afilado_ordenes::SQL($consulta);
         $vista_afilado_1200 = Vista_afilado_ordenes::ordenascView($consulta, 'am.maquina', 'AFILADO MAQ. 1200', 'ao.prioridad');

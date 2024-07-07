@@ -80,9 +80,9 @@ class Vista_afilado_ordenes extends ActiveRecord
         $consulta .= " `op` on((`ao`.`operador_id` = `op`.`id`))) left join ";
         $consulta .= " `produccionekin`.`usuarios` `u` on((`ao`.`usuario_id` = `u`.`id`)))";
 
-        // $resultado = self::SQL($consulta);
-        // return $resultado;
-        return $consulta;
+        $resultado = self::SQL($consulta);
+        return $resultado;
+        // return $consulta;
     }
 
 

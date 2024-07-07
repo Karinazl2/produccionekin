@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     const ctx1 = document.getElementById('myChart1').getContext('2d');
     const ctx2 = document.getElementById('myChart2').getContext('2d');
@@ -11,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 datasets: [{
                     label: title,
                     data: data,
-                    backgroundColor: 'rgba(0, 153, 153, 1)', // Color de fondo para las barras
-                    borderColor: 'rgba(0, 153, 153, 1)', // Color del borde de las barras
+                    backgroundColor: 'rgba(0, 102, 102, 1)', // Color de fondo para las barras
+                    borderColor: 'rgba(0, 102, 102, 1)', // Color del borde de las barras
                     borderWidth: 1
                 }]
             },
@@ -39,18 +40,21 @@ document.addEventListener('DOMContentLoaded', function () {
                     const area = orden.nombre_area;
                     const maquina = orden.nombre_maquina;
 
-                    // Contar por área
-                    if (ordenesPorArea[area]) {
-                        ordenesPorArea[area]++;
-                    } else {
-                        ordenesPorArea[area] = 1;
-                    }
+                    // Filtrar áreas y máquinas "terminada" y "materia prima"
+                    if (area !== 'TERMINADA' && area !== 'MATERIA PRIMA' && maquina !== 'TERMINADA' && maquina !== 'MATERIA PRIMA') {
+                        // Contar por área
+                        if (ordenesPorArea[area]) {
+                            ordenesPorArea[area]++;
+                        } else {
+                            ordenesPorArea[area] = 1;
+                        }
 
-                    // Contar por máquina
-                    if (ordenesPorMaquina[maquina]) {
-                        ordenesPorMaquina[maquina]++;
-                    } else {
-                        ordenesPorMaquina[maquina] = 1;
+                        // Contar por máquina
+                        if (ordenesPorMaquina[maquina]) {
+                            ordenesPorMaquina[maquina]++;
+                        } else {
+                            ordenesPorMaquina[maquina] = 1;
+                        }
                     }
                 });
 

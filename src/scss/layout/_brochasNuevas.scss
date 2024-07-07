@@ -15,6 +15,7 @@
     background-image: url('../img/encuentra3.webp');
 
 }
+
 .no-webp .imagen-estadisticas1 {
     background-image: url('../img/encuentra4.jpg');
 }
@@ -166,7 +167,7 @@
     }
 }
 
-.imagenestotales{
+.imagenestotales {
     margin-top: 5rem;
 }
 
@@ -482,11 +483,29 @@
 
 }
 
+
+
 .monitor {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin: 0rem 5rem 1rem 5rem;
+
+    @include telefono {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include tablet {
+        @include grid(3, 2rem)
+    }
+
+    @include xl_desktop {
+        @include grid(4, 2rem)
+    }
+
+    @include desktop {
+        @include grid(4, 2rem)
+    }
+
 
     .tout1 {
         font-weight: 550;
@@ -1747,7 +1766,7 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
-                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
                 }
             }
@@ -1759,7 +1778,7 @@
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
-                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
                 }
 
@@ -1787,7 +1806,7 @@
                     height: 6.2rem;
                     background-color: $blanco;
                     border-radius: 50%;
-                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
 
                 }
@@ -1837,7 +1856,7 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
-                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
                 }
             }
@@ -1849,7 +1868,7 @@
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
-                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
                 }
 
@@ -1925,7 +1944,7 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
-                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
                 }
             }
@@ -1937,7 +1956,7 @@
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
-                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
                 }
 
@@ -2013,7 +2032,7 @@
                     text-align: center;
                     font-size: 1.3rem;
                     margin: 0 0 0 0;
-                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
                 }
             }
@@ -2025,7 +2044,7 @@
                     margin-top: 0;
                     padding: 0;
                     color: $blanco;
-                text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
+                    text-shadow: 1.5px 1.5px 1.5px rgba(36, 35, 35, 0.5);
 
                 }
 
@@ -2069,23 +2088,90 @@
 
 }
 
-.estadisticas{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin: 5rem 8rem 13rem 8rem;
+.estadisticas {
 
-    p{
+    display: grid;
+    gap: 5rem;
+    margin: 7rem auto;
+    width: 75%;
+
+
+    @include telefono {
+        grid-template-columns: repeat(1, 1fr);
+        // margin-left: 0;
+    }
+
+    @include tablet {
+        @include grid(1, 2rem)
+    }
+
+    @include xl_desktop {
+        @include grid(2, 2rem)
+    }
+
+    @include desktop {
+        @include grid(2, 2rem)
+        
+    }
+
+    p {
         text-align: center;
     }
 
 }
 
-.contenedorimg{
+.estadisticas1 {
+    margin: 0 auto;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+    p {
+        text-align: center;
+    }
+
+}
+
+.estadisticas2 {
+    display: grid;
+    gap: 5rem;
+    margin: 7rem auto;
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+
+    @include telefono {
+        grid-template-columns: repeat(1, 1fr);
+        // margin-left: 0;
+    }
+
+    @include tablet {
+        @include grid(1, 2rem)
+    }
+
+    @include xl_desktop {
+        @include grid(2, 2rem)
+    }
+
+    @include desktop {
+        @include grid(2, 2rem)
+        
+    }
+
+    p {
+        text-align: center;
+    }
+
+}
+
+.contenedorimg {
     margin: 2rem;
 
 }
-.contenedorimg1{
+
+.contenedorimg1 {
     margin: 2rem 2rem 12rem 2rem;
 
 }

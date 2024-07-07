@@ -111,6 +111,7 @@ class PaginasController
         $vista_cremalleras_125 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina','MECANIZADO MAQ. 125','prioridad_orden');
         $vista_cremalleras_60 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina','PLANAS MAQ. 60','prioridad_orden');
         $vista_cremalleras_59 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina','CIL Y HELIC MAQ. 59','prioridad_orden');
+        $script = '<script src="/build/js/tablas1.js"></script>';
         
         $vista_cremalleras_terminadas = Vista_cremalleras_ordenes::contarmes('nombre_area','TERMINADA','prioridad_orden');
         $cuenta_terminadas=count($vista_cremalleras_terminadas);
@@ -149,7 +150,8 @@ class PaginasController
             'cuenta_terminadas' => $cuenta_terminadas,
             'vista_cremalleras_total' => $vista_cremalleras_total,
             'vista_cremalleras_terminadas' => $vista_cremalleras_terminadas,
-            'mes_actual' => $mes_actual, 
+            'mes_actual' => $mes_actual,
+            'script' =>$script 
         ]);
     }
 
@@ -158,6 +160,8 @@ class PaginasController
         $vista_afilado_1200 = Vista_afilado_ordenes::ordenasc('nombre_maquina','AFILADO MAQ. 1200','prioridad_orden');
         $vista_afilado_116 = Vista_afilado_ordenes::ordenasc('nombre_maquina','AFILADO MAQ. 116','prioridad_orden');
         $vista_afilado_131 = Vista_afilado_ordenes::ordenasc('nombre_maquina','AFILADO MAQ. 131','prioridad_orden');
+        $script = '<script src="/build/js/tablas2.js"></script>';
+
 
         $vista_afilado_terminadas = Vista_afilado_ordenes::contarmes('nombre_maquina','TERMINADA','orden_id');
         $cuenta_terminadas=count($vista_afilado_terminadas);
@@ -192,7 +196,8 @@ class PaginasController
             'vista_afilado_total' => $vista_afilado_total,
             'cuenta' => $cuenta,
             'cuenta_terminadas' => $cuenta_terminadas,
-            'mes_actual' => $mes_actual
+            'mes_actual' => $mes_actual,
+            'script'=>$script
         ]);
     }
 

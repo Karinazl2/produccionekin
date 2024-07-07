@@ -315,6 +315,20 @@
 </section>
 </div>
 
+<section>
+    <div class="estadisticas2">
+        <div>
+            <p>Cantidad de Cremalleras y Planas en Producción por Área</p>
+            <canvas id="myChart1" width="400" height="400"></canvas>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </div>
+        <div>
+            <p>Cantidad Cremalleras y Planas en Producción por Máquina</p>
+            <canvas id="myChart2" width="400" height="400"></canvas>
+        </div>
+    </div>
+</section>
+
 <div class="contenedorimg">
 <section class="imagen-estadisticas">
     <h3><?php echo $cuenta; ?></h3>

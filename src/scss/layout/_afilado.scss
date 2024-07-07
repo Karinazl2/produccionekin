@@ -19,9 +19,24 @@
 
 .monitorafilado {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin: 0rem 5rem 1rem 5rem;
+
+    @include telefono {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include tablet {
+        @include grid(3, 2rem)
+    }
+
+    @include xl_desktop {
+        @include grid(3, 2rem)
+    }
+
+    @include desktop {
+        @include grid(3, 2rem)
+    }
     .touta1 {
         font-weight: 550;
         color: $afilado11;

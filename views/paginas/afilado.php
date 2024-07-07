@@ -141,23 +141,33 @@
 </div>
 
 <div class="tituloimg">
-<section class="n">
-    <h1>Resumen de Afilado</h1>
-</section>
+    <section class="n">
+        <h1>Resumen de Afilado</h1>
+    </section>
 </div>
 
-<div class="contenedorimg">
-<section class="imagen-estadisticas">
-    <h3><?php echo $cuenta; ?></h3>
-    <p>AFILADOS EN PRODUCCIÓN</p>
+<section>
+    <div class="estadisticas1">
+        <div>
+            <p>Cantidad Afilado en Producción por Máquina</p>
+            <canvas id="myChart1" width="400" height="400"></canvas>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </div>
+    </div>
 </section>
+
+<div class="contenedorimg">
+    <section class="imagen-estadisticas">
+        <h3><?php echo $cuenta; ?></h3>
+        <p>AFILADOS EN PRODUCCIÓN</p>
+    </section>
 </div>
 
 <div class="contenedorimg1">
-<section class="imagen-estadisticas1">
-    <h3><?php echo $cuenta_terminadas; ?></h3>
-    <p>AFILADOS REALIZADOS EN <?php echo $mes_actual; ?></p>
-</section>
+    <section class="imagen-estadisticas1">
+        <h3><?php echo $cuenta_terminadas; ?></h3>
+        <p>AFILADOS REALIZADOS EN <?php echo $mes_actual; ?></p>
+    </section>
 </div>
 
 <section class="contenedor seccion">

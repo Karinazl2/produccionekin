@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 datasets: [{
                     label: title,
                     data: data,
-                    backgroundColor: 'rgba(0, 102, 102, 1)', // Color de fondo para las barras
-                    borderColor: 'rgba(0, 102, 102, 1)', // Color del borde de las barras
+                    backgroundColor: 'rgba(153, 0, 102, 1)', // Color de fondo para las barras
+                    borderColor: 'rgba(153, 0, 102, 1)', // Color del borde de las barras
                     borderWidth: 1
                 }]
             },
@@ -29,19 +29,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Función para obtener y procesar los datos de la API
     function fetchDataAndCreateCharts() {
-        fetch('/api/ordenes')  // Asegúrate de ajustar la URL de la API según tu entorno
+        fetch('/api/cremalleras')  // Asegúrate de ajustar la URL de la API según tu entorno
             .then(response => response.json())
             .then(data => {
                 const ordenesPorArea = {};
                 const ordenesPorMaquina = {};
 
                 // Contar órdenes por área y por máquina
-                data.vista_nuevas_ordenes.forEach(orden => {
+                data.vista_cremalleras_ordenes.forEach(orden => {
                     const area = orden.nombre_area;
                     const maquina = orden.nombre_maquina;
 
                     // Filtrar áreas y máquinas "terminada" y "materia prima"
-                    if (area !== 'TERMINADA' && area !== 'MATERIA PRIMA' && maquina !== 'TERMINADA' && maquina !== 'MATERIA PRIMA') {
+                    if (area !== 'TERMINADA' && area !== 'MATERIA PRIMA' &&
+                        maquina !== 'TERMINADA' && maquina !== 'MATERIA PRIMA') {
                         // Contar por área
                         if (ordenesPorArea[area]) {
                             ordenesPorArea[area]++;

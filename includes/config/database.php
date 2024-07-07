@@ -9,6 +9,8 @@ function conectarDB(): mysqli {
         $_ENV['DB_PASS'] ?? '',
         $_ENV['DB_BD'] ?? ''
     );
+    $db->set_charset("utf8");
+
     if(!$db){
         echo "Error no se pudo conectar";
         exit;

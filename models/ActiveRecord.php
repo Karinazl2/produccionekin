@@ -283,14 +283,14 @@ class ActiveRecord
 
     public static function totalenproduccion($columna1, $columna2, $columna3, $columna4, $columna5, $columna6, $columna7, $valor1, $valor2, $valor3, $valor4, $valor5, $valor6, $valor7, $columna_orden)
     {
-        $query = "SELECT * FROM vista_nuevas_ordenes WHERE nombre_area IN ('ASIENTOS DE LUNETA', 'RECTIFICADO DE DIENTES', 'RECTIFICADO DE MANGOS', 'ACANALADO', 'RECUBRIMIENTO', 'PLANOS Y ENGANCHES', 'AFILADO') ORDER BY orden_id ASC";
+        $query = "SELECT * FROM vista_nuevas_ordenes WHERE nombre_area IN ('ASIENTOS DE LUNETA', 'RECTIFICADO DE DIENTES', 'RECTIFICADO DE MANGOS', 'ACANALADO', 'RECUBRIMIENTO', 'PLANOS Y ENGANCHES', 'AFILADO') ORDER BY id ASC";
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
 
     public static function totalafi()
     {
-        $query = "SELECT * FROM vista_afilado_ordenes WHERE nombre_maquina IN ('AFILADO MAQ. 1200', 'AFILADO MAQ. 116', 'AFILADO MAQ. 131') ORDER BY orden_id ASC";
+        $query = "SELECT * FROM vista_afilado_ordenes WHERE nombre_maquina IN ('AFILADO MAQ. 1200', 'AFILADO MAQ. 116', 'AFILADO MAQ. 131') ORDER BY id ASC";
         $resultado = self::consultarSQL($query);
         return $resultado;
     }

@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Model\TablaAfiladoOrdenes;
 use Model\Vista_afilado_ordenes;
 use Model\Vista_cremalleras_ordenes;
 use MVC\Router;
@@ -159,47 +160,28 @@ class PaginasController
     public static function afilado(Router $router)
     {
 
-        // $consulta = "select `ao`.`id` AS `orden_id`,`ao`.`orden` AS `numero_orden`, ";
-        // $consulta .= "`ao`.`descripcion` AS `descripcion_orden`, ";
-        // $consulta .= "`ao`.`hora` AS `hora_orden`,`ao`.`fecha` AS `fecha_orden`,";
-        // $consulta .= "`ao`.`prioridad` AS `prioridad_orden`, ";
-        // $consulta .= "`am`.`maquina` AS `nombre_maquina`,`cl`.`nombre` AS `nombre_cliente`, ";
-        // $consulta .= "`rc`.`referencia` AS `referencia_cliente`, ";
-        // $consulta .= "`op`.`nombre` AS `nombre_operador`, ";
-        // $consulta .= "`op`.`apellido` AS `apellido_operador`, ";
-        // $consulta .= "`u`.`nombre`  AS `nombre_usuario`, ";
-        // $consulta .= "`u`.`apellido` AS `apellido_usuario`,`u`.`email` AS `email_usuario` ";
-        // $consulta .= " from (((((`produccionekin`.`afilado_ordenes` `ao` left join ";
-        // $consulta .= "`produccionekin`.`afilado_maquinas` `am` ";
-        // $consulta .= " on((`ao`.`maquina_id` = `am`.`id`))) left join ";
-        // $consulta .= "`produccionekin`.`cliente` `cl` on((`ao`.`cliente_id` = `cl`.`id`))) ";
-        // $consulta .= "left join `produccionekin`.`referencia_cliente` `rc` ";
-        // $consulta .= " on((`cl`.`referencia_cliente_id` = `rc`.`id`))) ";
-        // $consulta .= " left join `produccionekin`.`operadores` ";
-        // $consulta .= " `op` on((`ao`.`operador_id` = `op`.`id`))) left join ";
-        // $consulta .= " `produccionekin`.`usuarios` `u` on((`ao`.`usuario_id` = `u`.`id`)))";
+
         
-        $consulta = new Vista_afilado_ordenes;
-        $consulta = $consulta->consulta();
-        debuguear($consulta);
+        // $consulta = new Vista_afilado_ordenes;
+        // $consulta = $consulta->consulta();
         // debuguear($consulta);
         // $vista_afilado=Vista_afilado_ordenes::SQL($consulta);
-        $vista_afilado_1200 = Vista_afilado_ordenes::ordenascView($consulta, 'am.maquina', 'AFILADO MAQ. 1200', 'ao.prioridad');
-        $vista_afilado_116 = Vista_afilado_ordenes::ordenascView($consulta, 'am.maquina', 'AFILADO MAQ. 116', 'ao.prioridad');
-        $vista_afilado_131 = Vista_afilado_ordenes::ordenascView($consulta, 'am.maquina', 'AFILADO MAQ. 131', 'ao.prioridad');
+        $vista_afilado_1200 = Vista_afilado_ordenes::ordenasc('nombre_maquina', 'AFILADO MAQ. 1200', 'prioridad_orden');
+        $vista_afilado_116 = Vista_afilado_ordenes::ordenasc('nombre_maquina', 'AFILADO MAQ. 116', 'prioridad_orden');
+        $vista_afilado_131 = Vista_afilado_ordenes::ordenasc('nombre_maquina', 'AFILADO MAQ. 131', 'prioridad_orden');
         // debuguear($vista_afilado_131);
 
 
         $script = '<script src="/build/js/tablas2.js"></script>';
 
-        $vista_afilado_terminadas = Vista_afilado_ordenes::contarmesView($consulta, 'am.maquina', 'TERMINADA');
+        $vista_afilado_terminadas = Vista_afilado_ordenes::contarmes('nombre_maquina', 'TERMINADA', 'id');
         $cuenta_terminadas = count($vista_afilado_terminadas);
 
 
         // $vista_afilado_terminadas = Vista_afilado_ordenes::contarmes('nombre_maquina', 'TERMINADA', 'orden_id');
         // $cuenta_terminadas = count($vista_afilado_terminadas);
 
-        $vista_afilado_total = Vista_afilado_ordenes::totalafiView($consulta);
+        $vista_afilado_total = Vista_afilado_ordenes::totalafi();
         $cuenta = count($vista_afilado_total);
 
         $mes_actual_numero = date('n');

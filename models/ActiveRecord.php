@@ -42,6 +42,13 @@ class ActiveRecord
         return array_shift($resultado);
     }
 
+    public static function SQL($query)
+    {
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+
+    }
+
     public static function arraywhere($columna, $valor)
     {
         $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor'";
@@ -127,6 +134,8 @@ class ActiveRecord
 
         }
     }
+
+
 
     //Identificar y unir los atributos de la BD
     public function atributos()
@@ -286,11 +295,27 @@ class ActiveRecord
         return $resultado;
     }
 
+    public static function totalafiView($consultaBase)
+    {
+        $consultaBase .= " WHERE am.maquina IN ('AFILADO MAQ. 1200', 'AFILADO MAQ. 116', 'AFILADO MAQ. 131') ORDER BY ao.id ASC";
+        // debuguear($consultaBase);
+        $resultado = self::consultarSQL($consultaBase);
+        return $resultado;
+    }
+
+
     public static function ordenasc($columna, $valor, $columna_orden)
     {
         $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor' ORDER BY $columna_orden " . "ASC";
         // debuguear($query);
         $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
+    public static function ordenascView($consultaBase, $columna, $valor, $columna_orden)
+    {
+        $consultaBase .= " WHERE $columna = '$valor' ORDER BY $columna_orden ASC";
+        $resultado = self::consultarSQL($consultaBase);
         return $resultado;
     }
     public static function ordenasc4($columna1, $valor1, $valor2, $valor3, $valor4)
@@ -315,6 +340,17 @@ class ActiveRecord
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
+
+    public static function contarmesView($consultaBase, $columna, $valor)
+    {
+        $mes_actual = date('m');
+        $año_actual = date('Y');
+        $consultaBase .= " WHERE $columna = '$valor' AND MONTH(ao.fecha) = '$mes_actual' AND YEAR(ao.fecha) = '$año_actual'";
+        // debuguear($consultaBase);
+        $resultado = self::consultarSQL($consultaBase);
+        return $resultado;
+    }
+
 
     public static function ordendesc($columna, $valor, $columna_orden)
     {

@@ -45,7 +45,6 @@ class BusquedaNuevasController
         //arreglo con mrnsaje de errores
         $errores = Nuevas_maquinas::getErrores();
         $maquinas = Nuevas_maquinas::all();
-
         $vista_clientes = Vista_clientes::all();
         $nuevas_areas = Nuevas_areas::all();
         $operadores = Operadores::all();
@@ -77,11 +76,7 @@ class BusquedaNuevasController
             $operador = Operadores::find($operador_id);
             $nombre_operador = $operador->nombre;
             $apellido_operador = $operador->apellido;
-
             // debuguear($cliente);
-
-           // prioridad
-            // descripcion_orden
             // debuguear($args);
 
             $tansftabla = new Vista_nuevas_ordenes();
@@ -94,10 +89,7 @@ class BusquedaNuevasController
             $tansftabla->nombre_maquina = $nombre_maquina;
             $tansftabla->nombre_operador = $nombre_operador;
             $tansftabla->apellido_operador = $apellido_operador;
-
             // debuguear($tansftabla);
-
-
             $nuevas_ordenes->sincronizar($args);
             $hora_orden = $nuevas_ordenes->hora;
             $fecha_orden = $nuevas_ordenes->fecha;

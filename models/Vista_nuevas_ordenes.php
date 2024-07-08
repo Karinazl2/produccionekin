@@ -6,7 +6,7 @@ class Vista_nuevas_ordenes extends ActiveRecord
 {
     protected static $tabla = 'vista_nuevas_ordenes';
     protected static $columnasDB = [
-        'orden_id',
+        'id',
         'numero_orden',
         'descripcion_orden',
         'hora_orden',
@@ -15,6 +15,7 @@ class Vista_nuevas_ordenes extends ActiveRecord
         'nombre_area',
         'nombre_maquina',
         'nombre_cliente',
+        'referencia_cliente',
         'nombre_operador',
         'apellido_operador',
         'nombre_usuario',
@@ -22,7 +23,7 @@ class Vista_nuevas_ordenes extends ActiveRecord
         'email_usuario'
     ];
 
-    public $orden_id;
+    public $id;
     public $numero_orden;
     public $descripcion_orden;
     public $hora_orden;
@@ -42,7 +43,7 @@ class Vista_nuevas_ordenes extends ActiveRecord
     public function __construct($args = [])
     {
 
-        $this->orden_id = $args["orden_id"] ?? null;
+        $this->id = $args["id"] ?? null;
         $this->numero_orden = $args["numero_orden"] ?? '';
         $this->descripcion_orden = $args["descripcion_orden"] ?? '';
         $this->hora_orden = $args["hora_orden"] ?? '';

@@ -8,6 +8,7 @@ use Model\Anuncios;
 use Model\Propiedad;
 use Model\Operadores;
 use Model\Nuevas_ordenes;
+use Model\TablaNuevasOrdenes;
 use Model\TablaAfiladoOrdenes;
 use Model\Vista_nuevas_ordenes;
 use Model\Vista_afilado_ordenes;
@@ -34,7 +35,6 @@ class PaginasController
 
     public static function brochasNuevas(Router $router)
     {
-
         $vista_nuevas_jarbe1 = Vista_nuevas_ordenes::where2_colums_asc('nombre_maquina', 'nombre_area', 'JARBE', 'ASIENTOS DE LUNETA', 'prioridad_orden');
         $vista_nuevas_jarbe2 = Vista_nuevas_ordenes::where2_colums_asc('nombre_maquina', 'nombre_area', 'JARBE', 'RECTIFICADO DE DIENTES', 'prioridad_orden');
         $vista_nuevas_india1 = Vista_nuevas_ordenes::where2_colums_asc('nombre_maquina', 'nombre_area', 'INDIA', 'RECTIFICADO DE DIENTES', 'prioridad_orden');

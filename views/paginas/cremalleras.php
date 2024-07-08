@@ -162,7 +162,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($vista_cremallleras_54 as $orden) { ?>
+                        <?php foreach ($vista_cremalleras_54 as $orden) { ?>
                             <tr>
                                 <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQUINA' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>

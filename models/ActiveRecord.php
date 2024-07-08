@@ -320,14 +320,14 @@ class ActiveRecord
     }
     public static function ordenasc4($columna1, $valor1, $valor2, $valor3, $valor4)
     {
-        $query = "SELECT * FROM vista_cremalleras_ordenes WHERE $columna1 IN ('$valor1','$valor2','$valor3','$valor4') ORDER BY orden_id ASC";
+        $query = "SELECT * FROM vista_cremalleras_ordenes WHERE $columna1 IN ('$valor1','$valor2','$valor3','$valor4') ORDER BY id ASC";
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
 
     public static function ordenasc3($columna1, $valor1, $valor2, $valor3)
     {
-        $query = "SELECT * FROM vista_cremalleras_ordenes WHERE $columna1 IN ('$valor1','$valor2','$valor3') ORDER BY orden_id ASC";
+        $query = "SELECT * FROM vista_cremalleras_ordenes WHERE $columna1 IN ('$valor1','$valor2','$valor3') ORDER BY id ASC";
         $resultado = self::consultarSQL($query);
         return $resultado;
     }

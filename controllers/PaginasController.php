@@ -2,17 +2,18 @@
 
 namespace Controllers;
 
-use Model\TablaAfiladoOrdenes;
-use Model\Vista_afilado_ordenes;
-use Model\Vista_cremalleras_ordenes;
 use MVC\Router;
 use cremalleras;
 use Model\Anuncios;
 use Model\Propiedad;
 use Model\Operadores;
 use Model\Nuevas_ordenes;
+use Model\TablaAfiladoOrdenes;
 use Model\Vista_nuevas_ordenes;
+use Model\Vista_afilado_ordenes;
+use Model\TablaCremallerasOrdenes;
 use PHPMailer\PHPMailer\PHPMailer;
+use Model\Vista_cremalleras_ordenes;
 
 class PaginasController
 {
@@ -159,9 +160,6 @@ class PaginasController
 
     public static function afilado(Router $router)
     {
-
-
-        
         // $consulta = new Vista_afilado_ordenes;
         // $consulta = $consulta->consulta();
         // debuguear($consulta);

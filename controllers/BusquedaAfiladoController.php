@@ -2,15 +2,16 @@
 
 namespace Controllers;
 
-use Model\Afilado_areas;
-use Model\Afilado_maquinas;
-use Model\Afilado_ordenes;
+use MVC\Router;
 use Model\Cliente;
 use Model\Operadores;
+use Model\Afilado_areas;
+use Model\TablaClientes;
+use Model\Vista_clientes;
+use Model\Afilado_ordenes;
+use Model\Afilado_maquinas;
 use Model\Referencia_cliente;
 use Model\Vista_afilado_ordenes;
-use Model\Vista_clientes;
-use MVC\Router;
 
 class BusquedaAfiladoController
 {
@@ -18,6 +19,7 @@ class BusquedaAfiladoController
     {
         $afilado_areas=Afilado_areas::all();
         $clientes=Cliente::all();
+
         $vista_clientes=Vista_clientes::all();
         $afilado_maquinas=Afilado_maquinas::all();
         $operadores=Operadores::all();

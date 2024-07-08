@@ -4,6 +4,7 @@ namespace Controllers;
 
 use MVC\Router;
 use Model\Cliente;
+use Model\Usuarios;
 use Model\Operadores;
 use Model\Afilado_areas;
 use Model\TablaClientes;
@@ -48,33 +49,77 @@ class BusquedaAfiladoController
 
         $errores = Afilado_maquinas::getErrores();
         $maquinas = Afilado_maquinas::all();
-        $clientes = Cliente::all();
-        $referencia_cliente = Referencia_cliente::all();
         $vista_clientes = Vista_clientes::all();
-        $operadores = Operadores::all();
         $afilado_areas = Afilado_areas::all();
+        $operadores = Operadores::all();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
             $args = $_POST['afilado_ordenes'];
 
+            $numeroOrden = $args['orden'];
+            $descripcion_orden = $args['descripcion'];
+            $prioridad_orden = $args['prioridad'];
+            $cliente_id = $args['cliente_id'];
+            $maquina_id = $args['maquina_id'];
+            $operador_id = $args['operador_id'];
+
+            $cliente = Vista_clientes::find($cliente_id);
+            $nombre_cliente = $cliente->nombre_cliente;
+            $referencia_cliente = $cliente->referencia_cliente;
+            $maquina = Afilado_maquinas::find($maquina_id);
+            $nombre_maquina = $maquina->maquina;
+            $operador = Operadores::find($operador_id);
+            $nombre_operador = $operador->nombre;
+            $apellido_operador = $operador->apellido;
+
+            $tansftabla = new Vista_afilado_ordenes();
+            $tansftabla->numero_orden = $numeroOrden;
+            $tansftabla->descripcion_orden = $descripcion_orden;
+            $tansftabla->prioridad_orden = $prioridad_orden;
+            $tansftabla->nombre_cliente = $nombre_cliente;
+            $tansftabla->referencia_cliente = $referencia_cliente;
+            $tansftabla->nombre_maquina = $nombre_maquina;
+            $tansftabla->nombre_operador = $nombre_operador;
+            $tansftabla->apellido_operador = $apellido_operador;
+
+
+
             $afilado_ordenes->sincronizar($args);
+
+            $hora_orden = $afilado_ordenes->hora;
+            $fecha_orden = $afilado_ordenes->fecha;
+            $tansftabla->hora_orden = $hora_orden;
+            $tansftabla->fecha_orden = $fecha_orden;
+            $usuario_id = $afilado_ordenes->usuario_id;
+            $usuario = Usuarios::find($usuario_id);
+            $nombre_usuario = $usuario->nombre;
+            $apellido_usuario = $usuario->apellido;
+            $email_usuario = $usuario->email;
+            $tansftabla->nombre_usuario = $nombre_usuario;
+            $tansftabla->apellido_usuario = $apellido_usuario;
+            $tansftabla->email_usuario = $email_usuario;
             $errores = $afilado_ordenes->validar();
+            // debuguear($tansftabla);
+
             //    debuguear($_FILES);
 
             //generar nombre único
 
             //Guarda en la base de datos.
+            if (empty($errores)) {
+
             $afilado_ordenes->guardar();
+            $tansftabla->guardar();
+
             header('Location:/busquedaPersonalizada/busquedaafilado');
+            }
         }
 
         $router->render('busquedaafilado/crear', [
             'afilado_ordenes' => $afilado_ordenes,
             'maquinas' => $maquinas,
-            'clientes' => $clientes,
-            'referencia_cliente_id' => $referencia_cliente,
             'vista_clientes' => $vista_clientes,
             'operadores' => $operadores,
             'afilado_areas' => $afilado_areas,

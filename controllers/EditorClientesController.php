@@ -28,7 +28,10 @@ class EditorClientesController
         $errores = Cliente::getErrores();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
             $argsref = $_POST['referencia_cliente'];
+            $referencia = $argsref['referencia'];
+            // debuguear($argsref);
             $referencia_cliente->sincronizar($argsref);
             $errores = $referencia_cliente->validar();
 
@@ -41,6 +44,16 @@ class EditorClientesController
 
                 $argscliente = $_POST['cliente'];
                 $argscliente['referencia_cliente_id'] = $nuevaref->id;
+            // debuguear($argscliente);
+
+                $nombre = $argscliente['nombre'];
+                $referencia_id = $argscliente['referencia_cliente_id'];
+
+                $tansftabla = new Vista_clientes();
+                $tansftabla->nombre_cliente = $nombre;
+                $tansftabla->referencia_id = $referencia_id;
+                $tansftabla->referencia_cliente = $referencia;
+
                 $cliente->sincronizar($argscliente);
                 // $cliente->referencia_cliente_id = $referencia_cliente_id;
 
@@ -51,6 +64,7 @@ class EditorClientesController
 
                 if (empty($errores)) {
                     $cliente->guardar();
+                    $tansftabla->guardar();
                     header('Location:/editorclientes');
 
                 }

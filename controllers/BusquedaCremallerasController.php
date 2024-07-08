@@ -54,9 +54,6 @@ public static function busquedacremalleras(Router $router)
         $cremalleras_areas = Cremalleras_areas::all();
         $operadores = Operadores::all();
 
-
-
-
         // metodo post actualizar
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 

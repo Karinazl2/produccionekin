@@ -29,7 +29,6 @@ class Vista_afilado_ordenes extends ActiveRecord
     public $hora_orden;
     public $fecha_orden;
     public $prioridad_orden;
-    public $nombre_area;
     public $nombre_maquina;
     public $nombre_cliente;
     public $referencia_cliente;

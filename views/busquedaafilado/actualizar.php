@@ -1,6 +1,6 @@
 <main class="contenedor seccion">
     <section class="n">
-        <h1>Actualizar Afilado</h1>
+        <h1>Actualizar Orden de Afilado</h1>
 
         <?php foreach ($errores as $error): ?>
             <div class="alerta error">

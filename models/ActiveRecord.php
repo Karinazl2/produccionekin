@@ -225,6 +225,7 @@ class ActiveRecord
     public static function find($id)
     {
         $query = "SELECT * FROM " . static::$tabla . " WHERE id = $id";
+        // debuguear($query);
         $resultado = self::consultarSQL($query);
         return array_shift($resultado);
 

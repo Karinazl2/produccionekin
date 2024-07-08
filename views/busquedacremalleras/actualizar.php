@@ -1,6 +1,6 @@
 <main class="contenedor seccion">
     <section class="n">
-        <h1>Actualizar Herramienta</h1>
+        <h1>Actualizar Orden de Cremallera o Brocha Plana</h1>
 
         <?php foreach ($errores as $error): ?>
             <div class="alerta error">

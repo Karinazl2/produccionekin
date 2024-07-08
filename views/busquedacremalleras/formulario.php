@@ -17,8 +17,8 @@
     <select name="cremalleras_ordenes[cliente_id]" id="vista_clientes">
         <option selected value="">----Seleccione el cliente----</option>
         <?php foreach ($vista_clientes as $cliente) { ?>
-            <option <?php echo $cremalleras_ordenes->cliente_id == $cliente->cliente_id ? 'selected' : ''; ?>
-                value="<?php echo s($cliente->cliente_id); ?>">
+            <option <?php echo $cremalleras_ordenes->cliente_id == $cliente->id ? 'selected' : ''; ?>
+                value="<?php echo s($cliente->id); ?>">
                 <?php echo s($cliente->referencia_cliente) . " " . s($cliente->nombre_cliente); ?>
             </option>
         <?php } ?>

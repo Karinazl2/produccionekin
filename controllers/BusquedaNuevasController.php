@@ -6,6 +6,7 @@ use Model\Cliente;
 use Model\Nuevas_areas;
 use Model\Operadores;
 use Model\Referencia_cliente;
+use Model\Usuarios;
 use Model\Vista_clientes;
 use Model\Vista_nuevas_ordenes;
 use MVC\Router;
@@ -42,23 +43,78 @@ class BusquedaNuevasController
     {
         $nuevas_ordenes = new Nuevas_ordenes();
         //arreglo con mrnsaje de errores
-
-
         $errores = Nuevas_maquinas::getErrores();
         $maquinas = Nuevas_maquinas::all();
-        $clientes = Cliente::all();
-        $referencia_cliente = Referencia_cliente::all();
+
         $vista_clientes = Vista_clientes::all();
-        $operadores = Operadores::all();
         $nuevas_areas = Nuevas_areas::all();
+        $operadores = Operadores::all();
+        // debuguear($vista_clientes);
+
 
 
         // metodo post actualizar
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             $args = $_POST['nuevas_ordenes'];
 
+            // debuguear($_POST);
+            $numeroOrden = $args['orden'];
+            $descripcion_orden = $args['descripcion'];
+            $prioridad_orden = $args['prioridad'];
+            $cliente_id = $args['cliente_id'];
+            $area_id = $args['area_id'];
+            $maquina_id = $args['maquina_id'];
+            $operador_id = $args['operador_id'];
+
+
+            $cliente = Vista_clientes::find($cliente_id);
+            $nombre_cliente = $cliente->nombre_cliente;
+            $referencia_cliente = $cliente->referencia_cliente;
+            $area = Nuevas_areas::find($area_id);
+            $nombre_area = $area->area;
+            $maquina = Nuevas_maquinas::find($maquina_id);
+            $nombre_maquina = $maquina->maquina;
+            $operador = Operadores::find($operador_id);
+            $nombre_operador = $operador->nombre;
+            $apellido_operador = $operador->apellido;
+
+            // debuguear($cliente);
+
+           // prioridad
+            // descripcion_orden
+            // debuguear($args);
+
+            $tansftabla = new Vista_nuevas_ordenes();
+            $tansftabla->numero_orden = $numeroOrden;
+            $tansftabla->descripcion_orden = $descripcion_orden;
+            $tansftabla->prioridad_orden = $prioridad_orden;
+            $tansftabla->nombre_cliente = $nombre_cliente;
+            $tansftabla->referencia_cliente = $referencia_cliente;
+            $tansftabla->nombre_area = $nombre_area;
+            $tansftabla->nombre_maquina = $nombre_maquina;
+            $tansftabla->nombre_operador = $nombre_operador;
+            $tansftabla->apellido_operador = $apellido_operador;
+
+            // debuguear($tansftabla);
+
+
             $nuevas_ordenes->sincronizar($args);
+            $hora_orden = $nuevas_ordenes->hora;
+            $fecha_orden = $nuevas_ordenes->fecha;
+            $tansftabla->hora_orden = $hora_orden;
+            $tansftabla->fecha_orden = $fecha_orden;
+            $usuario_id = $nuevas_ordenes->usuario_id;
+            $usuario = Usuarios::find($usuario_id);
+            $nombre_usuario = $usuario->nombre;
+            $apellido_usuario = $usuario->apellido;
+            $email_usuario = $usuario->email;
+            $tansftabla->nombre_usuario = $nombre_usuario;
+            $tansftabla->apellido_usuario = $apellido_usuario;
+            $tansftabla->email_usuario = $email_usuario;
+            //  debuguear($usuario);
+            
+            // debuguear($tansftabla);
+
             $errores = $nuevas_ordenes->validar();
             //    debuguear($_FILES);
 
@@ -67,6 +123,7 @@ class BusquedaNuevasController
             //Guarda en la base de datos.
             if (empty($errores)) {
             $nuevas_ordenes->guardar();
+            $tansftabla->guardar();
             header('Location:/busquedaPersonalizada/busquedanuevas');
             }
         }
@@ -75,8 +132,6 @@ class BusquedaNuevasController
         $router->render('busquedanuevas/crear', [
             'nuevas_ordenes' => $nuevas_ordenes,
             'maquinas' => $maquinas,
-            'clientes' => $clientes,
-            'referencia_cliente_id' => $referencia_cliente,
             'vista_clientes' => $vista_clientes,
             'operadores' => $operadores,
             'nuevas_areas' => $nuevas_areas,
@@ -214,6 +269,8 @@ class BusquedaNuevasController
             'vista_clientes' => $clientes_concatenados,
         ]);
     }
+
+
     
 }
 

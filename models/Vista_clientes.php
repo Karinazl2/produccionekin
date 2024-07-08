@@ -6,12 +6,12 @@ class Vista_clientes extends ActiveRecord
 {
     protected static $tabla = 'vista_clientes';
     protected static $columnasDB = [
-        'cliente_id',
+        'id',
         'nombre_cliente',
         'referencia_id',
         'referencia_cliente'
     ];
-    public $cliente_id;
+    public $id;
     public $nombre_cliente;
     public $referencia_id;
 
@@ -20,7 +20,7 @@ class Vista_clientes extends ActiveRecord
     public function __construct($args = [])
     {
 
-        $this->cliente_id = $args["cliente_id"] ?? null;
+        $this->id = $args["id"] ?? null;
         $this->nombre_cliente = $args["nombre_cliente"] ?? '';
         $this->referencia_id = $args["referencia_id"] ?? '';     
         $this->referencia_cliente = $args["referencia_cliente"] ?? '';

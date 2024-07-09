@@ -146,14 +146,17 @@ class EditorClientesController
 
                 if (validarTipoContenido($tipo)) {
                     $referencia_cliente = Referencia_cliente::find($id);
+                    $vista_clientes = Vista_clientes::find($id);
+
                     $id = $referencia_cliente->id;
                     $cliente = Cliente::where('referencia_cliente_id', $id);
 
+                    $vista_clientes->eliminar();
                     $referencia_cliente->eliminar();
                     $cliente->eliminar();
+                    header('Location:/editorclientes');
 
                 }
-                header('Location:/editorclientes');
             }
         }
     }

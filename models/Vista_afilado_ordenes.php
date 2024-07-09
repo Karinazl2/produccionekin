@@ -59,7 +59,13 @@ class Vista_afilado_ordenes extends ActiveRecord
 
     }
 
+    public function eliminar($ruta = null)
+    {
+        //Eliminar la propiedad
+        $query = "DELETE FROM " . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1 ";
+        // debuguear($query);
 
+        $resultado = self::$db->query($query);
 
-
+    }
 }

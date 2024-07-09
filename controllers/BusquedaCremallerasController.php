@@ -238,6 +238,9 @@ class BusquedaCremallerasController
 
                 if (validarTipoContenido($tipo)) {
                     $cremalleras_ordenes = Cremalleras_ordenes::find($id);
+                    $vista_cremalleras_ordenes = Vista_cremalleras_ordenes::find($id);
+                    $vista_cremalleras_ordenes->eliminar();
+
                     $cremalleras_ordenes->eliminar('/busquedaPersonalizada/busquedacremalleras');
                 }
 

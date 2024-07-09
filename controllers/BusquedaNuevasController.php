@@ -242,6 +242,8 @@ class BusquedaNuevasController
 
                 if (validarTipoContenido($tipo)) {
                     $nuevas_ordenes = Nuevas_ordenes::find($id);
+                    $vista_nuevas_ordenes = Vista_nuevas_ordenes::find($id);
+                    $vista_nuevas_ordenes->eliminar();
                     $nuevas_ordenes->eliminar('/busquedaPersonalizada/busquedanuevas');
                 }
 

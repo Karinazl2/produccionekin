@@ -230,6 +230,8 @@ class BusquedaAfiladoController
 
                 if (validarTipoContenido($tipo)) {
                     $afilado_ordenes = Afilado_ordenes::find($id);
+                    $vista_afilado_ordenes = Vista_afilado_ordenes::find($id);
+                    $vista_afilado_ordenes->eliminar();
                     $afilado_ordenes->eliminar('/busquedaPersonalizada/busquedaafilado');
                 }
 

@@ -44,7 +44,7 @@ class EditorClientesController
 
                 $argscliente = $_POST['cliente'];
                 $argscliente['referencia_cliente_id'] = $nuevaref->id;
-            // debuguear($argscliente);
+                // debuguear($argscliente);
 
                 $nombre = $argscliente['nombre'];
                 $referencia_id = $argscliente['referencia_cliente_id'];
@@ -91,12 +91,8 @@ class EditorClientesController
         $id = $referencia_cliente->id;
         $cliente = Cliente::where('referencia_cliente_id', $id);
         // debuguear($cliente);
-
         // debuguear($cliente);
-
         //arreglo con mrnsaje de errores
-
-
         $errores = Cliente::getErrores();
         // $referencia_cliente =Referencia_cliente::all();
         // $cliente = Cliente::all();
@@ -105,6 +101,7 @@ class EditorClientesController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $argsref = $_POST['referencia_cliente'];
+            $referencia = $argsref['referencia'];
             $referencia_cliente->sincronizar($argsref);
             $errores = $referencia_cliente->validar();
 
@@ -117,17 +114,26 @@ class EditorClientesController
 
                 $argscliente = $_POST['cliente'];
                 $argscliente['referencia_cliente_id'] = $nuevaref->id;
+
+                $nombre = $argscliente['nombre'];
+                $referencia_id = $argscliente['referencia_cliente_id'];
+
+                $tansftabla = Vista_clientes::find($id);
+                $tansftabla->nombre_cliente = $nombre;
+                $tansftabla->referencia_id = $referencia_id;
+                $tansftabla->referencia_cliente = $referencia;
+
                 $cliente->sincronizar($argscliente);
                 // $cliente->referencia_cliente_id = $referencia_cliente_id;
-
                 $errores = $cliente->validar();
-                $cliente->guardar();
+
+                if (empty($errores)) {
+                    $cliente->guardar();
+                    $tansftabla->guardar();
+                    header('Location:/editorclientes');
+                }
             }
-            header('Location:/editorclientes');
-
         }
-
-
         $router->render('editorclientes/actualizar', [
             'cliente' => $cliente,
             'referencia_cliente' => $referencia_cliente,

@@ -38,14 +38,14 @@
                     </td>
                     <td>
                         <form method="POST" class="w-100" action="/editorclientes/eliminar">
-                            <input type="hidden" name="id" value="<?php echo $cliente->cliente_id; ?>">
+                            <input type="hidden" name="id" value="<?php echo $cliente->id; ?>">
                             <input type="hidden" name="tipo" value="cliente">
                             <input type="submit" class="boton-rojo-block-1" value="Eliminar">
                         </form>
                     </td>
                     <td>
 
-                        <a href="/editorclientes/actualizar?id=<?php echo $cliente->cliente_id; ?>"
+                        <a href="/editorclientes/actualizar?id=<?php echo $cliente->id; ?>"
                         class="boton-verde-block-1">Actualizar</a>
                     </td>
                 </tr>

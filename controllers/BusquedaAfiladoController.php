@@ -18,25 +18,25 @@ class BusquedaAfiladoController
 {
     public static function busquedaafilado(Router $router)
     {
-        $afilado_areas=Afilado_areas::all();
-        $clientes=Cliente::all();
+        $afilado_areas = Afilado_areas::all();
+        $clientes = Cliente::all();
 
-        $vista_clientes=Vista_clientes::all();
-        $afilado_maquinas=Afilado_maquinas::all();
-        $operadores=Operadores::all();
+        $vista_clientes = Vista_clientes::all();
+        $afilado_maquinas = Afilado_maquinas::all();
+        $operadores = Operadores::all();
 
         $vista_afilado_ordenes = Vista_afilado_ordenes::all();
         $script = '<script src="../build/js/filtrosAfilado.js"></script>';
 
 
-        $router->render('paginas/busquedaafilado',[
+        $router->render('paginas/busquedaafilado', [
             'vista_afilado_ordenes' => $vista_afilado_ordenes,
             'afilado_areas' => $afilado_areas,
             'afilado_maquinas' => $afilado_maquinas,
             'clientes' => $clientes,
             'vista_clientes' => $vista_clientes,
             'operadores' => $operadores,
-            'script' => $script 
+            'script' => $script
 
         ]);
     }
@@ -110,10 +110,10 @@ class BusquedaAfiladoController
             //Guarda en la base de datos.
             if (empty($errores)) {
 
-            $afilado_ordenes->guardar();
-            $tansftabla->guardar();
+                $afilado_ordenes->guardar();
+                $tansftabla->guardar();
 
-            header('Location:/busquedaPersonalizada/busquedaafilado');
+                header('Location:/busquedaPersonalizada/busquedaafilado');
             }
         }
 
@@ -132,8 +132,6 @@ class BusquedaAfiladoController
     public static function actualizar(Router $router)
     {
         $id = validatRedireccionar('/');
-
-
         $afilado_ordenes = Afilado_ordenes::find($id);
 
         $maquinas = Afilado_maquinas::find($id);
@@ -150,19 +148,60 @@ class BusquedaAfiladoController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $args = $_POST['afilado_ordenes'];
+
+            $numeroOrden = $args['orden'];
+            $descripcion_orden = $args['descripcion'];
+            $prioridad_orden = $args['prioridad'];
+            $cliente_id = $args['cliente_id'];
+            $maquina_id = $args['maquina_id'];
+            $operador_id = $args['operador_id'];
+
+            $cliente = Vista_clientes::find($cliente_id);
+            $nombre_cliente = $cliente->nombre_cliente;
+            $referencia_cliente = $cliente->referencia_cliente;
+            $maquina = Afilado_maquinas::find($maquina_id);
+            $nombre_maquina = $maquina->maquina;
+            $operador = Operadores::find($operador_id);
+            $nombre_operador = $operador->nombre;
+            $apellido_operador = $operador->apellido;
+
+            $tansftabla = Vista_afilado_ordenes::find($id);
+            $tansftabla->numero_orden = $numeroOrden;
+            $tansftabla->descripcion_orden = $descripcion_orden;
+            $tansftabla->prioridad_orden = $prioridad_orden;
+            $tansftabla->nombre_cliente = $nombre_cliente;
+            $tansftabla->referencia_cliente = $referencia_cliente;
+            $tansftabla->nombre_maquina = $nombre_maquina;
+            $tansftabla->nombre_operador = $nombre_operador;
+            $tansftabla->apellido_operador = $apellido_operador;
+
+
             $afilado_ordenes->sincronizar($args);
             $errores = $afilado_ordenes->validar();
 
+            $hora_orden = $afilado_ordenes->hora;
+            $fecha_orden = $afilado_ordenes->fecha;
+            $tansftabla->hora_orden = $hora_orden;
+            $tansftabla->fecha_orden = $fecha_orden;
+            $usuario_id = $afilado_ordenes->usuario_id;
+            $usuario = Usuarios::find($usuario_id);
+            $nombre_usuario = $usuario->nombre;
+            $apellido_usuario = $usuario->apellido;
+            $email_usuario = $usuario->email;
+            $tansftabla->nombre_usuario = $nombre_usuario;
+            $tansftabla->apellido_usuario = $apellido_usuario;
+            $tansftabla->email_usuario = $email_usuario;
+            // debuguear($tansftabla);
+
+
             //    debuguear($_FILES);
-
-
-
             //revizar que el arreglo de errores esté vacío
 
             if (empty($errores)) {
                 //        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
                 //Guarda en la base de datos.
                 $afilado_ordenes->guardar();
+                $tansftabla->guardar();
                 header('Location:/busquedaPersonalizada/busquedaafilado');
 
             }
@@ -202,7 +241,7 @@ class BusquedaAfiladoController
     {
         $vista_afilado_ordenes = Vista_afilado_ordenes::all();
         $vista_clientes = Vista_clientes::all();
-    
+
         // Concatenar referencia_cliente y nombre_cliente
         $clientes_concatenados = [];
         foreach ($vista_clientes as $cliente) {
@@ -211,7 +250,7 @@ class BusquedaAfiladoController
                 'cliente_concatenado' => $cliente->referencia_cliente . ' ' . $cliente->nombre_cliente
             ];
         }
-    
+
         echo json_encode([
             'vista_afilado_ordenes' => $vista_afilado_ordenes,
             'vista_clientes' => $clientes_concatenados,

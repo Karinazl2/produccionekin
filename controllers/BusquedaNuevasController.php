@@ -186,6 +186,7 @@ class BusquedaNuevasController
             $tansftabla->apellido_operador = $apellido_operador;
 
             $nuevas_ordenes->sincronizar($args);
+            $errores = $nuevas_ordenes->validar();
             $hora_orden = $nuevas_ordenes->hora;
             $fecha_orden = $nuevas_ordenes->fecha;
             $tansftabla->hora_orden = $hora_orden;
@@ -199,7 +200,6 @@ class BusquedaNuevasController
             $tansftabla->nombre_usuario = $nombre_usuario;
             $tansftabla->apellido_usuario = $apellido_usuario;
             $tansftabla->email_usuario = $email_usuario;
-            $errores = $nuevas_ordenes->validar();
 
             //    debuguear($_FILES);
 

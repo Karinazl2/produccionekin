@@ -14,31 +14,32 @@ use Model\Cremalleras_ordenes;
 use Model\Cremalleras_maquinas;
 use Model\Vista_cremalleras_ordenes;
 
-class BusquedaCremallerasController{
-public static function busquedacremalleras(Router $router)
+class BusquedaCremallerasController
+{
+    public static function busquedacremalleras(Router $router)
     {
 
-        $nuevas_areas=Cremalleras_areas::all();
-        $clientes=Cliente::all();
-        $vista_clientes=Vista_clientes::all();
-        $nuevas_maquinas=Cremalleras_maquinas::all();
-        $operadores=Operadores::all();
+        $nuevas_areas = Cremalleras_areas::all();
+        $clientes = Cliente::all();
+        $vista_clientes = Vista_clientes::all();
+        $nuevas_maquinas = Cremalleras_maquinas::all();
+        $operadores = Operadores::all();
 
-        $vista_cremalleras_ordenes=Vista_cremalleras_ordenes::all();
+        $vista_cremalleras_ordenes = Vista_cremalleras_ordenes::all();
         $script = '<script src="../build/js/filtrosCremalleras.js"></script>';
 
 
 
         $router->render('paginas/busquedacremalleras', [
-        'vista_cremalleras_ordenes' => $vista_cremalleras_ordenes,
+            'vista_cremalleras_ordenes' => $vista_cremalleras_ordenes,
             'nuevas_areas' => $nuevas_areas,
             'nuevas_maquinas' => $nuevas_maquinas,
             'clientes' => $clientes,
             'vista_clientes' => $vista_clientes,
             'operadores' => $operadores,
             'script' => $script
-        
-        
+
+
         ]);
     }
 
@@ -91,7 +92,7 @@ public static function busquedacremalleras(Router $router)
             $tansftabla->nombre_maquina = $nombre_maquina;
             $tansftabla->nombre_operador = $nombre_operador;
             $tansftabla->apellido_operador = $apellido_operador;
-            
+
 
             $cremalleras_ordenes->sincronizar($args);
             // debuguear($cremalleras_ordenes);
@@ -109,15 +110,15 @@ public static function busquedacremalleras(Router $router)
             $tansftabla->email_usuario = $email_usuario;
 
             $errores = $cremalleras_ordenes->validar();
-                // debuguear($tansftabla);
+            // debuguear($tansftabla);
 
             //generar nombre único
 
             //Guarda en la base de datos.
             if (empty($errores)) {
-            $cremalleras_ordenes->guardar();
-            $tansftabla->guardar();
-            header('Location:/busquedaPersonalizada/busquedacremalleras');
+                $cremalleras_ordenes->guardar();
+                $tansftabla->guardar();
+                header('Location:/busquedaPersonalizada/busquedacremalleras');
             }
         }
 
@@ -133,7 +134,7 @@ public static function busquedacremalleras(Router $router)
 
     }
 
-    
+
     public static function actualizar(Router $router)
     {
         $id = validatRedireccionar('/');
@@ -174,7 +175,6 @@ public static function busquedacremalleras(Router $router)
             // debuguear($args);
 
             $tansftabla = Vista_cremalleras_ordenes::find($id);
-                debuguear($tansftabla);
 
             $tansftabla->numero_orden = $numeroOrden;
             $tansftabla->descripcion_orden = $descripcion_orden;
@@ -185,21 +185,32 @@ public static function busquedacremalleras(Router $router)
             $tansftabla->nombre_maquina = $nombre_maquina;
             $tansftabla->nombre_operador = $nombre_operador;
             $tansftabla->apellido_operador = $apellido_operador;
+
             $cremalleras_ordenes->sincronizar($args);
             $errores = $cremalleras_ordenes->validar();
 
+            $hora_orden = $cremalleras_ordenes->hora;
+            $fecha_orden = $cremalleras_ordenes->fecha;
+            $tansftabla->hora_orden = $hora_orden;
+            $tansftabla->fecha_orden = $fecha_orden;
+            $usuario_id = $cremalleras_ordenes->usuario_id;
+            $usuario = Usuarios::find($usuario_id);
+            $nombre_usuario = $usuario->nombre;
+            $apellido_usuario = $usuario->apellido;
+            $email_usuario = $usuario->email;
+            $tansftabla->nombre_usuario = $nombre_usuario;
+            $tansftabla->apellido_usuario = $apellido_usuario;
+            $tansftabla->email_usuario = $email_usuario;
+
             //    debuguear($_FILES);
-
-
-
             //revizar que el arreglo de errores esté vacío
 
             if (empty($errores)) {
                 //        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
                 //Guarda en la base de datos.
                 $cremalleras_ordenes->guardar();
+                $tansftabla->guardar();
                 header('Location:/busquedaPersonalizada/busquedacremalleras');
-
             }
         }
 
@@ -238,7 +249,7 @@ public static function busquedacremalleras(Router $router)
     {
         $vista_cremalleras_ordenes = Vista_cremalleras_ordenes::all();
         $vista_clientes = Vista_clientes::all();
-    
+
         // Concatenar referencia_cliente y nombre_cliente
         $clientes_concatenados = [];
         foreach ($vista_clientes as $cliente) {
@@ -247,7 +258,7 @@ public static function busquedacremalleras(Router $router)
                 'cliente_concatenado' => $cliente->referencia_cliente . ' ' . $cliente->nombre_cliente
             ];
         }
-    
+
         echo json_encode([
             'vista_cremalleras_ordenes' => $vista_cremalleras_ordenes,
             'vista_clientes' => $clientes_concatenados

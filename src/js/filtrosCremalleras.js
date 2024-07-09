@@ -15,11 +15,11 @@
     contenedorForm.insertBefore(mensajeNoResultados, contenedorForm.firstChild); // Insertar mensaje arriba del formulario
     async function obtenerOrdenes(){
         try{
-            const url = '/api/ordenes';
+            const url = '/api/cremalleras';
             const respuesta = await fetch(url);
             const datos = await respuesta.json();
     
-            ordenes = datos.vista_nuevas_ordenes;
+            ordenes = datos.vista_cremalleras_ordenes;
             clientes = datos.vista_clientes;
             
             filtrar();
@@ -108,17 +108,12 @@
                     <td>${nombre_operador} ${apellido_operador}</td>
                     <td>${nombre_usuario} ${apellido_usuario}</td>
                     <td>
-                        <form method="POST" class="w-100" action="/busquedanuevas/eliminar">
+                        <form method="POST" class="w-100" action="/busquedacremalleras/eliminar">
                             <input type="hidden" name="id" value="${orden_id}">
-                            <input type="hidden" name="tipo" value="nuevas_ordenes">
+                            <input type="hidden" name="tipo" value="cremalleras_ordenes">
                             <input type="submit" class="boton-rojo-block-1" value="Eliminar">
                         </form>
-                        <a href="/busquedanuevas/actualizar?id=${orden_id}" class="boton-verde-block-1">Actualizar</a>
-                        <form method="POST" class="w-100" action="/busquedanuevas/siguiente_area">
-                            <input type="hidden" name="id" value="${orden_id}">
-                            <input type="hidden" name="tipo" value="nuevas_ordenes">
-                            <input type="submit" class="boton-azul-block-1" value="Área >>">
-                        </form>
+                        <a href="/busquedacremalleras/actualizar?id=${orden_id}" class="boton-verde-block-1">Actualizar</a>
                     </td>
                 `;
                 resultado.appendChild(row);

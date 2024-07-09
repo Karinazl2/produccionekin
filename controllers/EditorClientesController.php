@@ -9,7 +9,6 @@ use Model\Cliente;
 
 class EditorClientesController
 {
-
     public static function editorclientes(Router $router)
     {
         $clientes = Cliente::all();
@@ -66,21 +65,15 @@ class EditorClientesController
                     $cliente->guardar();
                     $tansftabla->guardar();
                     header('Location:/editorclientes');
-
                 }
-
             }
-
-
         }
-
         $router->render('editorclientes/crear', [
             'cliente' => $cliente,
             'referencia_cliente_id' => $referencia_cliente,
             'errores' => $errores
         ]);
     }
-
 
     public static function actualizar(Router $router)
     {
@@ -161,10 +154,7 @@ class EditorClientesController
 
                 }
                 header('Location:/editorclientes');
-
             }
         }
     }
-
-
 }

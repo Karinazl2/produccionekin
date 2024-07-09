@@ -137,13 +137,9 @@ public static function busquedacremalleras(Router $router)
     public static function actualizar(Router $router)
     {
         $id = validatRedireccionar('/');
-
-
         $cremalleras_ordenes = Cremalleras_ordenes::find($id);
         $maquinas = Cremalleras_maquinas::find($id);
         //arreglo con mrnsaje de errores
-
-
         $errores = Cremalleras_maquinas::getErrores();
         $maquinas = Cremalleras_maquinas::all();
         $clientes = Cliente::all();
@@ -155,6 +151,40 @@ public static function busquedacremalleras(Router $router)
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $args = $_POST['cremalleras_ordenes'];
+
+            $numeroOrden = $args['orden'];
+            $descripcion_orden = $args['descripcion'];
+            $prioridad_orden = $args['prioridad'];
+            $cliente_id = $args['cliente_id'];
+            $area_id = $args['area_id'];
+            $maquina_id = $args['maquina_id'];
+            $operador_id = $args['operador_id'];
+
+            $cliente = Vista_clientes::find($cliente_id);
+            $nombre_cliente = $cliente->nombre_cliente;
+            $referencia_cliente = $cliente->referencia_cliente;
+            $area = Cremalleras_areas::find($area_id);
+            $nombre_area = $area->area;
+            $maquina = Cremalleras_maquinas::find($maquina_id);
+            $nombre_maquina = $maquina->maquina;
+            $operador = Operadores::find($operador_id);
+            $nombre_operador = $operador->nombre;
+            $apellido_operador = $operador->apellido;
+            // debuguear($cliente);
+            // debuguear($args);
+
+            $tansftabla = Vista_cremalleras_ordenes::find($id);
+                debuguear($tansftabla);
+
+            $tansftabla->numero_orden = $numeroOrden;
+            $tansftabla->descripcion_orden = $descripcion_orden;
+            $tansftabla->prioridad_orden = $prioridad_orden;
+            $tansftabla->nombre_cliente = $nombre_cliente;
+            $tansftabla->referencia_cliente = $referencia_cliente;
+            $tansftabla->nombre_area = $nombre_area;
+            $tansftabla->nombre_maquina = $nombre_maquina;
+            $tansftabla->nombre_operador = $nombre_operador;
+            $tansftabla->apellido_operador = $apellido_operador;
             $cremalleras_ordenes->sincronizar($args);
             $errores = $cremalleras_ordenes->validar();
 

@@ -43,6 +43,7 @@ class BusquedaAfiladoController
 
     public static function crear(Router $router)
     {
+        is_admin_operador();
         $afilado_ordenes = new Afilado_ordenes();
         //arreglo con mrnsaje de errores
 
@@ -54,6 +55,7 @@ class BusquedaAfiladoController
         $operadores = Operadores::all();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            is_admin_operador();
 
 
             $args = $_POST['afilado_ordenes'];
@@ -131,6 +133,7 @@ class BusquedaAfiladoController
 
     public static function actualizar(Router $router)
     {
+        is_admin_operador();
         $id = validatRedireccionar('/');
         $afilado_ordenes = Afilado_ordenes::find($id);
 
@@ -147,6 +150,7 @@ class BusquedaAfiladoController
         $operadores = Operadores::all();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            is_admin_operador();
             $args = $_POST['afilado_ordenes'];
 
             $numeroOrden = $args['orden'];
@@ -221,6 +225,7 @@ class BusquedaAfiladoController
     public static function eliminar()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            isAdmin();
             //validadr id
             $id = $_POST['id'];
             $id = filter_var($id, FILTER_VALIDATE_INT);

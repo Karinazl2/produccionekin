@@ -34,7 +34,7 @@ class LoginController
                         $usuarioLogueado = Usuarios::where('email', $_POST['email']);
                         $usuarioLogueado = get_object_vars($usuarioLogueado);
                         $usuario = new Usuarios($usuarioLogueado);
-                        if(!isset($_SESSION)){
+                        if (!isset($_SESSION)) {
                             session_start();
                         }
 
@@ -43,10 +43,12 @@ class LoginController
                         $_SESSION['login'] = true;
                         $_SESSION['rol'] = $usuario->rol_id ?? null;
 
-                        if($_SESSION['rol']=== "1" ){
-                            echo "admin";
-                        } else {
-                            echo "Mesero";
+                        if ($_SESSION['rol'] === "1") {
+                            $_SESSION['admin'] = true;
+                            header('Location: /');
+                        } elseif ($_SESSION['rol'] === "2") {
+                            $_SESSION['operador'] = true;
+                            header('Location: /');
                         }
                         exit;
 
@@ -88,7 +90,7 @@ class LoginController
                     $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
                     $email->enviarConfirmacion();
 
-                    if($resultado){
+                    if ($resultado) {
                         header('Location: /mensaje');
                     }
 
@@ -102,18 +104,21 @@ class LoginController
         ]);
     }
 
-    public static function mensaje(Router $router){
+    public static function mensaje(Router $router)
+    {
         $router->render('auth/mensaje');
     }
 
-    public static function confirmar(Router $router){
+    public static function confirmar(Router $router)
+    {
         $token = $_GET['token'];
 
-        if(!$token) header('Location: /');
+        if (!$token)
+            header('Location: /');
 
         $usuario = Usuarios::where('token', $token);
 
-        if(empty($usuario)){
+        if (empty($usuario)) {
             Usuarios::setError('La cuenta no se confirmó');
             $errores = Usuarios::getErrores();
 
@@ -123,77 +128,78 @@ class LoginController
             unset($usuario->password2);
             $usuario->guardar();
         }
-        $router->render('auth/confirmar',[
-        'errores'=> $errores
+        $router->render('auth/confirmar', [
+            'errores' => $errores
         ]);
     }
 
     public static function recuperar(Router $router)
     {
-        $errores =[];
+        $errores = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $usuario = new Usuarios($_POST);
             $errores = $usuario->validarEmail();
 
-            if(empty($errores)){
-            $usuario= Usuarios::where('email',$usuario->email);
-            $usuario = $usuario;
+            if (empty($errores)) {
+                $usuario = Usuarios::where('email', $usuario->email);
+                $usuario = $usuario;
 
-            if($usuario && $usuario->confirmado){
-                $usuario->crearToken();
-                unset($usuario->password2);
-                $usuario->guardar();
+                if ($usuario && $usuario->confirmado) {
+                    $usuario->crearToken();
+                    unset($usuario->password2);
+                    $usuario->guardar();
 
-                $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
-                $email->enviarInstrucciones();
-                $exito[] = 'Hemos enviado las instrucciones a tu email';
-            } else {
-                $errores[] ='El Usuario no existe o no está confirmado';
+                    $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
+                    $email->enviarInstrucciones();
+                    $exito[] = 'Hemos enviado las instrucciones a tu email';
+                } else {
+                    $errores[] = 'El Usuario no existe o no está confirmado';
+                }
             }
         }
-    }
         $router->render('auth/recuperar', [
             'errores' => $errores,
             'exito' => $exito
         ]);
     }
 
-    public static function reestablecer(Router $router){
+    public static function reestablecer(Router $router)
+    {
         $token = s($_GET['token']);
         $token_valido = true;
-        if(!$token){
+        if (!$token) {
             header('Location: /');
         }
 
         $usuario = Usuarios::where('token', $token);
-        if(empty($usuario)){
+        if (empty($usuario)) {
             Usuarios::setError('Token No válido');
             $token_valido = false;
         }
 
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nuevoPassword = $_POST['password'];
-            $usuarioActualizado = get_object_vars($usuario); 
+            $usuarioActualizado = get_object_vars($usuario);
             $usuarioActualizado['password'] = $nuevoPassword;
             $usuario = new Usuarios($usuarioActualizado);
 
             $errores = $usuario->validarPassword();
 
-            if(empty($errores)){
+            if (empty($errores)) {
                 $usuario->hashPassword();
                 $usuario->token = null;
                 $resultado = $usuario->guardar();
 
-                if($resultado){
+                if ($resultado) {
                     header('Location: /login');
                 }
             }
         }
         $errores = Usuarios::getErrores();
-        $router->render('auth/reestablecer',[
-            'errores'=> $errores,
-            'token_valido'=> $token_valido
+        $router->render('auth/reestablecer', [
+            'errores' => $errores,
+            'token_valido' => $token_valido
         ]);
     }
 

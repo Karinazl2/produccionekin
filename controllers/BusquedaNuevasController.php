@@ -41,6 +41,7 @@ class BusquedaNuevasController
 
     public static function crear(Router $router)
     {
+        is_admin_operador();
         $nuevas_ordenes = new Nuevas_ordenes();
         //arreglo con mrnsaje de errores
         $errores = Nuevas_maquinas::getErrores();
@@ -54,6 +55,7 @@ class BusquedaNuevasController
 
         // metodo post actualizar
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            is_admin_operador();
             $args = $_POST['nuevas_ordenes'];
 
             // debuguear($_POST);
@@ -134,6 +136,7 @@ class BusquedaNuevasController
 
     public static function actualizar(Router $router)
     {
+        is_admin_operador();
         $id = validatRedireccionar('/');
         $nuevas_ordenes = Nuevas_ordenes::find($id);
         // debuguear($nuevas_ordenes);
@@ -151,6 +154,7 @@ class BusquedaNuevasController
         $nuevas_areas = Nuevas_areas::all();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            is_admin_operador();
             $args = $_POST['nuevas_ordenes'];
             $numeroOrden = $args['orden'];
             $descripcion_orden = $args['descripcion'];
@@ -233,6 +237,7 @@ class BusquedaNuevasController
     public static function eliminar()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            isAdmin();
             //validadr id
             $id = $_POST['id'];
             $id = filter_var($id, FILTER_VALIDATE_INT);
@@ -256,8 +261,8 @@ class BusquedaNuevasController
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            is_admin_operador();
             //validadr id
-
             $id = $_POST['id'];
             $id = filter_var($id, FILTER_VALIDATE_INT);
 

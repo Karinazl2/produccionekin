@@ -20,7 +20,6 @@ class PaginasController
 {
     public static function index(Router $router)
     {
-
         //    $propiedades = Propiedad::get(3);
         $inicio = true;
         $anuncios = Anuncios::get(2);

@@ -22,11 +22,13 @@ class EditorClientesController
 
     public static function crear(Router $router)
     {
+        isAdmin();
         $referencia_cliente = new Referencia_cliente;
         $cliente = new Cliente();
         $errores = Cliente::getErrores();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            isAdmin();
 
             $argsref = $_POST['referencia_cliente'];
             $referencia = $argsref['referencia'];
@@ -77,6 +79,7 @@ class EditorClientesController
 
     public static function actualizar(Router $router)
     {
+        isAdmin();
         $id = validatRedireccionar('/');
 
 
@@ -93,6 +96,7 @@ class EditorClientesController
         $vista_clientes = Vista_clientes::all();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            isAdmin();
             $argsref = $_POST['referencia_cliente'];
             $referencia = $argsref['referencia'];
             $referencia_cliente->sincronizar($argsref);
@@ -137,6 +141,8 @@ class EditorClientesController
     public static function eliminar()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        isAdmin();
+
             //validadr id
             $id = $_POST['id'];
             $id = filter_var($id, FILTER_VALIDATE_INT);

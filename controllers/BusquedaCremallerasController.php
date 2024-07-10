@@ -18,6 +18,7 @@ class BusquedaCremallerasController
 {
     public static function busquedacremalleras(Router $router)
     {
+        
 
         $nuevas_areas = Cremalleras_areas::all();
         $clientes = Cliente::all();
@@ -45,6 +46,7 @@ class BusquedaCremallerasController
 
     public static function crear(Router $router)
     {
+        is_admin_operador();
         $cremalleras_ordenes = new Cremalleras_ordenes();
         //arreglo con mrnsaje de errores
 
@@ -57,6 +59,7 @@ class BusquedaCremallerasController
 
         // metodo post actualizar
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            is_admin_operador();
 
             // debuguear($_POST);
             $args = $_POST['cremalleras_ordenes'];
@@ -137,6 +140,7 @@ class BusquedaCremallerasController
 
     public static function actualizar(Router $router)
     {
+        is_admin_operador();
         $id = validatRedireccionar('/');
         $cremalleras_ordenes = Cremalleras_ordenes::find($id);
         $maquinas = Cremalleras_maquinas::find($id);
@@ -151,6 +155,7 @@ class BusquedaCremallerasController
         $cremalleras_areas = Cremalleras_areas::all();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            is_admin_operador();
             $args = $_POST['cremalleras_ordenes'];
 
             $numeroOrden = $args['orden'];
@@ -229,6 +234,7 @@ class BusquedaCremallerasController
     public static function eliminar()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            isAdmin();
             //validadr id
             $id = $_POST['id'];
             $id = filter_var($id, FILTER_VALIDATE_INT);

@@ -17,6 +17,27 @@ function estaAutenticado()
     }
 }
 
+function isAdmin(){
+    if(!isset($_SESSION['admin'])){
+        header('Location: /');
+    }
+}
+
+function isOperador(){
+    if(!isset($_SESSION['operador'])){
+        header('Location: /');
+    }
+}
+
+function is_admin_operador(){
+    $admin = isset($_SESSION['admin']);
+    $operador = isset($_SESSION['operador']);
+
+    if(!$admin && !$operador){
+        header('Location: /');
+        return;
+    }
+}
 
 function convertDateFormat($dateStr) {
     $dateObj = DateTime::createFromFormat("Y-m-d", $dateStr);

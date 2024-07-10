@@ -12,6 +12,7 @@ class OperadoresController
 {
     public static function crear(Router $router)
     {
+        isAdmin();
         $operador = new Operadores;
 
         //arreglo con mrnsaje de errores
@@ -19,8 +20,10 @@ class OperadoresController
 
 
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
-            $errores= Operadores::getErrores();
-        $operador = new Operadores($_POST['operadores']);
+            isAdmin();
+
+            $errores = Operadores::getErrores();
+            $operador = new Operadores($_POST['operadores']);
 
 
             //generar nombre único
@@ -36,15 +39,15 @@ class OperadoresController
             }
 
             //revizar que el arreglo de errores esté vacío
-            $errores=$operador->validar();
+            $errores = $operador->validar();
             if (empty($errores)) {
-                if (!is_dir(CARPETA_IMAGENES)){
+                if (!is_dir(CARPETA_IMAGENES)) {
                     mkdir(CARPETA_IMAGENES);
                 }
 
 
-                    //Guarda la imagen en el servidor
-                    $image->save(CARPETA_IMAGENES . $nombreImagen);
+                //Guarda la imagen en el servidor
+                $image->save(CARPETA_IMAGENES . $nombreImagen);
                 //subir imagen
                 //        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
                 //Guarda en la base de datos.
@@ -62,6 +65,8 @@ class OperadoresController
 
     public static function actualizar(Router $router)
     {
+        isAdmin();
+
         $id = validatRedireccionar('/');
         $operador = Operadores::find($id);
         $errores = Operadores::getErrores();
@@ -69,33 +74,34 @@ class OperadoresController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+            isAdmin();
 
             $args = $_POST['operadores'];
-            
+
             $operador->sincronizar($args);
             $errores = $operador->validar();
-        //debuguear($operador);
+            //debuguear($operador);
 
-        
+
             //generar nombre único
             $nombreImagen = md5(uniqid(rand(), true));
-        
+
             if ($_FILES['operadores']['tmp_name']['imagen']) {
                 //REALIZA UN RESIZE A LA IMAGEN CON INTERVENTION
                 $image = Image::make($_FILES['operadores']['tmp_name']['imagen'])->fit(600, 800);
                 $operador->setImagen($nombreImagen);
-           
-        
+
+
             }
-        
+
             //revizar que el arreglo de errores esté vacío
-        
+
             if (empty($errores)) {
-                if($_FILES['operadores']['tmp_name']['imagen']){        
-                //Guarda la imagen en el servidor
-                $image->save(CARPETA_IMAGENES . $nombreImagen);
+                if ($_FILES['operadores']['tmp_name']['imagen']) {
+                    //Guarda la imagen en el servidor
+                    $image->save(CARPETA_IMAGENES . $nombreImagen);
                 } //subir imagen
-        //        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
+                //        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
                 //Guarda en la base de datos.
                 $operador->guardar();
                 header('Location:/nuestroEquipo/operadoresadmin');
@@ -103,36 +109,40 @@ class OperadoresController
         }
 
         $router->render('operadores/actualizar', [
-            'operador'=> $operador,
-            'errores'=> $errores
+            'operador' => $operador,
+            'errores' => $errores
 
         ]);
     }
 
     public static function nuestroEquipo(Router $router)
     {
-        $operadores=Operadores::all();
-    //    debuguear( $operadores);
+        $operadores = Operadores::all();
+        //    debuguear( $operadores);
         $router->render('paginas/nuestroEquipo', [
-            'operadores'=> $operadores
+            'operadores' => $operadores
         ]);
     }
 
     public static function operadoresadmin(Router $router)
     {
-        $operadores=Operadores::all();
-    //    debuguear( $operadores);
+        isAdmin();
+
+        $operadores = Operadores::all();
+        //    debuguear( $operadores);
         $router->render('paginas/operadoresadmin', [
-            'operadores'=> $operadores
+            'operadores' => $operadores
         ]);
     }
 
-    public static function eliminar (){
+    public static function eliminar()
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            isAdmin();
             //validadr id
             $id = $_POST['id'];
             $id = filter_var($id, FILTER_VALIDATE_INT);
-        
+
             if ($id) {
                 $tipo = $_POST['tipo'];
                 if (validarTipoContenido($tipo)) {
@@ -140,7 +150,7 @@ class OperadoresController
 
                     $operador->eliminar('/nuestroEquipo/operadoresadmin');
                 }
-        
+
             }
         }
     }

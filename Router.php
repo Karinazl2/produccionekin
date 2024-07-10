@@ -29,13 +29,28 @@ class Router
 
         //Arreglo de rutas protegidas
         $rutas_protegidas = [
-            '/admin', 
-            '/propiedades/crear', 
-            '/propiedades/actualizar', 
-            '/propiedades/eliminar', 
-            '/vendedores/crear', 
-            '/vendedores/actualizar', 
-            '/vendedores/eliminar'
+            '/nuestroEquipo/operadoresadmin',
+            '/nuestroEquipo/crear',
+            '/nuestroEquipo/actualizar',
+            '/nuestroEquipo/eliminar',
+            '/anuncios/anunciosadmin',
+            '/anuncios/crear',
+            '/anuncios/actualizar',
+            '/anuncios/eliminar',
+            '/busquedanuevas/crear',
+            '/busquedanuevas/actualizar',
+            '/busquedanuevas/eliminar',
+            '/busquedanuevas/siguiente_area',
+            '/busquedacremalleras/crear',
+            '/busquedacremalleras/actualizar',
+            '/busquedacremalleras/eliminar',
+            '/busquedaafilado/crear',
+            '/busquedaafilado/actualizar',
+            '/busquedaafilado/eliminar',
+            '/editorclientes/crear',
+            '/editorclientes/actualizar',
+            '/editorclientes/eliminar'
+
         ];
 
         if ($metodo === 'GET') {
@@ -53,7 +68,7 @@ class Router
         if ($fn) {
             call_user_func($fn, $this);
         } else {
-            echo "Página no encontrada";
+            header('Location: /404');
         }
     }
 

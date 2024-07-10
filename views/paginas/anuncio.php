@@ -2,7 +2,7 @@
     <h1><?php echo $anuncio->titulo; ?></h1>
 
     <section class="botonop">
-        <a href="/anuncios" class="boton-rojo1">Volver</a>
+        <a href="/anuncios" class="boton-rosadito2">Volver</a>
     </section>
     <picture>
         <img loading="lazy" src="/imagenes/<?php echo $anuncio->imagen; ?>" alt="imagen del anuncio">
@@ -11,7 +11,8 @@
         <span><?php echo $anuncio->autor; ?></span></p>
 
     <section>
-        <a href="/imagenes/<?php echo $anuncio->imagen; ?>" class="boton-azul" download>Descargar Imagen</a>
+        <a href="/imagenes/<?php echo $anuncio->imagen; ?>" class="boton-azul">Ver Imagen</a>
+
     </section>
 
     <div class="resumen-propiedad">

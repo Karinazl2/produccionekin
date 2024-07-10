@@ -18,20 +18,6 @@ use Controllers\BusquedaPersonalizadaController;
 
 $router = new Router();
 
-//Zona privada
-$router->get('/admin', [PropiedadController::class,'index']);
-$router->get('/propiedades/crear', [PropiedadController::class,'crear']);
-$router->get('/propiedades/actualizar', [PropiedadController::class,'actualizar']);
-$router->post('/propiedades/crear', [PropiedadController::class,'crear']);
-$router->post('/propiedades/actualizar', [PropiedadController::class,'actualizar']);
-$router->post('/propiedades/eliminar', [PropiedadController::class,'eliminar']);
-
-$router->get('/vendedores/crear', [VendedorController::class,'crear']);
-$router->get('/vendedores/actualizar', [VendedorController::class,'actualizar']);
-$router->post('/vendedores/crear', [VendedorController::class,'crear']);
-$router->post('/vendedores/actualizar', [VendedorController::class,'actualizar']);
-$router->post('/vendedores/eliminar', [VendedorController::class,'eliminar']);
-
 //Zona pública
 $router->get('/', [PaginasController::class,'index']);
 $router->get('/brochasNuevas', [PaginasController::class,'brochasNuevas']);
@@ -96,6 +82,8 @@ $router->post('/editorclientes/crear', [EditorClientesController::class,'crear']
 $router->get('/editorclientes/actualizar', [EditorClientesController::class,'actualizar']);
 $router->post('/editorclientes/actualizar', [EditorClientesController::class,'actualizar']);
 $router->post('/editorclientes/eliminar', [EditorClientesController::class,'eliminar']);
+
+$router->get('/404',[PaginasController::class, 'error']);
 
 
 //login y autenticacion 

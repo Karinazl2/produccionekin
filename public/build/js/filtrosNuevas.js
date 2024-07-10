@@ -107,6 +107,7 @@
                     <td>${referencia_cliente} ${nombre_cliente}</td>
                     <td>${nombre_operador} ${apellido_operador}</td>
                     <td>${nombre_usuario} ${apellido_usuario}</td>
+                    
                     <td>
                         <form method="POST" class="w-100" action="/busquedanuevas/eliminar">
                             <input type="hidden" name="id" value="${id}">
@@ -119,6 +120,7 @@
                             <input type="hidden" name="tipo" value="nuevas_ordenes">
                             <input type="submit" class="boton-azul-block-1" value="Área >>">
                         </form>
+                    
                     </td>
                 `;
                 resultado.appendChild(row);

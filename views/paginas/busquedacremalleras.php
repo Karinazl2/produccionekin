@@ -112,9 +112,7 @@
                 <th>Cliente</th>
                 <th>Operador</th>
                 <th>Usuario</th>
-                <?php if (!empty($admin) || !empty($operador)) { ?>
                 <th>Acciones</th>
-                <?php } ?>
             </tr>
         </thead>
         <!-- Mostrar los resultados -->

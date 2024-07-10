@@ -111,6 +111,8 @@ class PaginasController
 
     public static function cremalleras(Router $router)
     {
+        $operador = isset($_SESSION['operador']);
+        $admin = isset($_SESSION['admin']);
         $vista_cremalleras_39 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina', 'PLANEADO MAQ. 39', 'prioridad_orden');
         $vista_cremalleras_41 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina', 'PLANEADO MAQ. 41', 'prioridad_orden');
         $vista_cremalleras_58 = Vista_cremalleras_ordenes::ordenasc('nombre_maquina', 'MECANIZADO MAQ. 58', 'prioridad_orden');
@@ -158,7 +160,9 @@ class PaginasController
             'vista_cremalleras_total' => $vista_cremalleras_total,
             'vista_cremalleras_terminadas' => $vista_cremalleras_terminadas,
             'mes_actual' => $mes_actual,
-            'script' => $script
+            'script' => $script,
+            'operador' => $operador,
+            'admin' => $admin
         ]);
     }
 
@@ -168,6 +172,8 @@ class PaginasController
         // $consulta = $consulta->consulta();
         // debuguear($consulta);
         // $vista_afilado=Vista_afilado_ordenes::SQL($consulta);
+        $operador = isset($_SESSION['operador']);
+        $admin = isset($_SESSION['admin']);
         $vista_afilado_1200 = Vista_afilado_ordenes::ordenasc('nombre_maquina', 'AFILADO MAQ. 1200', 'prioridad_orden');
         $vista_afilado_116 = Vista_afilado_ordenes::ordenasc('nombre_maquina', 'AFILADO MAQ. 116', 'prioridad_orden');
         $vista_afilado_131 = Vista_afilado_ordenes::ordenasc('nombre_maquina', 'AFILADO MAQ. 131', 'prioridad_orden');
@@ -214,7 +220,9 @@ class PaginasController
             'cuenta' => $cuenta,
             'cuenta_terminadas' => $cuenta_terminadas,
             'mes_actual' => $mes_actual,
-            'script' => $script
+            'script' => $script,
+            'operador' => $operador,
+            'admin' => $admin
         ]);
     }
 
@@ -267,11 +275,14 @@ class PaginasController
 
     public static function blog(Router $router)
     {
+        $operador = isset($_SESSION['operador']);
+        $admin = isset($_SESSION['admin']);
         $anuncios = Anuncios::all();
 
-
         $router->render('paginas/anuncios', [
-            'anuncios' => $anuncios
+            'anuncios' => $anuncios,
+            'operador' => $operador,
+            'admin' => $admin
         ]);
 
     }

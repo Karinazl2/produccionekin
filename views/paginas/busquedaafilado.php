@@ -18,14 +18,16 @@
     </div>
 
     <h2>Afilado</h2>
+    <?php if (!empty($admin) || !empty($operador)) { ?>
+        <section class="botonop">
+            <a href="/busquedaafilado/crear" class="boton-verdecito">+ Añadir Órdenes en afilado</a>
+        </section>
 
-    <section class="botonop">
-        <a href="/busquedaafilado/crear" class="boton-verdecito">+ Añadir Órdenes en afilado</a>
-    </section>
+        <section class="botones_editor_tablas">
+            <a href="/editorclientes" class="boton-verde-clientes">Ver Clientes</a>
+        </section>
+    <?php } ?>
 
-    <section class="botones_editor_tablas">
-        <a href="/editorclientes" class="boton-verde-clientes">Ver Clientes</a>
-    </section>
 
     <section class="n">
         <h3>Filtros</h3>
@@ -35,8 +37,8 @@
         <img src="/build/img/barras.svg" alt="icono menu responsive">
     </div>
 
-        <!-- //filtrossssssssssssssros -->
-        <div class="contenedor2 oculto" id="contenedorForm">
+    <!-- //filtrossssssssssssssros -->
+    <div class="contenedor2 oculto" id="contenedorForm">
         <form id="buscador">
             <fieldset>
                 <legend>Personaliza tu búsqueda</legend>
@@ -61,8 +63,9 @@
                         <select name="afilado_ordenes[cliente_id]" id="cliente">
                             <option selected value="">Seleccione el cliente</option>
                             <?php foreach ($vista_clientes as $cliente) { ?>
-                                <option value="<?php echo s($cliente->referencia_cliente). " " . s($cliente->nombre_cliente); ?>">
-                                    <?php echo s($cliente->referencia_cliente). " " . s($cliente->nombre_cliente); ?>
+                                <option
+                                    value="<?php echo s($cliente->referencia_cliente) . " " . s($cliente->nombre_cliente); ?>">
+                                    <?php echo s($cliente->referencia_cliente) . " " . s($cliente->nombre_cliente); ?>
                                 </option>
                             <?php } ?>
                         </select>
@@ -98,19 +101,20 @@
                 <th>Cliente</th>
                 <th>Operador</th>
                 <th>Usuario</th>
-                <th>Acciones</th>
+                <?php if (!empty($admin) || !empty($operador)) { ?>
+                    <th>Acciones</th>
+                <?php } ?>
+
             </tr>
         </thead>
         <!-- Mostrar los resultados -->
         <tbody>
 
             <?php foreach ($vista_afilado_ordenes as $ordenes): ?>
-                <tr>      
+                <tr>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
 
 </main>
-
-   

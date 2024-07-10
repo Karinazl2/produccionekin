@@ -5,7 +5,10 @@
 <section class="botonop">
     <a href="busquedaPersonalizada/busquedacremalleras" class="boton-rosadito1">ADMINISTRADOR DE CREMALLERAS Y BROCHAS
         PLANAS</a>
-    <a href="/busquedacremalleras/crear" class="boton-rosadito2">+ Añadir ordenes para Brochas Planas y Cremalleras</a>
+    <?php if (!empty($admin) || !empty($operador)) { ?>
+        <a href="/busquedacremalleras/crear" class="boton-rosadito2">+ Añadir ordenes para Brochas Planas y Cremalleras</a>
+    <?php } ?>
+
 </section>
 
 <section class="imagen-materiaPrima">
@@ -310,9 +313,9 @@
 </div>
 
 <div class="tituloimg">
-<section class="n">
-    <h1>Resumen de Cremalleras</h1>
-</section>
+    <section class="n">
+        <h1>Resumen de Cremalleras</h1>
+    </section>
 </div>
 
 <section>
@@ -330,17 +333,17 @@
 </section>
 
 <div class="contenedorimg">
-<section class="imagen-estadisticas">
-    <h3><?php echo $cuenta; ?></h3>
-    <p>CREMALLERAS Y PLANAS EN PRODUCCIÓN</p>
-</section>
+    <section class="imagen-estadisticas">
+        <h3><?php echo $cuenta; ?></h3>
+        <p>CREMALLERAS Y PLANAS EN PRODUCCIÓN</p>
+    </section>
 </div>
 
 <div class="contenedorimg1">
-<section class="imagen-estadisticas1">
-    <h3><?php echo $cuenta_terminadas; ?></h3>
-    <p>CREMALLERAS Y PLANAS TERMINADAS EN <?php echo $mes_actual; ?></p>
-</section>
+    <section class="imagen-estadisticas1">
+        <h3><?php echo $cuenta_terminadas; ?></h3>
+        <p>CREMALLERAS Y PLANAS TERMINADAS EN <?php echo $mes_actual; ?></p>
+    </section>
 </div>
 
 <section class="contenedor seccion">

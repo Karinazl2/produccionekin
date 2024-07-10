@@ -18,7 +18,7 @@
     </div>
 
     <h2>Brochas Nuevas</h2>
-
+    <?php if(!empty($admin) || !empty($operador)) { ?>
     <section class="botonop">
         <a href="/busquedanuevas/crear" class="boton-azulito">+ Añadir Órdenes en Brochas Nuevas</a>
     </section>
@@ -26,6 +26,7 @@
     <section class="botones_editor_tablas">
         <a href="/editorclientes" class="boton-azul-clientes">Ver Clientes</a>
     </section>
+    <?php } ?>
 
     <section class="n">
         <h3>Filtros</h3>
@@ -110,7 +111,9 @@
                 <th>Cliente</th>
                 <th>Operador</th>
                 <th>Editado por:</th>
+                <?php if(!empty($admin) || !empty($operador)) { ?>
                 <th>Acciones:</th>
+                <?php } ?>
             </tr>
         </thead>
         <!-- Mostrar los resultados -->

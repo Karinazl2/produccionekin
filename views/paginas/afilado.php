@@ -4,7 +4,10 @@
 
 <section class="botonop">
     <a href="/busquedaPersonalizada/busquedaafilado" class="boton-verdeson1">ADMINISTRADOR DE AFILADO DE BROCHAS</a>
+    <?php if(!empty($admin) || !empty($operador)) { ?>
     <a href="/busquedaafilado/crear" class="boton-verdeson2">+ Añadir ordenes para Afilado</a>
+    <?php } ?>
+
 </section>
 
 

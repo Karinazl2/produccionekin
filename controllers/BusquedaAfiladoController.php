@@ -18,6 +18,8 @@ class BusquedaAfiladoController
 {
     public static function busquedaafilado(Router $router)
     {
+        $operador = isset($_SESSION['operador']);
+        $admin = isset($_SESSION['admin']);
         $afilado_areas = Afilado_areas::all();
         $clientes = Cliente::all();
 
@@ -36,7 +38,9 @@ class BusquedaAfiladoController
             'clientes' => $clientes,
             'vista_clientes' => $vista_clientes,
             'operadores' => $operadores,
-            'script' => $script
+            'script' => $script,
+            'operador' => $operador,
+            'admin' => $admin
 
         ]);
     }

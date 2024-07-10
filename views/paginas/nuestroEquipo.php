@@ -1,10 +1,12 @@
 <section class="n">
     <h1>Nuestro equipo</h1>
 </section>
-<section class="botonop">
 
+<?php if(!empty($admin) || !empty($operador)) { ?>
+<section class="botonop">
     <a href="/nuestroEquipo/operadoresadmin" class="boton-naranja1">PANEL DE ADMINISTRACIÓN</a>
 </section>
+<?php } ?>
 
 <div class="l"><p>Conoce a nuestros expertos en fabricación de brochas</p>
 </div>

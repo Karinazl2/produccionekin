@@ -17,9 +17,9 @@ use Model\Vista_cremalleras_ordenes;
 class BusquedaCremallerasController
 {
     public static function busquedacremalleras(Router $router)
-    {
-        
-
+    {     
+        $operador = isset($_SESSION['operador']);
+        $admin = isset($_SESSION['admin']);
         $nuevas_areas = Cremalleras_areas::all();
         $clientes = Cliente::all();
         $vista_clientes = Vista_clientes::all();
@@ -38,7 +38,9 @@ class BusquedaCremallerasController
             'clientes' => $clientes,
             'vista_clientes' => $vista_clientes,
             'operadores' => $operadores,
-            'script' => $script
+            'script' => $script,
+            'operador' => $operador,
+            'admin' => $admin
 
 
         ]);

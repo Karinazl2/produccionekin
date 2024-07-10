@@ -117,10 +117,14 @@ class OperadoresController
 
     public static function nuestroEquipo(Router $router)
     {
+        $operador = isset($_SESSION['operador']);
+        $admin = isset($_SESSION['admin']);
         $operadores = Operadores::all();
         //    debuguear( $operadores);
         $router->render('paginas/nuestroEquipo', [
-            'operadores' => $operadores
+            'operadores' => $operadores,
+            'operador' => $operador,
+            'admin' => $admin
         ]);
     }
 

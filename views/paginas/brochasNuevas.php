@@ -4,8 +4,9 @@
 
 <section class="botonop">
     <a href="busquedaPersonalizada/busquedanuevas" class="boton-nuevas-azul1">ADMINISTRADOR DE BROCHAS NUEVAS</a>
-    <a href="/busquedanuevas/crear" class="boton-nuevas-azul2">+ Añadir ordenes para Brochas Nuevas</a>
-
+    <?php if(!empty($admin) || !empty($operador)) { ?>
+        <a href="/busquedanuevas/crear" class="boton-nuevas-azul2">+ Añadir ordenes para Brochas Nuevas</a>
+    <?php } ?>
 </section>
 
 <section class="imagen-materiaPrima">
@@ -46,7 +47,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_jarbe1 as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.': $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -84,7 +85,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_jarbe2 as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.':  $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -123,7 +124,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_india1 as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.': $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -161,7 +162,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_122_1 as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.':  $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -201,7 +202,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_doimak as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.':  $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -240,7 +241,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_danobat as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.':  $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -279,7 +280,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_india2 as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.':  $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -320,7 +321,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_122_2 as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.':  $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -359,7 +360,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_jarbe3 as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.':  $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -399,7 +400,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_23 as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.':  $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -437,7 +438,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_29 as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.':  $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -477,7 +478,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_24 as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.':  $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -555,7 +556,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_tachella as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.':  $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -595,7 +596,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_1200 as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.':  $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -635,7 +636,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_116 as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.': $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -675,7 +676,7 @@
                     <tbody>
                         <?php foreach ($vista_nuevas_131 as $orden) { ?>
                             <tr>
-                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.': $orden->prioridad_orden; ?></td>
+                                <td><?php echo $orden->prioridad_orden === '1' ? 'EN MAQ.' : $orden->prioridad_orden; ?></td>
                                 <td><?php echo $orden->numero_orden; ?></td>
                                 <td><?php echo $orden->referencia_cliente; ?></td>
                                 <td><?php echo convertTimeFormat($orden->hora_orden) . " el " . convertDateFormat($orden->fecha_orden); ?>
@@ -700,9 +701,9 @@
 </div>
 
 <div class="tituloimg">
-<section class="n">
-    <h1>Resumen Brochas Nuevas</h1>
-</section>
+    <section class="n">
+        <h1>Resumen Brochas Nuevas</h1>
+    </section>
 </div>
 
 <section>
@@ -720,17 +721,17 @@
 </section>
 
 <div class="contenedorimg">
-<section class="imagen-estadisticas">
-    <h3><?php echo $cuenta; ?></h3>
-    <p>BROCHAS NUEVAS EN PRODUCCIÓN</p>
-</section>
+    <section class="imagen-estadisticas">
+        <h3><?php echo $cuenta; ?></h3>
+        <p>BROCHAS NUEVAS EN PRODUCCIÓN</p>
+    </section>
 </div>
 
 <div class="contenedorimg1">
-<section class="imagen-estadisticas1">
-    <h3><?php echo $cuenta_terminadas; ?></h3>
-    <p>BROCHAS NUEVAS TERMINADAS EN <?php echo $mes_actual; ?></p>
-</section>
+    <section class="imagen-estadisticas1">
+        <h3><?php echo $cuenta_terminadas; ?></h3>
+        <p>BROCHAS NUEVAS TERMINADAS EN <?php echo $mes_actual; ?></p>
+    </section>
 </div>
 
 <section class="contenedor seccion">

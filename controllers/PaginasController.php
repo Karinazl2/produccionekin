@@ -34,6 +34,8 @@ class PaginasController
 
     public static function brochasNuevas(Router $router)
     {
+        $operador = isset($_SESSION['operador']);
+        $admin = isset($_SESSION['admin']);
         $vista_nuevas_jarbe1 = Vista_nuevas_ordenes::where2_colums_asc('nombre_maquina', 'nombre_area', 'JARBE', 'ASIENTOS DE LUNETA', 'prioridad_orden');
         $vista_nuevas_jarbe2 = Vista_nuevas_ordenes::where2_colums_asc('nombre_maquina', 'nombre_area', 'JARBE', 'RECTIFICADO DE DIENTES', 'prioridad_orden');
         $vista_nuevas_india1 = Vista_nuevas_ordenes::where2_colums_asc('nombre_maquina', 'nombre_area', 'INDIA', 'RECTIFICADO DE DIENTES', 'prioridad_orden');
@@ -99,7 +101,10 @@ class PaginasController
             'script' => $script,
             'vista_nuevas_terminadas' => $vista_nuevas_terminadas,
             'cuenta_terminadas' => $cuenta_terminadas,
-            'mes_actual' => $mes_actual
+            'mes_actual' => $mes_actual,
+            'operador' => $operador,
+            'admin' => $admin
+
 
         ]);
     }
@@ -346,8 +351,9 @@ class PaginasController
         ]);
     }
 
-    public static function error(Router $router) {
-        $router->render('paginas/error',[
+    public static function error(Router $router)
+    {
+        $router->render('paginas/error', [
             'titulo' => 'Página no Encontrada'
         ]);
     }

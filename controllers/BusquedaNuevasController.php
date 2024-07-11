@@ -305,6 +305,7 @@ class BusquedaNuevasController
         
         $vista_nuevas_ordenes = Vista_nuevas_ordenes::all();
         $vista_clientes = Vista_clientes::all();
+        
 
         // Concatenar referencia_cliente y nombre_cliente
         $clientes_concatenados = [];

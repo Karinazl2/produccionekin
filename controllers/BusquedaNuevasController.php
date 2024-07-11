@@ -144,7 +144,7 @@ class BusquedaNuevasController
         is_admin_operador();
         $id = validatRedireccionar('/');
         $nuevas_ordenes = Nuevas_ordenes::find($id);
-        debuguear($nuevas_ordenes);
+        
         // debuguear($nuevas_ordenes);
 
         $maquinas = Nuevas_maquinas::find($id);

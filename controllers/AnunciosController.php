@@ -28,7 +28,7 @@ class AnunciosController
 
 
             //generar nombre único
-            $nombreImagen = md5(uniqid(rand(), true));
+            $nombreImagen = md5(uniqid(rand(), true)) . "jpg";
 
 
             if ($_FILES['anuncios']['tmp_name']['imagen']) {
@@ -41,13 +41,12 @@ class AnunciosController
 
             $errores = $anuncio->validar();
             if (empty($errores)) {
-                if (!is_dir(CARPETA_IMAGENES)) {
-                    mkdir(CARPETA_IMAGENES);
-                }
+                if ($_FILES['anuncios']['tmp_name']['imagen']) {   
 
 
                 //Guarda la imagen en el servidor
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
+                }
                 //subir imagen
                 //        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
                 //Guarda en la base de datos.
@@ -80,7 +79,7 @@ class AnunciosController
             $anuncio->sincronizar($args);
             $errores = $anuncio->validar();
 
-            $nombreImagen = md5(uniqid(rand(), true));
+            $nombreImagen = md5(uniqid(rand(), true)) . "jpg";
 
             if ($_FILES['anuncios']['tmp_name']['imagen']) {
                 //REALIZA UN RESIZE A LA IMAGEN CON INTERVENTION

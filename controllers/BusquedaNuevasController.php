@@ -316,7 +316,7 @@ class BusquedaNuevasController
         $clientes_concatenados = [];
         foreach ($vista_clientes as $cliente) {
             $clientes_concatenados[] = [
-                'cliente_id' => $cliente->cliente_id,
+                'id' => $cliente->id,
                 'cliente_concatenado' => $cliente->referencia_cliente . ' ' . $cliente->nombre_cliente
             ];
         }

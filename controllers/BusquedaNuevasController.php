@@ -144,7 +144,7 @@ class BusquedaNuevasController
         is_admin_operador();
         $id = validatRedireccionar('/');
         $nuevas_ordenes = Nuevas_ordenes::find($id);
-        
+
         // debuguear($nuevas_ordenes);
 
         $maquinas = Nuevas_maquinas::find($id);
@@ -264,9 +264,8 @@ class BusquedaNuevasController
 
     public static function siguiente_area()
     {
-
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
             is_admin_operador();
             //validadr id
             $id = $_POST['id'];
@@ -278,9 +277,14 @@ class BusquedaNuevasController
                 if (validarTipoContenido($tipo)) {
                     $nuevas_ordenes = Nuevas_ordenes::find($id);
 
+                    $vista_nuevas_ordenes = Vista_nuevas_ordenes::find($id);
+
                     $x = $nuevas_ordenes->area_id + 1;
                     $nuevas_ordenes->area_id = "$x";
+                    $nueva_area = Nuevas_areas::find($x);
+                    $nombre = $nueva_area->area;
                     $nuevas_ordenes->sincronizar();
+                    $vista_nuevas_ordenes->nombre_area = $nombre;
 
                     //    debuguear($nuevas_ordenes);
                 }
@@ -294,6 +298,7 @@ class BusquedaNuevasController
                 if (empty($errores)) {
                     //Guarda en la base de datos.
                     $nuevas_ordenes->guardar();
+                    $vista_nuevas_ordenes->guardar();
                     header('Location:/busquedaPersonalizada/busquedanuevas');
                 }
             }
@@ -302,10 +307,10 @@ class BusquedaNuevasController
 
     public static function filtrar()
     {
-        
+
         $vista_nuevas_ordenes = Vista_nuevas_ordenes::all();
         $vista_clientes = Vista_clientes::all();
-        
+
 
         // Concatenar referencia_cliente y nombre_cliente
         $clientes_concatenados = [];

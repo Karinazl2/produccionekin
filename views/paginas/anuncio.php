@@ -11,7 +11,7 @@
         <span><?php echo $anuncio->autor; ?></span></p>
 
     <section>
-        <a href="/imagenes/<?php echo $anuncio->imagen; ?>" class="boton-azul">Ver Imagen</a>
+        <a href="/imagenes/<?php echo $anuncio->imagen; ?>" class="boton-azul" download>Ver Imagen</a>
 
     </section>
 

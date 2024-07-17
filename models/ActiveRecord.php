@@ -75,7 +75,7 @@ class ActiveRecord
         if ($resultado) {
             //redireccionar al usuario
             if (!$ruta) {
-                header('Location:/admin?resultado=1');
+                header('Location:/');
             } else {
                 header("Location: $ruta");
             }
@@ -105,7 +105,7 @@ class ActiveRecord
         if ($resultado) {
             //redireccionar al usuario
             if (!$ruta) {
-                header('Location:/admin?resultado=2');
+                header('Location:/');
             } else {
                 header("Location: $ruta");
             }
@@ -127,7 +127,7 @@ class ActiveRecord
             $this->borrarImagen();
             //redireccionar al usuario
             if (!$ruta) {
-                header('Location:/admin?resultado=3');
+                header('Location:/');
             } else {
                 header("Location: $ruta");
             }

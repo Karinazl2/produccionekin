@@ -96,6 +96,8 @@ class AnunciosController
                 //        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
                 //Guarda en la base de datos.
                 $anuncio->guardar();
+                header('Location:/anuncios');
+
             }
 
         }

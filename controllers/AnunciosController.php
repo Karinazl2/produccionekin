@@ -67,7 +67,7 @@ class AnunciosController
 
         isAdmin();
 
-        $id = \validatRedireccionar('/anuncios/anunciosadmin');
+        $id = \validatRedireccionar('/anuncios');
         $anuncio = Anuncios::find($id);
         $errores = Anuncios::getErrores();
 

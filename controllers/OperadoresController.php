@@ -27,7 +27,7 @@ class OperadoresController
 
 
             //generar nombre único
-            $nombreImagen = md5(uniqid(rand(), true));
+            $nombreImagen = md5(uniqid(rand(), true)) . ".png";
 
 
             if ($_FILES['operadores']['tmp_name']['imagen']) {
@@ -41,18 +41,17 @@ class OperadoresController
             //revizar que el arreglo de errores esté vacío
             $errores = $operador->validar();
             if (empty($errores)) {
-                if (!is_dir(CARPETA_IMAGENES)) {
-                    mkdir(CARPETA_IMAGENES);
-                }
-
+                if ($_FILES['operadores']['tmp_name']['imagen']) {   
 
                 //Guarda la imagen en el servidor
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
+            }
+
                 //subir imagen
                 //        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
                 //Guarda en la base de datos.
                 $operador->guardar();
-                header('Location:/nuestroEquipo/operadoresadmin');
+                header('Location:/nuestroEquipo');
             }
 
         }
@@ -84,7 +83,7 @@ class OperadoresController
 
 
             //generar nombre único
-            $nombreImagen = md5(uniqid(rand(), true));
+            $nombreImagen = md5(uniqid(rand(), true)) . ".png";
 
             if ($_FILES['operadores']['tmp_name']['imagen']) {
                 //REALIZA UN RESIZE A LA IMAGEN CON INTERVENTION
@@ -104,7 +103,7 @@ class OperadoresController
                 //        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
                 //Guarda en la base de datos.
                 $operador->guardar();
-                header('Location:/nuestroEquipo/operadoresadmin');
+                header('Location:/nuestroEquipo');
             }
         }
 

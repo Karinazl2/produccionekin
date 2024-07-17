@@ -2,7 +2,7 @@
     <h1>Nuestro equipo</h1>
 </section>
 
-<?php if(!empty($admin) || !empty($operador)) { ?>
+<?php if(!empty($admin)) { ?>
 <section class="botonop">
     <a href="/nuestroEquipo/operadoresadmin" class="boton-naranja1">PANEL DE ADMINISTRACIÓN</a>
 </section>

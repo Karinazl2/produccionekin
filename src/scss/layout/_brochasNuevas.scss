@@ -2094,10 +2094,13 @@
     gap: 5rem;
     margin: 7rem auto;
     width: 75%;
+    justify-content: center;
+    align-items: center;
 
 
     @include telefono {
         grid-template-columns: repeat(1, 1fr);
+        
         // margin-left: 0;
     }
 

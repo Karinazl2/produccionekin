@@ -47,6 +47,8 @@ class BusquedaNuevasController
 
     public static function crear(Router $router)
     {
+        // debuguear();
+        $usuario_id = $_SESSION['id'];
         is_admin_operador();
         $nuevas_ordenes = new Nuevas_ordenes();
         //arreglo con mrnsaje de errores
@@ -55,6 +57,7 @@ class BusquedaNuevasController
         $vista_clientes = Vista_clientes::all();
         $nuevas_areas = Nuevas_areas::all();
         $operadores = Operadores::all();
+        $idDelUsuario = intval($_SESSION['id']);
         // debuguear($vista_clientes);
 
 
@@ -63,65 +66,64 @@ class BusquedaNuevasController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             is_admin_operador();
             $args = $_POST['nuevas_ordenes'];
-
-            // debuguear($_POST);
-            $numeroOrden = $args['orden'];
-            $descripcion_orden = $args['descripcion'];
-            $prioridad_orden = $args['prioridad'];
-            $cliente_id = $args['cliente_id'];
-            $area_id = $args['area_id'];
-            $maquina_id = $args['maquina_id'];
-            $operador_id = $args['operador_id'];
-
-
-            $cliente = Vista_clientes::find($cliente_id);
-            $nombre_cliente = $cliente->nombre_cliente;
-            $referencia_cliente = $cliente->referencia_cliente;
-            $area = Nuevas_areas::find($area_id);
-            $nombre_area = $area->area;
-            $maquina = Nuevas_maquinas::find($maquina_id);
-            $nombre_maquina = $maquina->maquina;
-            $operador = Operadores::find($operador_id);
-            $nombre_operador = $operador->nombre;
-            $apellido_operador = $operador->apellido;
-            // debuguear($cliente);
-            // debuguear($args);
-
-            $tansftabla = new Vista_nuevas_ordenes();
-            $tansftabla->numero_orden = $numeroOrden;
-            $tansftabla->descripcion_orden = $descripcion_orden;
-            $tansftabla->prioridad_orden = $prioridad_orden;
-            $tansftabla->nombre_cliente = $nombre_cliente;
-            $tansftabla->referencia_cliente = $referencia_cliente;
-            $tansftabla->nombre_area = $nombre_area;
-            $tansftabla->nombre_maquina = $nombre_maquina;
-            $tansftabla->nombre_operador = $nombre_operador;
-            $tansftabla->apellido_operador = $apellido_operador;
-            // debuguear($tansftabla);
             $nuevas_ordenes->sincronizar($args);
-            $hora_orden = $nuevas_ordenes->hora;
-            $fecha_orden = $nuevas_ordenes->fecha;
-            $tansftabla->hora_orden = $hora_orden;
-            $tansftabla->fecha_orden = $fecha_orden;
-            $usuario_id = $nuevas_ordenes->usuario_id;
-            $usuario = Usuarios::find($usuario_id);
-            $nombre_usuario = $usuario->nombre;
-            $apellido_usuario = $usuario->apellido;
-            $email_usuario = $usuario->email;
-            $tansftabla->nombre_usuario = $nombre_usuario;
-            $tansftabla->apellido_usuario = $apellido_usuario;
-            $tansftabla->email_usuario = $email_usuario;
-            //  debuguear($usuario);
-
-            // debuguear($tansftabla);
-
+            $nuevas_ordenes->usuario_id = $idDelUsuario;
             $errores = $nuevas_ordenes->validar();
-            //    debuguear($_FILES);
 
-            //generar nombre único
 
-            //Guarda en la base de datos.
             if (empty($errores)) {
+                // debuguear($_POST);
+                $numeroOrden = $args['orden'];
+                $descripcion_orden = $args['descripcion'];
+                $prioridad_orden = $args['prioridad'];
+                $cliente_id = $args['cliente_id'];
+                $area_id = $args['area_id'];
+                $maquina_id = $args['maquina_id'];
+                $operador_id = $args['operador_id'];
+
+                $cliente = Vista_clientes::find($cliente_id);
+                $nombre_cliente = $cliente->nombre_cliente;
+                $referencia_cliente = $cliente->referencia_cliente;
+                $area = Nuevas_areas::find($area_id);
+                $nombre_area = $area->area;
+                $maquina = Nuevas_maquinas::find($maquina_id);
+                $nombre_maquina = $maquina->maquina;
+                $operador = Operadores::find($operador_id);
+                $nombre_operador = $operador->nombre;
+                $apellido_operador = $operador->apellido;
+                // debuguear($cliente);
+                // debuguear($args);
+
+                $tansftabla = new Vista_nuevas_ordenes();
+                $tansftabla->numero_orden = $numeroOrden;
+                $tansftabla->descripcion_orden = $descripcion_orden;
+                $tansftabla->prioridad_orden = $prioridad_orden;
+                $tansftabla->nombre_cliente = $nombre_cliente;
+                $tansftabla->referencia_cliente = $referencia_cliente;
+                $tansftabla->nombre_area = $nombre_area;
+                $tansftabla->nombre_maquina = $nombre_maquina;
+                $tansftabla->nombre_operador = $nombre_operador;
+                $tansftabla->apellido_operador = $apellido_operador;
+                // debuguear($tansftabla);
+
+                $hora_orden = $nuevas_ordenes->hora;
+                $fecha_orden = $nuevas_ordenes->fecha;
+                $tansftabla->hora_orden = $hora_orden;
+                $tansftabla->fecha_orden = $fecha_orden;
+                $usuario_id = $nuevas_ordenes->usuario_id;
+                $usuario = Usuarios::find($usuario_id);
+                $nombre_usuario = $usuario->nombre;
+                $apellido_usuario = $usuario->apellido;
+                $email_usuario = $usuario->email;
+                $tansftabla->nombre_usuario = $nombre_usuario;
+                $tansftabla->apellido_usuario = $apellido_usuario;
+                $tansftabla->email_usuario = $email_usuario;
+
+                // debuguear($tansftabla);
+                //    debuguear($_FILES);
+                //generar nombre único
+
+                //Guarda en la base de datos.
                 $nuevas_ordenes->guardar();
                 $tansftabla->guardar();
                 header('Location:/busquedaPersonalizada/busquedanuevas');
@@ -142,6 +144,7 @@ class BusquedaNuevasController
 
     public static function actualizar(Router $router)
     {
+        $usuario_id = $_SESSION['id'];
 
         is_admin_operador();
         $id = validatRedireccionar('/');
@@ -160,10 +163,18 @@ class BusquedaNuevasController
         $vista_clientes = Vista_clientes::all();
         $operadores = Operadores::all();
         $nuevas_areas = Nuevas_areas::all();
+        $idDelUsuario = intval($_SESSION['id']);
+
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             is_admin_operador();
             $args = $_POST['nuevas_ordenes'];
+            $nuevas_ordenes->sincronizar($args);
+            $nuevas_ordenes->usuario_id = $idDelUsuario;
+            $errores = $nuevas_ordenes->validar();
+
+            if (empty($errores)) {
+
             $numeroOrden = $args['orden'];
             $descripcion_orden = $args['descripcion'];
             $prioridad_orden = $args['prioridad'];
@@ -197,8 +208,7 @@ class BusquedaNuevasController
             $tansftabla->nombre_operador = $nombre_operador;
             $tansftabla->apellido_operador = $apellido_operador;
 
-            $nuevas_ordenes->sincronizar($args);
-            $errores = $nuevas_ordenes->validar();
+
             $hora_orden = $nuevas_ordenes->hora;
             $fecha_orden = $nuevas_ordenes->fecha;
             $tansftabla->hora_orden = $hora_orden;
@@ -212,14 +222,8 @@ class BusquedaNuevasController
             $tansftabla->nombre_usuario = $nombre_usuario;
             $tansftabla->apellido_usuario = $apellido_usuario;
             $tansftabla->email_usuario = $email_usuario;
-
-            //    debuguear($_FILES);
-
-
-
             //revizar que el arreglo de errores esté vacío
 
-            if (empty($errores)) {
                 //        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
                 //Guarda en la base de datos.
                 $nuevas_ordenes->guardar();

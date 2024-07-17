@@ -14,6 +14,9 @@
         <section class="botonop">
             <a href="/busquedanuevas/crear" class="boton-azulito">+ Añadir Órdenes en Brochas Nuevas</a>
         </section>
+        <?php } ?>
+    
+        <?php if (!empty($admin)) { ?>
 
         <section class="botones_editor_tablas">
             <a href="/editorclientes" class="boton-azul-clientes">Ver Clientes</a>

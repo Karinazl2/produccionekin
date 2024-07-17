@@ -47,6 +47,8 @@ class BusquedaAfiladoController
 
     public static function crear(Router $router)
     {
+        $usuario_id = $_SESSION['id'];
+
         is_admin_operador();
         $afilado_ordenes = new Afilado_ordenes();
         //arreglo con mrnsaje de errores
@@ -57,12 +59,16 @@ class BusquedaAfiladoController
         $vista_clientes = Vista_clientes::all();
         $afilado_areas = Afilado_areas::all();
         $operadores = Operadores::all();
+        $idDelUsuario = intval($_SESSION['id']);
+
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             is_admin_operador();
-
-
             $args = $_POST['afilado_ordenes'];
+            $afilado_ordenes->sincronizar($args);
+            $afilado_ordenes->usuario_id = $idDelUsuario;
+            $errores = $afilado_ordenes->validar();
+            if (empty($errores)) {
 
             $numeroOrden = $args['orden'];
             $descripcion_orden = $args['descripcion'];
@@ -89,11 +95,6 @@ class BusquedaAfiladoController
             $tansftabla->nombre_maquina = $nombre_maquina;
             $tansftabla->nombre_operador = $nombre_operador;
             $tansftabla->apellido_operador = $apellido_operador;
-
-
-
-            $afilado_ordenes->sincronizar($args);
-
             $hora_orden = $afilado_ordenes->hora;
             $fecha_orden = $afilado_ordenes->fecha;
             $tansftabla->hora_orden = $hora_orden;
@@ -106,15 +107,10 @@ class BusquedaAfiladoController
             $tansftabla->nombre_usuario = $nombre_usuario;
             $tansftabla->apellido_usuario = $apellido_usuario;
             $tansftabla->email_usuario = $email_usuario;
-            $errores = $afilado_ordenes->validar();
             // debuguear($tansftabla);
-
             //    debuguear($_FILES);
-
             //generar nombre único
-
             //Guarda en la base de datos.
-            if (empty($errores)) {
 
                 $afilado_ordenes->guardar();
                 $tansftabla->guardar();
@@ -137,6 +133,8 @@ class BusquedaAfiladoController
 
     public static function actualizar(Router $router)
     {
+        $usuario_id = $_SESSION['id'];
+
         is_admin_operador();
         $id = validatRedireccionar('/');
         $afilado_ordenes = Afilado_ordenes::find($id);
@@ -152,10 +150,18 @@ class BusquedaAfiladoController
         $referencia_cliente = Referencia_cliente::all();
         $vista_clientes = Vista_clientes::all();
         $operadores = Operadores::all();
+        $idDelUsuario = intval($_SESSION['id']);
+
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             is_admin_operador();
             $args = $_POST['afilado_ordenes'];
+            $afilado_ordenes->sincronizar($args);
+            $afilado_ordenes->usuario_id = $idDelUsuario;
+            $errores = $afilado_ordenes->validar();
+
+            if (empty($errores)) {
+
 
             $numeroOrden = $args['orden'];
             $descripcion_orden = $args['descripcion'];
@@ -182,11 +188,6 @@ class BusquedaAfiladoController
             $tansftabla->nombre_maquina = $nombre_maquina;
             $tansftabla->nombre_operador = $nombre_operador;
             $tansftabla->apellido_operador = $apellido_operador;
-
-
-            $afilado_ordenes->sincronizar($args);
-            $errores = $afilado_ordenes->validar();
-
             $hora_orden = $afilado_ordenes->hora;
             $fecha_orden = $afilado_ordenes->fecha;
             $tansftabla->hora_orden = $hora_orden;
@@ -200,12 +201,9 @@ class BusquedaAfiladoController
             $tansftabla->apellido_usuario = $apellido_usuario;
             $tansftabla->email_usuario = $email_usuario;
             // debuguear($tansftabla);
-
-
             //    debuguear($_FILES);
             //revizar que el arreglo de errores esté vacío
 
-            if (empty($errores)) {
                 //        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
                 //Guarda en la base de datos.
                 $afilado_ordenes->guardar();

@@ -233,6 +233,8 @@ class PaginasController
 
     public static function materiaprima(Router $router)
     {
+        $operador = isset($_SESSION['operador']);
+        $admin = isset($_SESSION['admin']);
         $vista_nuevas_materiaprima = Vista_nuevas_ordenes::ordenasc('nombre_area', 'MATERIA PRIMA', 'prioridad_orden');
         $cuenta_materiaprima = count($vista_nuevas_materiaprima);
 
@@ -243,7 +245,9 @@ class PaginasController
             'vista_nuevas_materiaprima' => $vista_nuevas_materiaprima,
             'vista_cremalleras_materiaprima' => $vista_cremalleras_materiaprima,
             'cuenta_materiaprima' => $cuenta_materiaprima,
-            'cuenta_materiaprimac' => $cuenta_materiaprimac
+            'cuenta_materiaprimac' => $cuenta_materiaprimac,
+            'operador' => $operador,
+            'admin' => $admin
 
         ]);
     }

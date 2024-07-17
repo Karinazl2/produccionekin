@@ -48,7 +48,7 @@ class Vista_nuevas_ordenes extends ActiveRecord
         $this->descripcion_orden = $args["descripcion_orden"] ?? '';
         $this->hora_orden = $args["hora_orden"] ?? '';
         $this->fecha_orden = $args["fecha_orden"] ?? '';
-        $this->prioridad_orden = $args["prioridad_orden"] ?? '';
+        $this->prioridad_orden = $args["prioridad_orden"] ?? 15;
         $this->nombre_area = $args["nombre_area"] ?? '';
         $this->nombre_maquina = $args["nombre_maquina"] ?? '';
         $this->nombre_cliente = $args["nombre_cliente"] ?? '';

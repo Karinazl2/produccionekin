@@ -22,6 +22,9 @@
         <section class="botonop">
             <a href="/busquedaafilado/crear" class="boton-verdecito">+ Añadir Órdenes en afilado</a>
         </section>
+    <?php } ?>
+
+        <?php if (!empty($admin)) { ?>
 
         <section class="botones_editor_tablas">
             <a href="/editorclientes" class="boton-verde-clientes">Ver Clientes</a>

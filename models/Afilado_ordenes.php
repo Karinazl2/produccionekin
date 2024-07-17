@@ -36,11 +36,11 @@ class Afilado_ordenes extends ActiveRecord
         $this->descripcion = $args["descripcion"] ?? '';
         $this->hora = $this->obtenerHoraActual();
         $this->fecha = date('Y/m/d');
-        $this->prioridad = $args["prioridad"] ?? '';
+        $this->prioridad = $args["prioridad"] ?? 15;
         $this->maquina_id = $args["maquina_id"] ?? '';
         $this->cliente_id = $args["cliente_id"] ?? '';
         $this->operador_id = $args["operador_id"] ?? '';
-        $this->usuario_id = $args["usuario_id"] ?? 1;
+        $this->usuario_id = $args["usuario_id"] ?? '';
     }
 
     public function validar()

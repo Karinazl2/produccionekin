@@ -3,7 +3,7 @@
         <h1>Anuncios</h1>
     </section>
 
-    <?php if (!empty($admin) || !empty($operador)) { ?>
+    <?php if (!empty($admin)) { ?>
         <section class="botonop">
             <a href="/anuncios/anunciosadmin" class="boton-rosadito2">PANEL DE ADMINISTRACIÓN</a>
         </section>

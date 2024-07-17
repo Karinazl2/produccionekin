@@ -23,7 +23,7 @@
     </form>
 
     <div class="acciones-auth">
-        <a href="/registar">¿No tienes cuenta? Crea una</a>
+        <a href="/registrar">¿No tienes cuenta? Crea una</a>
         <a href="/login">¿Ya tienes una cuenta? Inicia sesión</a>
     </div>
 </main>

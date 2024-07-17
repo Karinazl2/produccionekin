@@ -14,6 +14,9 @@
     <section class="botonop">
         <a href="/busquedacremalleras/crear" class="boton-rosadito2">+ Añadir Órdenes en Cremalleras</a>
     </section>
+    <?php } ?>
+
+    <?php if(!empty($admin)) { ?>
 
     <section class="botones_editor_tablas">
         <a href="/editorclientes" class="boton-rosa-clientes">Ver Clientes</a>

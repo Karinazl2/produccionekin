@@ -2,18 +2,14 @@
     <h1>Materia Prima</h1>
 </section>
 <main class="contenedor seccion">
-    <?php
-    if ($resultado) {
-        $mensaje = mostrarNotificacion(intval($resultado));
-        if ($mensaje) { ?>
-            <p class="alerta exito"><?php echo s($mensaje) ?></p>
-        <?php }
-    }
-    ?>
+<?php if (!empty($admin) || !empty($operador)) { ?>
+
     <section class="botonop">
-        <a href="/busquedanuevas/crear" class="boton-nuevas-mp">+ Añadir Órdenes para Brochas Nuevas</a>
-        <a href="/busquedacremalleras/crear" class="boton-nuevas-mp1">+ Añadir Órdenes para Planas y Cremalleras</a>
+        <a href="/busquedanuevas/crear" class="boton-nuevas-mp">+ Añadir Órdenes en Materia Prima para Brochas Nuevas</a>
+        <a href="/busquedacremalleras/crear" class="boton-nuevas-mp1">+ Añadir Órdenes en Materia Prima para Planas y Cremalleras</a>
     </section>
+    <?php } ?>
+
     <section class="tutul">
         <div class="hto2">
             <h2>Materia prima para Brochas Nuevas</h2>

@@ -28,7 +28,7 @@ class AnunciosController
 
 
             //generar nombre único
-            $nombreImagen = md5(uniqid(rand(), true)) . "jpg";
+            $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
 
 
             if ($_FILES['anuncios']['tmp_name']['imagen']) {
@@ -51,7 +51,7 @@ class AnunciosController
                 //        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
                 //Guarda en la base de datos.
                 $anuncio->guardar();
-                header('Location:/anuncios/anunciosadmin');
+                header('Location:/anuncios');
             }
 
         }
@@ -79,7 +79,7 @@ class AnunciosController
             $anuncio->sincronizar($args);
             $errores = $anuncio->validar();
 
-            $nombreImagen = md5(uniqid(rand(), true)) . "jpg";
+            $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
 
             if ($_FILES['anuncios']['tmp_name']['imagen']) {
                 //REALIZA UN RESIZE A LA IMAGEN CON INTERVENTION

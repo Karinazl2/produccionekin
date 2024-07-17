@@ -21,6 +21,7 @@
     
             ordenes = datos.vista_nuevas_ordenes;
             clientes = datos.vista_clientes;
+            mostrar_botones = datos.mostrar_botones;
             
             filtrar();
         } catch (error){
@@ -89,6 +90,7 @@
 
     function mostrarOrdenes(ordenes) {
          limpiarHTML();
+         
          if(ordenes.length > 0){
             ordenes.forEach(orden => {
                 const { numero_orden, descripcion_orden, hora_orden, fecha_orden, prioridad_orden, nombre_area, nombre_maquina, referencia_cliente, nombre_cliente, nombre_operador, apellido_operador, nombre_usuario, apellido_usuario, id } = orden;
@@ -107,6 +109,7 @@
                     <td>${referencia_cliente} ${nombre_cliente}</td>
                     <td>${nombre_operador} ${apellido_operador}</td>
                     <td>${nombre_usuario} ${apellido_usuario}</td>
+                    ${mostrar_botones ? `
                     <td>
                         <form method="POST" class="w-100" action="/busquedanuevas/eliminar">
                             <input type="hidden" name="id" value="${id}">
@@ -120,6 +123,7 @@
                             <input type="submit" class="boton-azul-block-1" value="Área >>">
                         </form>
                     </td>
+                    ` : ''}
                 `;
                 resultado.appendChild(row);
             });

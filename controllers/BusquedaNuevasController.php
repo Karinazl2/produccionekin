@@ -30,6 +30,8 @@ class BusquedaNuevasController
 
 
 
+
+
         $router->render('paginas/busquedanuevas', [
             'vista_nuevas_ordenes' => $vista_nuevas_ordenes,
             'nuevas_areas' => $nuevas_areas,
@@ -311,6 +313,8 @@ class BusquedaNuevasController
         $vista_nuevas_ordenes = Vista_nuevas_ordenes::all();
         $vista_clientes = Vista_clientes::all();
 
+        $mostrar_botones = isset($_SESSION['admin']) || isset($_SESSION['operador']);
+
 
         // Concatenar referencia_cliente y nombre_cliente
         $clientes_concatenados = [];
@@ -324,6 +328,7 @@ class BusquedaNuevasController
         echo json_encode([
             'vista_nuevas_ordenes' => $vista_nuevas_ordenes,
             'vista_clientes' => $clientes_concatenados,
+            'mostrar_botones' => $mostrar_botones
         ]);
     }
 

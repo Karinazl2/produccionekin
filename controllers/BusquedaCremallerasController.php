@@ -3,7 +3,6 @@
 namespace Controllers;
 
 use MVC\Router;
-use cremalleras;
 use Model\Cliente;
 use Model\Usuarios;
 use Model\Operadores;
@@ -236,6 +235,7 @@ class BusquedaCremallerasController
     public static function eliminar()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+           
             isAdmin();
             //validadr id
             $id = $_POST['id'];
@@ -265,7 +265,7 @@ class BusquedaCremallerasController
         $clientes_concatenados = [];
         foreach ($vista_clientes as $cliente) {
             $clientes_concatenados[] = [
-                'cliente_id' => $cliente->cliente_id,
+                'id' => $cliente->id,
                 'cliente_concatenado' => $cliente->referencia_cliente . ' ' . $cliente->nombre_cliente
             ];
         }

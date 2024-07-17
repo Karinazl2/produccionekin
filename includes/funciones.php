@@ -14,18 +14,22 @@ function estaAutenticado()
     session_start();
     if (!$_SESSION['login']) {
         header('Location: /');
+        exit;
     }
 }
 
 function isAdmin(){
     if(!isset($_SESSION['admin'])){
         header('Location: /');
+        exit;
+
     }
 }
 
 function isOperador(){
     if(!isset($_SESSION['operador'])){
         header('Location: /');
+        exit;
     }
 }
 
@@ -35,7 +39,7 @@ function is_admin_operador(){
 
     if(!$admin && !$operador){
         header('Location: /');
-        return;
+        exit;
     }
 }
 

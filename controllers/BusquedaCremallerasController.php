@@ -11,7 +11,10 @@ use Model\Cremalleras_areas;
 use Model\Referencia_cliente;
 use Model\Cremalleras_ordenes;
 use Model\Cremalleras_maquinas;
+use Model\VistaCremallerasExcel;
 use Model\Vista_cremalleras_ordenes;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
 class BusquedaCremallerasController
 {
@@ -283,6 +286,62 @@ class BusquedaCremallerasController
 
         ]);
     }
+
+    public static function generarExcel(Router $router)
+    {
+        is_admin_operador();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $args = $_POST['filtros'];
+            $resultado = VistaCremallerasExcel::all();
+            $excel = new Spreadsheet();
+            $hojaActiva = $excel->getActiveSheet();
+            $hojaActiva->setTitle("Cremalleras");
+
+            $hojaActiva->getColumnDimension('A')->setWidth(15);
+            $hojaActiva->setCellValue('A1', 'Orden');
+            $hojaActiva->getColumnDimension('B')->setWidth(35);
+            $hojaActiva->setCellValue('B1', 'Descripcion');
+            $hojaActiva->getColumnDimension('C')->setWidth(25);
+            $hojaActiva->setCellValue('C1', 'Area');
+            $hojaActiva->getColumnDimension('D')->setWidth(25);
+            $hojaActiva->setCellValue('D1', 'Maquina');
+            $hojaActiva->getColumnDimension('E')->setWidth(25);
+            $hojaActiva->setCellValue('E1', 'Refererencia Cliente');
+            $hojaActiva->getColumnDimension('F')->setWidth(40);
+            $hojaActiva->setCellValue('F1', 'Cliente');
+            $hojaActiva->getColumnDimension('G')->setWidth(20);
+            $hojaActiva->setCellValue('G1', 'Nombre Operador');
+            $hojaActiva->getColumnDimension('H')->setWidth(20);
+            $hojaActiva->setCellValue('H1', 'Apellido Operador');
+
+            $fila = 2;
+
+            foreach ($resultado as $obj) {
+                $hojaActiva->setCellValue('A' . $fila, $obj->numero_orden);
+                $hojaActiva->setCellValue('B' . $fila, $obj->descripcion_orden);
+                $hojaActiva->setCellValue('C' . $fila, $obj->nombre_area);
+                $hojaActiva->setCellValue('D' . $fila, $obj->nombre_maquina);
+                $hojaActiva->setCellValue('E' . $fila, $obj->referencia_cliente);
+                $hojaActiva->setCellValue('F' . $fila, $obj->nombre_cliente);
+                $hojaActiva->setCellValue('G' . $fila, $obj->nombre_operador);
+                $hojaActiva->setCellValue('H' . $fila, $obj->apellido_operador);
+                $fila++;
+            }
+
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="cremalleras.xlsx"');
+            header('Cache-Control: max-age=0');
+
+            $writer = IOFactory::createWriter($excel, 'Xlsx');
+            $writer->save('php://output');
+            exit;
+
+            // debuguear($args);
+
+
+        }
+    }
+
 
 
 }

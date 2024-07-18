@@ -11,8 +11,11 @@ use Model\TablaClientes;
 use Model\Vista_clientes;
 use Model\Afilado_ordenes;
 use Model\Afilado_maquinas;
+use Model\VistaAfiladoExcel;
 use Model\Referencia_cliente;
 use Model\Vista_afilado_ordenes;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
 class BusquedaAfiladoController
 {
@@ -266,6 +269,58 @@ class BusquedaAfiladoController
             'vista_clientes' => $clientes_concatenados,
             'mostrar_botones' => $mostrar_botones
         ]);
+    }
+
+    public static function generarExcel(Router $router)
+    {
+        is_admin_operador();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $args = $_POST['filtros'];
+            $resultado = VistaAfiladoExcel::all();
+            $excel = new Spreadsheet();
+            $hojaActiva = $excel->getActiveSheet();
+            $hojaActiva->setTitle("Afilado");
+
+            $hojaActiva->getColumnDimension('A')->setWidth(15);
+            $hojaActiva->setCellValue('A1', 'Orden');
+            $hojaActiva->getColumnDimension('B')->setWidth(35);
+            $hojaActiva->setCellValue('B1', 'Descripcion');
+            $hojaActiva->getColumnDimension('C')->setWidth(25);
+            $hojaActiva->setCellValue('C1', 'Maquina');
+            $hojaActiva->getColumnDimension('D')->setWidth(25);
+            $hojaActiva->setCellValue('D1', 'Refererencia Cliente');
+            $hojaActiva->getColumnDimension('E')->setWidth(40);
+            $hojaActiva->setCellValue('E1', 'Cliente');
+            $hojaActiva->getColumnDimension('F')->setWidth(20);
+            $hojaActiva->setCellValue('F1', 'Nombre Operador');
+            $hojaActiva->getColumnDimension('G')->setWidth(20);
+            $hojaActiva->setCellValue('G1', 'Apellido Operador');
+
+            $fila = 2;
+
+            foreach ($resultado as $obj) {
+                $hojaActiva->setCellValue('A' . $fila, $obj->numero_orden);
+                $hojaActiva->setCellValue('B' . $fila, $obj->descripcion_orden);
+                $hojaActiva->setCellValue('C' . $fila, $obj->nombre_maquina);
+                $hojaActiva->setCellValue('D' . $fila, $obj->referencia_cliente);
+                $hojaActiva->setCellValue('E' . $fila, $obj->nombre_cliente);
+                $hojaActiva->setCellValue('F' . $fila, $obj->nombre_operador);
+                $hojaActiva->setCellValue('G' . $fila, $obj->apellido_operador);
+                $fila++;
+            }
+
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="afilado.xlsx"');
+            header('Cache-Control: max-age=0');
+
+            $writer = IOFactory::createWriter($excel, 'Xlsx');
+            $writer->save('php://output');
+            exit;
+
+            // debuguear($args);
+
+
+        }
     }
 }
 

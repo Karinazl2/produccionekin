@@ -68,6 +68,7 @@ $router->post('/busquedacremalleras/actualizar', [BusquedaCremallerasController:
 $router->post('/busquedacremalleras/eliminar', [BusquedaCremallerasController::class,'eliminar']);
 $router->post('/busquedacremalleras/siguiente_area', [BusquedaCremallerasController::class,'siguiente_area']);
 $router->get('/api/cremalleras', [BusquedaCremallerasController::class,'filtrar']);
+$router->post('/busquedacremalleras/generarExcel', [BusquedaCremallerasController::class,'generarExcel']);
 
 $router->get('/busquedaafilado/crear', [BusquedaAfiladoController::class,'crear']);
 $router->post('/busquedaafilado/crear', [BusquedaAfiladoController::class,'crear']);
@@ -75,6 +76,7 @@ $router->get('/busquedaafilado/actualizar', [BusquedaAfiladoController::class,'a
 $router->post('/busquedaafilado/actualizar', [BusquedaAfiladoController::class,'actualizar']);
 $router->post('/busquedaafilado/eliminar', [BusquedaAfiladoController::class,'eliminar']);
 $router->get('/api/afilado', [BusquedaAfiladoController::class,'filtrar']);
+$router->post('/busquedaafilado/generarExcel', [BusquedaAfiladoController::class,'generarExcel']);
 
 
 $router->get('/editorclientes', [EditorClientesController::class,'editorclientes']);

@@ -42,18 +42,18 @@
 
     <!-- //filtrossssssssssssssros -->
     <div class="contenedor2 oculto" id="contenedorForm">
-        <form id="buscador">
+        <form id="buscador" method="POST" action="/busquedaafilado/generarExcel">
             <fieldset>
                 <legend>Personaliza tu búsqueda</legend>
                 <div class="row">
                     <div class="three columns">
                         <label for="orden">Orden: </label>
-                        <input type="text" id="orden">
+                        <input type="text" id="orden" name="filtros[orden]">
                     </div>
 
                     <div class="three columns">
                         <label for="maquina">Máquina: </label>
-                        <select class="u-full-width" id="maquina">
+                        <select class="u-full-width" id="maquina" name="filtros[maquina]">
                             <option value="">Seleccione</option>
                             <?php foreach ($afilado_maquinas as $maquina) { ?>
                                 <option value="<?php echo $maquina->maquina; ?>"><?php echo $maquina->maquina; ?></option>
@@ -63,7 +63,7 @@
 
                     <div class="three columns">
                         <label for="vista_clientes">Cliente</label>
-                        <select name="afilado_ordenes[cliente_id]" id="cliente">
+                        <select name="filtros[clientes]" id="cliente">
                             <option selected value="">Seleccione el cliente</option>
                             <?php foreach ($vista_clientes as $cliente) { ?>
                                 <option
@@ -76,7 +76,7 @@
 
                     <div class="three columns">
                         <label for="operadores">Operador: </label>
-                        <select name="afilado_ordenes[operador_id]" id="operador">
+                        <select name="afilado_ordenes[operador_id]" id="operador" name="filtros[operador]">
                             <option selected value="">Seleccione</option>
                             <?php foreach ($operadores as $operador) { ?>
                                 <option value="<?php echo s($operador->nombre) . " " . s($operador->apellido); ?>">
@@ -84,11 +84,14 @@
                                 </option>
                             <?php } ?>
                         </select>
-
                     </div>
-
                 </div>
             </fieldset>
+            <?php if (!empty($admin) || !empty($operador)) { ?>
+                <section class="botonop">
+                    <input type="submit" class="boton-verdecito" value="Generar excel">
+                </section>
+            <?php } ?>
         </form>
     </div>
     <!-- //cierrefiltrosssssssssssssssss -->

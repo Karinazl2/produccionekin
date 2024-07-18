@@ -112,7 +112,7 @@
                     <td>${referencia_cliente} ${nombre_cliente}</td>
                     <td>${nombre_operador} ${apellido_operador}</td>
                     <td>${nombre_usuario} ${apellido_usuario}</td>
-                    ${mostrar_botones ? `
+                    ${mostrar_botones !== true ? '' : `
                     <td>
                         <form method="POST" class="w-100" action="/busquedacremalleras/eliminar">
                             <input type="hidden" name="id" value="${id}">
@@ -121,7 +121,7 @@
                         </form>
                         <a href="/busquedacremalleras/actualizar?id=${id}" class="boton-verde-block-1">Actualizar</a>
                     </td>
-                    ` : ''}
+                    `}
                 `;
                 resultado.appendChild(row);
             });

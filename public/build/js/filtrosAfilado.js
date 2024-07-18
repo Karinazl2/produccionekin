@@ -16,7 +16,8 @@
 
     async function obtenerOrdenes() {
         try {
-            const url = '/api/afilado';
+            const server = window.location.origin;
+            const url = `${server}/api/afilado`;
             const respuesta = await fetch(url);
             const datos = await respuesta.json();
 

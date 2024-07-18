@@ -15,7 +15,8 @@
     contenedorForm.insertBefore(mensajeNoResultados, contenedorForm.firstChild); // Insertar mensaje arriba del formulario
     async function obtenerOrdenes(){
         try{
-            const url = '/api/cremalleras';
+            const server = window.location.origin;
+            const url = `${server}/api/cremalleras`;
             const respuesta = await fetch(url);
             const datos = await respuesta.json();
     

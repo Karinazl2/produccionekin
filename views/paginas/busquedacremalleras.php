@@ -89,7 +89,7 @@
                     </div>
                 </div>
             </fieldset> 
-            <?php if (!empty($admin) || !empty($operador)) { ?>
+            <?php if (!empty($_SESSION)) { ?>
                 <section class="botonop">
                     <input type="submit" class="boton-rosadito2" value="Generar excel">
                 </section>

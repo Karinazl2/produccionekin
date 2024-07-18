@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </fieldset>
-            <?php if (!empty($admin) || !empty($operador)) { ?>
+            <?php if (!empty($_SESSION)) { ?>
                 <section class="botonop">
                     <input type="submit" class="boton-verdecito" value="Generar excel">
                 </section>

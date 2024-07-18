@@ -314,7 +314,7 @@ class BusquedaNuevasController
     public static function filtrar()
     {
 
-        $vista_nuevas_ordenes = Vista_nuevas_ordenes::all();
+        $vista_nuevas_ordenes = Vista_nuevas_ordenes::ordenalf('numero_orden');
         $vista_clientes = Vista_clientes::all();
 
         $mostrar_botones = isset($_SESSION['admin']) || isset($_SESSION['operador']);

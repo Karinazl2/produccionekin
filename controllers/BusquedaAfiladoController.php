@@ -248,7 +248,7 @@ class BusquedaAfiladoController
 
     public static function filtrar()
     {
-        $vista_afilado_ordenes = Vista_afilado_ordenes::all();
+        $vista_afilado_ordenes = Vista_afilado_ordenes::ordenalf('numero_orden');
         $vista_clientes = Vista_clientes::all();
 
         // Concatenar referencia_cliente y nombre_cliente

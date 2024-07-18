@@ -263,7 +263,7 @@ class BusquedaCremallerasController
 
     public static function filtrar()
     {
-        $vista_cremalleras_ordenes = Vista_cremalleras_ordenes::all();
+        $vista_cremalleras_ordenes = Vista_cremalleras_ordenes::ordenalf('numero_orden');
         $vista_clientes = Vista_clientes::all();
 
         // Concatenar referencia_cliente y nombre_cliente

@@ -26,6 +26,8 @@
         
             filtrar();
         } catch (error){
+            console.log(error);
+
         }
     }
     

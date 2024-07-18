@@ -27,6 +27,7 @@
 
             filtrar();
         } catch (error) {
+            console.log(error);
         }
     }
 
@@ -43,7 +44,6 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        // filtros();
         $resultado = document.querySelector('tbody');
         // llenarSelect();
         obtenerOrdenes();

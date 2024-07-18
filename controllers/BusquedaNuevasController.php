@@ -54,7 +54,7 @@ class BusquedaNuevasController
         //arreglo con mrnsaje de errores
         $errores = Nuevas_maquinas::getErrores();
         $maquinas = Nuevas_maquinas::all();
-        $vista_clientes = Vista_clientes::all();
+        $vista_clientes = Vista_clientes::ordenalf('referencia_cliente');
         $nuevas_areas = Nuevas_areas::all();
         $operadores = Operadores::all();
         $idDelUsuario = intval($_SESSION['id']);
@@ -160,7 +160,7 @@ class BusquedaNuevasController
         $clientes = Cliente::all();
 
         $referencia_cliente = Referencia_cliente::all();
-        $vista_clientes = Vista_clientes::all();
+        $vista_clientes = Vista_clientes::ordenalf('referencia_cliente');
         $operadores = Operadores::all();
         $nuevas_areas = Nuevas_areas::all();
         $idDelUsuario = intval($_SESSION['id']);

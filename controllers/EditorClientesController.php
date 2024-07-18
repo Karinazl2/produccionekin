@@ -12,7 +12,7 @@ class EditorClientesController
     public static function editorclientes(Router $router)
     {
         $clientes = Cliente::all();
-        $vista_clientes = Vista_clientes::all();
+        $vista_clientes = Vista_clientes::ordenalf('referencia_cliente');
 
         $router->render('paginas/editorclientes', [
             'clientes' => $clientes,

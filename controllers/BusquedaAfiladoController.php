@@ -56,7 +56,7 @@ class BusquedaAfiladoController
 
         $errores = Afilado_maquinas::getErrores();
         $maquinas = Afilado_maquinas::all();
-        $vista_clientes = Vista_clientes::all();
+        $vista_clientes = Vista_clientes::ordenalf('referencia_cliente');
         $afilado_areas = Afilado_areas::all();
         $operadores = Operadores::all();
         $idDelUsuario = intval($_SESSION['id']);
@@ -148,7 +148,7 @@ class BusquedaAfiladoController
         $clientes = Cliente::all();
 
         $referencia_cliente = Referencia_cliente::all();
-        $vista_clientes = Vista_clientes::all();
+        $vista_clientes = Vista_clientes::ordenalf('referencia_cliente');
         $operadores = Operadores::all();
         $idDelUsuario = intval($_SESSION['id']);
 

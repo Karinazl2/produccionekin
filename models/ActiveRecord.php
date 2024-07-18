@@ -313,6 +313,14 @@ class ActiveRecord
         return $resultado;
     }
 
+    public static function ordenalf($columna_orden)
+    {
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY $columna_orden " . "ASC";
+        // debuguear($query);
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
     public static function ordenascView($consultaBase, $columna, $valor, $columna_orden)
     {
         $consultaBase .= " WHERE $columna = '$valor' ORDER BY $columna_orden ASC";

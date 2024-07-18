@@ -56,7 +56,7 @@ class BusquedaCremallerasController
 
         $errores = Cremalleras_maquinas::getErrores();
         $maquinas = Cremalleras_maquinas::all();
-        $vista_clientes = Vista_clientes::all();
+        $vista_clientes = Vista_clientes::ordenalf('referencia_cliente');
         $cremalleras_areas = Cremalleras_areas::all();
         $operadores = Operadores::all();
         $idDelUsuario = intval($_SESSION['id']);
@@ -153,7 +153,7 @@ class BusquedaCremallerasController
         $clientes = Cliente::all();
 
         $referencia_cliente = Referencia_cliente::all();
-        $vista_clientes = Vista_clientes::all();
+        $vista_clientes = Vista_clientes::ordenalf('referencia_cliente');
         $operadores = Operadores::all();
         $cremalleras_areas = Cremalleras_areas::all();
         $idDelUsuario = intval($_SESSION['id']);

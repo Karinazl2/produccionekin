@@ -104,7 +104,9 @@
                 <th>Cliente</th>
                 <th>Operador</th>
                 <th>Usuario</th>
-                <th>Acciones</th>
+                <?php if (!empty($_SESSION)) { ?>
+                    <th>Acciones:</th>
+                <?php } ?>
 
             </tr>
         </thead>

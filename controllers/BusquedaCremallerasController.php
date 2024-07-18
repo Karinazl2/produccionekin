@@ -267,6 +267,7 @@ class BusquedaCremallerasController
         $vista_clientes = Vista_clientes::all();
 
         // Concatenar referencia_cliente y nombre_cliente
+        $mostrar_botones = isset($_SESSION['admin']) || isset($_SESSION['operador']);
         $clientes_concatenados = [];
         foreach ($vista_clientes as $cliente) {
             $clientes_concatenados[] = [
@@ -277,7 +278,9 @@ class BusquedaCremallerasController
 
         echo json_encode([
             'vista_cremalleras_ordenes' => $vista_cremalleras_ordenes,
-            'vista_clientes' => $clientes_concatenados
+            'vista_clientes' => $clientes_concatenados,
+            'mostrar_botones' => $mostrar_botones
+
         ]);
     }
 

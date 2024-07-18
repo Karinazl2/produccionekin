@@ -21,7 +21,8 @@
     
             ordenes = datos.vista_cremalleras_ordenes;
             clientes = datos.vista_clientes;
-            
+            mostrar_botones = datos.mostrar_botones;
+        
             filtrar();
         } catch (error){
         }
@@ -93,7 +94,8 @@
             ordenes.forEach(orden => {
                 const { numero_orden, descripcion_orden, hora_orden, fecha_orden, prioridad_orden, nombre_area, nombre_maquina, referencia_cliente, nombre_cliente, nombre_operador, apellido_operador, nombre_usuario, apellido_usuario, id } = orden;
                 
-                const dateTime = new Date(fecha_orden);
+                const [year, month, day] = fecha_orden.split('-');
+                const dateTime = new Date(year, month-1,day);
                 const fechaFormateada = dateTime.toLocaleDateString('es-ES');
         
                 const row = document.createElement('tr');
@@ -107,6 +109,7 @@
                     <td>${referencia_cliente} ${nombre_cliente}</td>
                     <td>${nombre_operador} ${apellido_operador}</td>
                     <td>${nombre_usuario} ${apellido_usuario}</td>
+                    ${mostrar_botones ? `
                     <td>
                         <form method="POST" class="w-100" action="/busquedacremalleras/eliminar">
                             <input type="hidden" name="id" value="${id}">
@@ -115,6 +118,7 @@
                         </form>
                         <a href="/busquedacremalleras/actualizar?id=${id}" class="boton-verde-block-1">Actualizar</a>
                     </td>
+                    ` : ''}
                 `;
                 resultado.appendChild(row);
             });

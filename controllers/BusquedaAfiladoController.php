@@ -252,6 +252,7 @@ class BusquedaAfiladoController
         $vista_clientes = Vista_clientes::all();
 
         // Concatenar referencia_cliente y nombre_cliente
+        $mostrar_botones = isset($_SESSION['admin']) || isset($_SESSION['operador']);
         $clientes_concatenados = [];
         foreach ($vista_clientes as $cliente) {
             $clientes_concatenados[] = [
@@ -263,6 +264,7 @@ class BusquedaAfiladoController
         echo json_encode([
             'vista_afilado_ordenes' => $vista_afilado_ordenes,
             'vista_clientes' => $clientes_concatenados,
+            'mostrar_botones' => $mostrar_botones
         ]);
     }
 }

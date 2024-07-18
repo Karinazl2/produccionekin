@@ -95,7 +95,8 @@
             ordenes.forEach(orden => {
                 const { numero_orden, descripcion_orden, hora_orden, fecha_orden, prioridad_orden, nombre_area, nombre_maquina, referencia_cliente, nombre_cliente, nombre_operador, apellido_operador, nombre_usuario, apellido_usuario, id } = orden;
                 
-                const dateTime = new Date(fecha_orden);
+                const [year, month, day] = fecha_orden.split('-');
+                const dateTime = new Date(year, month-1,day);
                 const fechaFormateada = dateTime.toLocaleDateString('es-ES');
         
                 const row = document.createElement('tr');

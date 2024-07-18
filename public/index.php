@@ -59,6 +59,7 @@ $router->post('/busquedanuevas/actualizar', [BusquedaNuevasController::class,'ac
 $router->post('/busquedanuevas/eliminar', [BusquedaNuevasController::class,'eliminar']);
 $router->post('/busquedanuevas/siguiente_area', [BusquedaNuevasController::class,'siguiente_area']);
 $router->get('/api/ordenes', [BusquedaNuevasController::class,'filtrar']);
+$router->post('/busquedanuevas/generarExcel', [BusquedaNuevasController::class,'generarExcel']);
 
 $router->get('/busquedacremalleras/crear', [BusquedaCremallerasController::class,'crear']);
 $router->post('/busquedacremalleras/crear', [BusquedaCremallerasController::class,'crear']);

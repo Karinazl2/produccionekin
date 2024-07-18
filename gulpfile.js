@@ -77,3 +77,4 @@ exports.css = css;
 
 exports.watchArchivos = watchArchivos;
 exports.default = parallel(css, javascript, otherJavaScript, imagenes, versionWebp, watchArchivos); 
+exports.build = parallel(css, javascript, otherJavaScript, imagenes, versionWebp); 

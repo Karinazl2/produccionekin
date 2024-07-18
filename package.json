@@ -4,7 +4,8 @@
   "description": "Curso Desarrollo Web Completo",
   "main": "gulpfile.js",
   "scripts": {
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "build": "gulp build"
   },
   "author": "Juan De La Torre",
   "license": "ISC",

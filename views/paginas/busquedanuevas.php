@@ -14,9 +14,9 @@
         <section class="botonop">
             <a href="/busquedanuevas/crear" class="boton-azulito">+ Añadir Órdenes en Brochas Nuevas</a>
         </section>
-        <?php } ?>
-    
-        <?php if (!empty($admin)) { ?>
+    <?php } ?>
+
+    <?php if (!empty($admin)) { ?>
 
         <section class="botones_editor_tablas">
             <a href="/editorclientes" class="boton-azul-clientes">Ver Clientes</a>
@@ -34,7 +34,7 @@
 
     <!-- //filtrossssssssssssssros -->
     <div class="contenedor1 oculto" id="contenedorForm">
-        <form id="buscador">
+        <form id="buscador" method="POST" action="/busquedanuevas/generarExcel">
             <fieldset>
                 <legend>Personaliza tu búsqueda</legend>
                 <div class="row">
@@ -88,6 +88,12 @@
                     </div>
                 </div>
             </fieldset>
+
+            <?php if (!empty($admin) || !empty($operador)) { ?>
+                <section class="botonop">
+                    <input type="submit" class="boton-azulito" value="Generar excel">
+                </section>
+            <?php } ?>
         </form>
     </div>
     <!-- //cierrefiltrosssssssssssssssss -->

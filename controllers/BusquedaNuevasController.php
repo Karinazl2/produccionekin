@@ -29,9 +29,6 @@ class BusquedaNuevasController
         $script = '<script src="../build/js/filtrosNuevas.js"></script>';
 
 
-
-
-
         $router->render('paginas/busquedanuevas', [
             'vista_nuevas_ordenes' => $vista_nuevas_ordenes,
             'nuevas_areas' => $nuevas_areas,
@@ -336,7 +333,15 @@ class BusquedaNuevasController
         ]);
     }
 
+    public static function generarExcel(Router $router)
+    {
+        is_admin_operador();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+            
+
+        }
+    }
 
 }
 

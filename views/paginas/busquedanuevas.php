@@ -40,11 +40,11 @@
                 <div class="row">
                     <div class="three columns">
                         <label for="orden">Orden: </label>
-                        <input type="text" id="orden">
+                        <input type="text" id="orden" name="filtros[orden]">
                     </div>
                     <div class="three columns">
                         <label for="area">Área: </label>
-                        <select class="u-full-width" id="area">
+                        <select class="u-full-width" id="area" name="filtros[area]">
                             <option value="">Seleccione</option>
                             <?php foreach ($nuevas_areas as $area) { ?>
                                 <option value="<?php echo $area->area; ?>"><?php echo $area->area; ?></option>
@@ -54,7 +54,7 @@
 
                     <div class="three columns">
                         <label for="maquina">Máquina: </label>
-                        <select class="u-full-width" id="maquina">
+                        <select class="u-full-width" id="maquina" name="filtros[maquina]">
                             <option value="">Seleccione</option>
                             <?php foreach ($nuevas_maquinas as $maquina) { ?>
                                 <option value="<?php echo $maquina->maquina; ?>"><?php echo $maquina->maquina; ?></option>
@@ -64,7 +64,7 @@
 
                     <div class="three columns">
                         <label for="vista_clientes">Cliente</label>
-                        <select name="nuevas_ordenes[cliente_id]" id="cliente">
+                        <select name="filtros[clientes]" id="cliente">
                             <option selected value="">Seleccione el cliente</option>
                             <?php foreach ($vista_clientes as $cliente) { ?>
                                 <option
@@ -77,7 +77,7 @@
 
                     <div class="three columns">
                         <label for="operadores">Operador: </label>
-                        <select name="nuevas_ordenes[operador_id]" id="operador">
+                        <select id="operador" name="filtros[operador]">
                             <option selected value="">Seleccione el nombre del técnico</option>
                             <?php foreach ($operadores as $operador) { ?>
                                 <option value="<?php echo s($operador->nombre) . " " . s($operador->apellido); ?>">

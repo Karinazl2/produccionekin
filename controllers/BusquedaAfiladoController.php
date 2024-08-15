@@ -157,6 +157,8 @@ class BusquedaAfiladoController
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//            debuguear($_POST);
+
             is_admin_operador();
             $args = $_POST['afilado_ordenes'];
             $afilado_ordenes->sincronizar($args);

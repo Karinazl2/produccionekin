@@ -13,7 +13,7 @@
         <a href="/busquedaPersonalizada/busquedaafilado" class="boton boton-verdecito">Volver</a>
     </section>
 
-    <form class="formulariobrochas" method="POST" enctype="multipart/form-data">
+    <form class="formulariobrochas" method="POST" action="/busquedaafilado/actualizar">
         <?php include __DIR__ . '/formulario.php'; ?>
         <input type="submit" value="Actualizar herramienta" class="boton-verde">
     </form>

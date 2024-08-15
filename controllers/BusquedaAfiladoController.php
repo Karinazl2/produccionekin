@@ -211,7 +211,7 @@ class BusquedaAfiladoController
                 //Guarda en la base de datos.
                 $afilado_ordenes->guardar();
                 $tansftabla->guardar();
-                header('Location:/busquedaPersonalizada/busquedaafilado');
+                header('Location: /busquedaPersonalizada/busquedaafilado');
 
             }
         }

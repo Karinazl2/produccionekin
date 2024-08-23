@@ -140,7 +140,9 @@ class BusquedaAfiladoController
 
         is_admin_operador();
         $id = validatRedireccionar('/');
-        $afilado_ordenes = Afilado_ordenes::find($id);
+        $vista_afilado_ordenes = Vista_afilado_ordenes::find($id);
+        $orden = $vista_afilado_ordenes->numero_orden;
+        $afilado_ordenes = Afilado_ordenes::where('orden',$orden);
 
         $maquinas = Afilado_maquinas::find($id);
         //arreglo con mrnsaje de errores
@@ -157,7 +159,7 @@ class BusquedaAfiladoController
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//            debuguear($_POST);
+           debuguear($_POST);
 
             is_admin_operador();
             $args = $_POST['afilado_ordenes'];
